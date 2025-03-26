@@ -1,0 +1,347 @@
+.work-detail-page {
+  padding: 6rem 0;
+}
+
+.back-to-works {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.work-detail-header {
+  margin-bottom: 3rem;
+}
+
+.work-detail-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.work-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.work-detail-category,
+.work-detail-year,
+.work-detail-exhibition {
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.work-detail-category {
+  background-color: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent);
+}
+
+.work-detail-year {
+  background-color: rgba(var(--text-secondary-rgb), 0.1);
+  color: var(--text-secondary);
+}
+
+.work-detail-exhibition {
+  background-color: rgba(var(--accent-secondary-rgb), 0.1);
+  color: var(--accent-secondary);
+}
+
+.work-detail-content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* YouTube埋め込み */
+.youtube-embed-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.youtube-embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ギャラリー */
+.work-detail-gallery {
+  position: relative;
+}
+
+.gallery-main {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: var(--background-secondary);
+  aspect-ratio: 16 / 9;
+}
+
+.gallery-active-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(var(--background-rgb), 0.8);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.gallery-nav:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+.gallery-nav.prev {
+  left: 1rem;
+}
+
+.gallery-nav.next {
+  right: 1rem;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.gallery-thumbnail {
+  width: 80px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  border: 2px solid transparent;
+  padding: 0;
+  background: none;
+  position: relative;
+}
+
+.gallery-thumbnail:hover {
+  opacity: 1;
+}
+
+.gallery-thumbnail.active {
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+.gallery-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* YouTube サムネイル */
+.youtube-thumbnail {
+  position: relative;
+}
+
+.youtube-thumbnail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.thumbnail-video-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2rem;
+  z-index: 2;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* 読みやすさのためのテキストシャドウ追加 */
+}
+
+.thumbnail-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+
+.work-video {
+  margin-top: 2rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* 作品情報 */
+.work-detail-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.work-detail-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.work-detail-description {
+  margin-bottom: 2rem;
+}
+
+.work-detail-description p {
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.work-detail-technology {
+  margin-bottom: 2rem;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.technology-item {
+  padding: 0.4rem 1rem;
+  background-color: rgba(var(--text-secondary-rgb), 0.1);
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+}
+
+.awards-list {
+  list-style: none;
+}
+
+.award-item {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+}
+
+.award-item::before {
+  content: '🏆';
+  margin-right: 0.5rem;
+}
+
+.award-item:last-child {
+  border-bottom: none;
+}
+
+/* 関連作品 */
+.related-works {
+  margin-bottom: 4rem;
+}
+
+.related-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.related-item {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.related-thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.related-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.related-item:hover .related-image {
+  transform: scale(1.05);
+}
+
+.related-work-title {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ナビゲーション */
+.work-navigation {
+  text-align: center;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .work-detail-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .work-detail-title {
+    font-size: 2.5rem;
+  }
+  
+  .gallery-thumbnail {
+    width: 60px;
+    height: 45px;
+  }
+}

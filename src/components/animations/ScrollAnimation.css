@@ -1,0 +1,9 @@
+.scroll-animation {
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animation {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,94 @@
+.cursor-dot,
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: transform 0.15s ease-out, width 0.2s, height 0.2s;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent);
+  transition: all 0.2s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ホバー状態 */
+.cursor-dot.hover {
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0.5;
+}
+
+.cursor-ring.hover {
+  width: 60px;
+  height: 60px;
+  border-width: 1.5px;
+  background-color: rgba(var(--accent-rgb), 0.1);
+}
+
+/* 拡大状態 */
+.cursor-dot.expand {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.cursor-ring.expand {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(var(--accent-rgb), 0.15);
+}
+
+/* クリック状態 */
+.cursor-dot.click {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.cursor-ring.click {
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0.6;
+}
+
+/* テキスト状態 */
+.cursor-dot.text {
+  opacity: 0;
+}
+
+.cursor-ring.text {
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--accent);
+  min-width: 80px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cursor-text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* カーソルが画面外の場合は非表示 */
+.cursor-dot,
+.cursor-ring {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.cursor-dot.hidden,
+.cursor-ring.hidden {
+  opacity: 0;
+}

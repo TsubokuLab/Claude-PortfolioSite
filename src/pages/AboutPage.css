@@ -1,0 +1,292 @@
+.about-page {
+  overflow-x: hidden;
+}
+
+/* ヘッダーセクション */
+.about-header {
+  padding: 8rem 0 6rem;
+  background-color: var(--background);
+}
+
+.page-title {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.header-text {
+  padding-right: 2rem;
+}
+
+.header-intro {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.header-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.header-image {
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.about-img, .vision-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.header-image:hover .about-img,
+.vision-image:hover .vision-img {
+  transform: scale(1.03);
+}
+
+.about-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--accent), var(--accent-secondary));
+  animation: gradientMove 10s ease infinite;
+  background-size: 400% 400%;
+}
+
+/* CALAR.inkセクション */
+.about-calar {
+  padding: 6rem 0;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--accent-secondary), var(--accent));
+  z-index: -1;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+.section-title.light {
+  color: white;
+}
+
+.section-title.light::after {
+  background-color: white;
+}
+
+.calar-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.calar-members h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.member-item {
+  text-align: center;
+}
+
+.member-color {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.member-item:hover .member-color {
+  transform: scale(1.1);
+}
+
+.member-blue { background-color: #0099cc; }
+.member-purple { background-color: #9966cc; }
+.member-orange { background-color: #ff9933; }
+.member-green { background-color: #33cc66; }
+.member-red { background-color: #e04d84; }
+.member-brown { background-color: #996633; }
+
+.member-item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-item p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+/* 歴史/沿革セクション */
+.about-history {
+  padding: 6rem 0;
+  background-color: var(--background);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: var(--accent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.timeline-date {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* ビジョン/フィロソフィーセクション */
+.about-vision {
+  padding: 6rem 0;
+  background-color: var(--background-secondary);
+}
+
+.vision-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.vision-text {
+  padding-right: 2rem;
+}
+
+.vision-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.vision-image {
+  position: relative;
+}
+
+.vision-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, var(--accent), var(--accent-secondary));
+  animation: gradientMove 10s ease infinite;
+  background-size: 400% 400%;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .header-content,
+  .vision-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .header-text,
+  .vision-text {
+    padding-right: 0;
+    order: 2;
+  }
+  
+  .header-image,
+  .vision-image {
+    order: 1;
+  }
+  
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .member-color {
+    width: 80px;
+    height: 80px;
+  }
+}

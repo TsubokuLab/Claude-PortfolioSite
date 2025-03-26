@@ -1,0 +1,53 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding-top: 80px; /* ヘッダーの高さ分 */
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* ページ遷移アニメーションラッパー */
+.page-transition-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 80px - 200px); /* ヘッダーとフッターの高さを考慮 */
+  transition: opacity 300ms ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+/* 遷移アニメーションステージ */
+.page-transition-wrapper.fadeIn {
+  opacity: 1;
+}
+
+.page-transition-wrapper.fadeOut {
+  opacity: 0;
+}
+
+/* ページコンテンツ */
+.page-content {
+  width: 100%;
+  position: relative;
+}
+
+/* アニメーション中の操作無効化 */
+.page-transition-wrapper.fadeOut .page-content {
+  pointer-events: none;
+}
+
+/* アニメーション無効化 */
+@media (prefers-reduced-motion: reduce) {
+  .main-content,
+  .page-transition-wrapper,
+  .page-content {
+    transition: none !important;
+    animation: none !important;
+  }
+}

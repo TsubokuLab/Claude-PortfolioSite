@@ -1,0 +1,53 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "path": "/images/hero/ExhibitionPicture_Moment.jpg",
+      "title": "Exhibition Picture Moment",
+      "alt": "展示会のモーメント",
+      "orientation": "landscape"
+    },
+    {
+      "id": 2,
+      "path": "/images/hero/FantasyTheater.png",
+      "title": "Fantasy Theater",
+      "alt": "ファンタジーシアター",
+      "orientation": "landscape"
+    },
+    {
+      "id": 3,
+      "path": "/images/hero/interactive-funeral.jpg",
+      "title": "Interactive Funeral",
+      "alt": "インタラクティブな葬儀",
+      "orientation": "landscape"
+    },
+    {
+      "id": 4,
+      "path": "/images/hero/InvisibleSculpture_thumb.png",
+      "title": "Invisible Sculpture",
+      "alt": "不可視彫像",
+      "orientation": "landscape"
+    },
+    {
+      "id": 5,
+      "path": "/images/hero/Tsukumogami_thumb.png",
+      "title": "Tsukumogami",
+      "alt": "付喪神",
+      "orientation": "landscape"
+    },
+    {
+      "id": 6,
+      "path": "/images/hero/Vertexceed.jpg",
+      "title": "Vertexceed",
+      "alt": "バーテックス",
+      "orientation": "landscape"
+    },
+    {
+      "id": 7,
+      "path": "/images/hero/VERTEX_icon_512.jpg",
+      "title": "VERTEX Icon",
+      "alt": "VERTEXアイコン",
+      "orientation": "portrait"
+    }
+  ]
+}

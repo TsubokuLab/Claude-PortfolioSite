@@ -1,0 +1,15 @@
+.webgl-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-background);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .webgl-background {
+    display: none;
+  }
+}

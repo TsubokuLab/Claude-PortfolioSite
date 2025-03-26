@@ -1,0 +1,153 @@
+.home-page {
+  overflow-x: hidden;
+}
+
+/* スキルセクション */
+.skills-section {
+  padding: 6rem 0;
+  background-color: var(--background-secondary);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.skill-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.skill-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 実績セクション */
+.achievements-section {
+  padding: 6rem 0;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--accent-secondary), var(--accent));
+  z-index: -1;
+}
+
+.section-title.light {
+  color: white;
+}
+
+.section-title.light::after {
+  background-color: white;
+}
+
+.achievements-list {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.achievement-item {
+  display: flex;
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.achievement-year {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.achievement-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-content p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* コンタクトCTA */
+.contact-cta {
+  padding: 6rem 0;
+  text-align: center;
+  background-color: var(--background);
+}
+
+.cta-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-description {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .achievement-item {
+    flex-direction: column;
+  }
+  
+  .achievement-year {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .cta-title {
+    font-size: 2.5rem;
+  }
+}

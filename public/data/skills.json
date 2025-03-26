@@ -1,0 +1,97 @@
+[
+  {
+    "category": "プログラミング",
+    "skills": [
+      {
+        "name": "Unity / C#",
+        "level": 95,
+        "description": "テーマパークのアトラクションやインタラクティブなプロジェクションマッピング、VR/MRアプリ開発"
+      },
+      {
+        "name": "C++/openFrameworks",
+        "level": 85,
+        "description": "メディアアート作品「七色小道」「ミライノピアノ」「石畳燈籠」の開発"
+      },
+      {
+        "name": "PHP/HTML/CSS/JavaScript",
+        "level": 80,
+        "description": "Webシステム開発、CMS構築"
+      },
+      {
+        "name": "Python",
+        "level": 70,
+        "description": "データ処理、機械学習など"
+      },
+      {
+        "name": "Processing",
+        "level": 85,
+        "description": "ビジュアルプログラミングによるアート作品制作"
+      }
+    ]
+  },
+  {
+    "category": "メディア技術",
+    "skills": [
+      {
+        "name": "プロジェクションマッピング",
+        "level": 90,
+        "description": "建物や物体へのプロジェクションマッピング技術"
+      },
+      {
+        "name": "センサー連携技術",
+        "level": 85,
+        "description": "Kinect、Leap Motion、Arduino等のセンサーデバイスとの連携"
+      },
+      {
+        "name": "VR/AR/MR開発",
+        "level": 90,
+        "description": "Meta Quest、HTC Vive、HoloLensなどのVR/ARデバイス向けアプリ開発"
+      },
+      {
+        "name": "インタラクティブ設計",
+        "level": 95,
+        "description": "ユーザーインタラクションの設計と実装"
+      }
+    ]
+  },
+  {
+    "category": "データベース",
+    "skills": [
+      {
+        "name": "MySQL",
+        "level": 75,
+        "description": "Webアプリケーションのデータベース設計・構築"
+      },
+      {
+        "name": "PostgreSQL",
+        "level": 70,
+        "description": "大規模データの管理"
+      },
+      {
+        "name": "ORACLE",
+        "level": 65,
+        "description": "企業システムでの利用経験"
+      }
+    ]
+  },
+  {
+    "category": "その他",
+    "skills": [
+      {
+        "name": "デジタルファブリケーション",
+        "level": 80,
+        "description": "3Dプリンティング、レーザーカッター等の活用"
+      },
+      {
+        "name": "ハードウェア設計",
+        "level": 75,
+        "description": "電子回路設計、マイコン制御"
+      },
+      {
+        "name": "プロジェクトマネジメント",
+        "level": 85,
+        "description": "チームプロジェクトのディレクション・マネジメント"
+      }
+    ]
+  }
+]
