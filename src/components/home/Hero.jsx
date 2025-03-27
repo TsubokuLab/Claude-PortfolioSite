@@ -276,7 +276,7 @@ const Hero = () => {
       
       <div className="hero-scroll-indicator">
         <div className="scroll-text">SCROLL</div>
-        <div className="scroll-line"></div>
+        <i className="fa-solid fa-chevron-down scroll-arrow"></i>
       </div>
     </section>
   );

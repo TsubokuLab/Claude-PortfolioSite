@@ -3,7 +3,7 @@
     "id": "vertex",
     "title": "VERTEX: VRCBattleRoyale",
     "category": "VR",
-    "year": 2021,
+    "year": 2022,
     "description": "VRChat向けのバトルロワイヤルゲーム。VR空間でのインタラクティブな対戦体験を提供。",
     "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
     "thumbnail": "images/works/VERTEX/VERTEX_web_thumb.jpg",
@@ -12,14 +12,14 @@
       "images/works/VERTEX/VERTEX_PR_02.png",
       "images/works/VERTEX/VERTEX_Thumb_forVRC.png"
     ],
-    "exhibition": "",
+    "exhibition": "VRChat",
     "awards": []
   },
   {
     "id": "exhibition-picture",
     "title": "展覧会の絵 - Pictures at an Exhibition",
-    "category": "interactive",
-    "year": 2020,
+    "category": "mediaart",
+    "year": 2022,
     "description": "クラシック音楽「展覧会の絵」をモチーフにしたインタラクティブアート作品。音楽に合わせて展開する視覚的な体験を提供。",
     "technology": ["Unity", "Kinect", "プロジェクションマッピング"],
     "thumbnail": "images/works/ExhibitionPicture/ExhibitionPicture_thumb.jpg",
@@ -34,7 +34,7 @@
   {
     "id": "fantasy-theater",
     "title": "幻想シアター / Fantasy Theater - Interactive Photo Booth",
-    "category": "installation",
+    "category": "mediaart",
     "year": 2019,
     "description": "インタラクティブなフォトブース。来場者の写真をリアルタイムで加工し、幻想的な世界の一部として表現する。",
     "technology": ["OpenCV", "Unity", "カメラシステム"],
@@ -42,15 +42,15 @@
     "images": [
       "images/works/FantasyTheater/FantasyTheater.png"
     ],
-    "exhibition": "アートイベント",
+    "exhibition": "魔法の美術館",
     "awards": []
   },
   {
     "id": "void-sailing",
     "title": "void Sailing();",
-    "category": "installation",
-    "year": 2019,
-    "description": "コードと物理的な空間を融合させたインスタレーション作品。プログラムの「void」空間を航海するコンセプトで制作。",
+    "category": "mediaart",
+    "year": 2018,
+    "description": "仮想空間と物理的空間を融合させたインスタレーション作品。プログラムの「void」空間を航海するコンセプトで制作。",
     "technology": ["C++", "openFrameworks", "プロジェクションマッピング"],
     "thumbnail": "images/banners/voidsailing_thumb.png",
     "images": [
@@ -62,15 +62,15 @@
   {
     "id": "fantasy-diorama",
     "title": "空想ジオラマ - Fantasy Diorama",
-    "category": "interactive",
-    "year": 2018,
+    "category": "mediaart",
+    "year": 2017,
     "description": "現実世界のミニチュアジオラマと投影されたデジタル情報を融合させたインタラクティブな作品。",
     "technology": ["プロジェクションマッピング", "センサー技術"],
     "thumbnail": "images/banners/fantasy_diorama_thumb.png",
     "images": [
       "images/banners/fantasy_diorama_thumb.png"
     ],
-    "exhibition": "",
+    "exhibition": "魔法の美術館",
     "awards": ["総務省 異能vation ジェネレーションアワード2018 大きく広がる分野 最優秀賞"]
   },
   {
@@ -84,13 +84,13 @@
     "images": [
       "images/banners/during_the_night_thumb.png"
     ],
-    "exhibition": "CALAR.ink exhibition",
+    "exhibition": "六本木アートナイト",
     "awards": []
   },
   {
     "id": "invisible-sculpture",
     "title": "不可視彫像 / Invisible Sculpture",
-    "category": "installation",
+    "category": "mediaart",
     "year": 2017,
     "description": "目に見えない彫刻を体感するVR作品。触覚と視覚の関係性を探る実験的なインスタレーション。",
     "technology": ["VR", "Unity", "触覚フィードバック"],
@@ -110,8 +110,8 @@
   {
     "id": "achromatic-world",
     "title": "Achromatic World -いろのないせかい-",
-    "category": "installation",
-    "year": 2017,
+    "category": "performance",
+    "year": 2016,
     "description": "色のない世界を表現したインスタレーション作品。訪問者のインタラクションによって、少しずつ色が追加されていく。",
     "technology": ["Unity", "センサー技術", "プログラミング"],
     "thumbnail": "images/banners/achromatic_banner.jpg",
@@ -156,7 +156,7 @@
   {
     "id": "tsukumogami",
     "title": "つくもがみ - Tsukumogami",
-    "category": "installation",
+    "category": "mediaart",
     "year": 2015,
     "description": "日本の伝統的な「付喪神」の概念に基づいたインタラクティブインスタレーション。物に宿る魂を視覚化。",
     "technology": ["C++", "openFrameworks", "プロジェクションマッピング"],
@@ -168,13 +168,13 @@
       "images/works/Tsukumogami/Tsukumogami02.png",
       "images/works/Tsukumogami/Tsukumogami03.png"
     ],
-    "exhibition": "",
+    "exhibition": "魔法の美術館",
     "awards": []
   },
   {
     "id": "vertexceed",
     "title": "Vertexceed",
-    "category": "software",
+    "category": "mediaart",
     "year": 2015,
     "description": "インタラクティブな視覚効果を生成するソフトウェア。音楽やモーションに反応するビジュアルを作成。",
     "technology": ["C++", "openFrameworks", "GLSL"],
@@ -183,13 +183,13 @@
       "images/banners/vertexceed_topics_bg.png",
       "images/works/Vertexceed/Vertexceed.jpg"
     ],
-    "exhibition": "",
+    "exhibition": "魔法の美術館",
     "awards": []
   },
   {
     "id": "miraino-piano",
     "title": "ミライノピアノ - MIRAINO PIANO",
-    "category": "installation",
+    "category": "mediaart",
     "year": 2014,
     "description": "プロジェクションマッピングとピアノを組み合わせたインタラクティブな音楽体験。演奏に合わせて映像が変化する。",
     "technology": ["C++", "openFrameworks", "MIDIセンシング", "プロジェクションマッピング"],
@@ -203,13 +203,13 @@
   {
     "id": "nanairo-komichi",
     "title": "七色小道 - NANAIRO KOMICHI",
-    "category": "installation",
+    "category": "mediaart",
     "year": 2014,
     "description": "床面へのプロジェクションマッピングによるインタラクティブな通路。歩くと光の軌跡が生まれ、色が変化する。",
     "technology": ["C++", "openFrameworks", "Kinect", "プロジェクションマッピング"],
-    "thumbnail": "images/works/NanairoKomichi/NanairoKomichi.jpg",
+    "thumbnail": "images/works/NanairoKomichi/nanairo_komichi.png",
     "images": [
-      "images/banners/nanairo_komichi.png"
+      "images/works/NanairoKomichi/nanairo_komichi.png"
     ],
     "exhibition": "魔法の美術館",
     "awards": []
@@ -217,7 +217,7 @@
   {
     "id": "interactive-funeral",
     "title": "インタラクティブお葬式",
-    "category": "conceptual",
+    "category": "device",
     "year": 2014,
     "description": "デジタル時代における葬儀の新しい形を提案する概念的プロジェクト。オンライン参加型の追悼体験をデザイン。",
     "technology": ["Web技術", "参加型デザイン"],
@@ -238,7 +238,7 @@
     "title": "AffinBeatVJ",
     "category": "software",
     "year": 2013,
-    "description": "音楽と連動して映像効果を生成するVJソフトウェア。パフォーマンスやライブイベントで使用可能。",
+    "description": "音楽と連動して映像効果を生成するプロジェクションマッピングソフトウェア。レーザープロジェクタやDMX照明との連携も可能。",
     "technology": ["C++", "openFrameworks", "オーディオ解析"],
     "thumbnail": "images/works/AffinBeatVJ/AffinBeatVJ_sample01.jpg",
     "images": [
@@ -249,13 +249,13 @@
       "images/works/AffinBeatVJ/AffinBeatVJ_sample04.jpg",
       "images/works/AffinBeatVJ/AffinBeatVJ_sample05.jpg"
     ],
-    "exhibition": "",
+    "exhibition": "クラブイベント",
     "awards": []
   },
   {
     "id": "affinbeat-box",
     "title": "AffinBeatBox",
-    "category": "installation",
+    "category": "mediaart",
     "year": 2012,
     "description": "体の動きで音楽と映像を生成できるインタラクティブなインスタレーション。身体を楽器として使える体験。",
     "technology": ["C++", "openFrameworks", "Kinect", "サウンド生成"],
@@ -274,7 +274,7 @@
   {
     "id": "ishidatami-tourou",
     "title": "石畳燈籠",
-    "category": "installation",
+    "category": "mediaart",
     "year": 2011,
     "description": "伝統的な日本の石畳と現代のインタラクティブ技術を融合させた作品。足元の石畳が反応して光る体験。",
     "technology": ["C++", "openFrameworks", "圧力センサー", "LED制御"],
@@ -293,7 +293,7 @@
   {
     "id": "shadow-touch",
     "title": "Shadow Touch",
-    "category": "interactive",
+    "category": "mediaart",
     "year": 2010,
     "description": "影を通じて物体と対話できるインタラクティブ作品。実物に触れなくても、その影に触れることで操作が可能になる。",
     "technology": ["C#", "XNA Framework", "コンピュータビジョン"],

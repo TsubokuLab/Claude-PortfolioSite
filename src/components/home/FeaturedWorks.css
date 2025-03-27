@@ -23,8 +23,17 @@
   text-align: center;
   font-size: 1.2rem;
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto 4rem;
+  line-height: 1.8;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .section-description {
+    white-space: normal;
+    padding: 0 1rem;
+  }
 }
 
 .works-grid {

@@ -182,6 +182,7 @@ const getCategoryLabel = (category) => {
   const categoryMap = {
     'installation': 'インスタレーション',
     'interactive': 'インタラクティブ',
+    'mediaart': 'メディアアート',
     'performance': 'パフォーマンス',
     'VR': 'VR/AR',
     'device': 'デバイス',

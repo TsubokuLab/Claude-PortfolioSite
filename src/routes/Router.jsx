@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 import Layout from '../components/layout/Layout';
 
@@ -11,10 +11,10 @@ import WorkDetailPage from '../pages/WorkDetailPage';
 import ActivityPage from '../pages/ActivityPage';
 import ContactPage from '../pages/ContactPage';
 
-// GitHub Pages対応のためHashRouterを使用
+// BrowserRouterに変更し、basename属性を追加
 function AppRouter() {
   return (
-    <HashRouter>
+    <BrowserRouter basename="/Claude-PortfolioSite">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -27,7 +27,7 @@ function AppRouter() {
           <Route path="*" element={<div>Page Not Found</div>} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
