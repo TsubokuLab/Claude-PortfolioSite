@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>リダイレクト中...</title>
   <script>
-    // シングルページアプリケーションのためのリダイレクト
-    (function(){
-      // URLのパス部分を取得
-      var l = window.location;
-      var path = l.pathname.replace(/^\/Claude-PortfolioSite/, '');
+    // GitHubページでのSPAリダイレクト処理
+    (function() {
+      // URLから引数を取得する関数
+      function getQueryParameter(name) {
+        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        const results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      // URLパスを取得
+      var pathSegments = location.pathname.split('/');
+      var repoName = "Claude-PortfolioSite";
+      var hasRepoName = pathSegments.indexOf(repoName) !== -1;
       
-      // パス、クエリ、ハッシュを保存
-      var redirectTo = path + (l.search || '') + (l.hash || '');
+      // リポジトリ名が既にパスに含まれているかチェック
+      var redirectPath;
+      if (hasRepoName) {
+        // すでにリポジトリ名が含まれている場合
+        redirectPath = location.pathname;
+      } else {
+        // リポジトリ名とパスを適切に構築
+        if (pathSegments[1] === "") {
+          redirectPath = "/" + repoName + "/";
+        } else {
+          redirectPath = "/" + repoName + location.pathname;
+        }
+      }
+
+      // リダイレクト先をセッションストレージに保存
+      sessionStorage.setItem('redirect', redirectPath);
       
-      // セッションストレージに保存
-      sessionStorage.setItem('redirect', redirectTo);
-      
-      // ベースURLへリダイレクト
-      l.replace('/Claude-PortfolioSite');
+      // ベースURL（リポジトリ名まで）にリダイレクト
+      window.location.replace("/" + repoName + "/");
     })();
   </script>
 </head>
 <body>
-  リダイレクト中...
+  <p>リダイレクト中です...</p>
 </body>
 </html>

@@ -6,11 +6,9 @@
     "year": 2022,
     "description": "VRChat向けのバトルロワイヤルゲーム。VR空間でのインタラクティブな対戦体験を提供。",
     "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
-    "thumbnail": "images/works/VERTEX/VERTEX_web_thumb.jpg",
+    "thumbnail": "images/works/VERTEX/VERTEX_01.png",
     "images": [
-      "images/works/VERTEX/VERTEX_web_thumb.jpg",
-      "images/works/VERTEX/VERTEX_PR_02.png",
-      "images/works/VERTEX/VERTEX_Thumb_forVRC.png"
+      "images/works/VERTEX/VERTEX_Training_01.jpg"
     ],
     "exhibition": "VRChat",
     "awards": []
@@ -22,11 +20,9 @@
     "year": 2022,
     "description": "クラシック音楽「展覧会の絵」をモチーフにしたインタラクティブアート作品。音楽に合わせて展開する視覚的な体験を提供。",
     "technology": ["Unity", "Kinect", "プロジェクションマッピング"],
-    "thumbnail": "images/works/ExhibitionPicture/ExhibitionPicture_thumb.jpg",
+    "thumbnail": "images/works/ExhibitionPicture/ExhibitionPicture_01.jpg",
     "images": [
-      "images/works/ExhibitionPicture/ExhibitionPicture_thumb.jpg",
-      "images/works/ExhibitionPicture/ExhibitionPicture_thumb_high.jpg",
-      "images/works/ExhibitionPicture/ExhibitionPicture_Moment.jpg"
+      "images/works/ExhibitionPicture/ExhibitionPicture_01.jpg"
     ],
     "exhibition": "魔法の美術館",
     "awards": []
@@ -38,9 +34,9 @@
     "year": 2019,
     "description": "インタラクティブなフォトブース。来場者の写真をリアルタイムで加工し、幻想的な世界の一部として表現する。",
     "technology": ["OpenCV", "Unity", "カメラシステム"],
-    "thumbnail": "images/works/FantasyTheater/FantasyTheater.png",
+    "thumbnail": "images/works/FantasyTheater/FantasyTheater_01.png",
     "images": [
-      "images/works/FantasyTheater/FantasyTheater.png"
+      "images/works/FantasyTheater/FantasyTheater_02.png"
     ],
     "exhibition": "魔法の美術館",
     "awards": []
@@ -52,9 +48,12 @@
     "year": 2018,
     "description": "仮想空間と物理的空間を融合させたインスタレーション作品。プログラムの「void」空間を航海するコンセプトで制作。",
     "technology": ["C++", "openFrameworks", "プロジェクションマッピング"],
-    "thumbnail": "images/banners/voidsailing_thumb.png",
+    "thumbnail": "images/works/VoidSailing/VoidSailing_01.png",
     "images": [
-      "images/banners/voidsailing_thumb.png"
+      "images/works/VoidSailing/VoidSailing_01.png",
+      "images/works/VoidSailing/VoidSailing_02.png",
+      "images/works/VoidSailing/VoidSailing_03.png",
+      "images/works/VoidSailing/VoidSailing_04.png"
     ],
     "exhibition": "",
     "awards": []
@@ -66,9 +65,11 @@
     "year": 2017,
     "description": "現実世界のミニチュアジオラマと投影されたデジタル情報を融合させたインタラクティブな作品。",
     "technology": ["プロジェクションマッピング", "センサー技術"],
-    "thumbnail": "images/banners/fantasy_diorama_thumb.png",
+    "thumbnail": "images/works/FantasyDiorama/FantasyDiorama_thumb.png",
     "images": [
-      "images/banners/fantasy_diorama_thumb.png"
+      "images/works/FantasyDiorama/FantasyDiorama_01.png",
+      "images/works/FantasyDiorama/FantasyDiorama_02.png",
+      "images/works/FantasyDiorama/FantasyDiorama_03.jpg"
     ],
     "exhibition": "魔法の美術館",
     "awards": ["総務省 異能vation ジェネレーションアワード2018 大きく広がる分野 最優秀賞"]
@@ -96,9 +97,7 @@
     "technology": ["VR", "Unity", "触覚フィードバック"],
     "thumbnail": "images/works/InvisibleSculpture/InvisibleSculpture_thumb.png",
     "images": [
-      "images/banners/invisible_sculpture_banner.png",
-      "images/works/InvisibleSculpture/InvisibleSculpture_thumb.png",
-      "images/works/InvisibleSculpture/InvisibleSculpture_youtubethumb.png"
+      "images/works/InvisibleSculpture/InvisibleSculpture_thumb.png"
     ],
     "exhibition": "JAPAN VR EXPO 2017",
     "awards": [
@@ -142,13 +141,14 @@
     "year": 2016,
     "description": "出産時の陣痛を疑似体験できるウェアラブルデバイス。パートナーとの共感を深めるためのプロジェクト。",
     "technology": ["Arduino", "電気刺激", "センサー技術"],
-    "thumbnail": "images/works/HappyPain/HappyPain_image01.png",
+    "thumbnail": "images/works/HappyPain/HappyPain_01.jpg",
     "images": [
-      "images/banners/happypain_banner_small.png",
-      "images/banners/happypain_banner.png",
-      "images/works/HappyPain/HappyPain_image01.png",
-      "images/works/HappyPain/HappyPain_image02.png",
-      "images/works/HappyPain/HappyPain_image03.png"
+      "images/works/HappyPain/HappyPain_02.jpg",
+      "images/works/HappyPain/HappyPain_03.jpg",
+      "images/works/HappyPain/HappyPain_04.jpg",
+      "images/works/HappyPain/HappyPain_05.png",
+      "images/works/HappyPain/HappyPain_06.png",
+      "images/works/HappyPain/HappyPain_07.png"
     ],
     "exhibition": "GUGEN2016",
     "awards": []
@@ -178,10 +178,10 @@
     "year": 2015,
     "description": "インタラクティブな視覚効果を生成するソフトウェア。音楽やモーションに反応するビジュアルを作成。",
     "technology": ["C++", "openFrameworks", "GLSL"],
-    "thumbnail": "images/works/Vertexceed/Vertexceed.jpg",
+    "thumbnail": "images/works/Vertexceed/Vertexceed_01.jpg",
     "images": [
-      "images/banners/vertexceed_topics_bg.png",
-      "images/works/Vertexceed/Vertexceed.jpg"
+      "images/works/Vertexceed/Vertexceed_01.jpg",
+      "images/works/Vertexceed/vertexceed_02.png"
     ],
     "exhibition": "魔法の美術館",
     "awards": []
@@ -207,9 +207,10 @@
     "year": 2014,
     "description": "床面へのプロジェクションマッピングによるインタラクティブな通路。歩くと光の軌跡が生まれ、色が変化する。",
     "technology": ["C++", "openFrameworks", "Kinect", "プロジェクションマッピング"],
-    "thumbnail": "images/works/NanairoKomichi/nanairo_komichi.png",
+    "thumbnail": "images/works/NanairoKomichi/nanairo_01.jpg",
     "images": [
-      "images/works/NanairoKomichi/nanairo_komichi.png"
+      "images/works/NanairoKomichi/nanairo_01.jpg",
+      "images/works/NanairoKomichi/nanairo_02.jpg"
     ],
     "exhibition": "魔法の美術館",
     "awards": []
@@ -228,7 +229,11 @@
       "images/works/InteractiveFuneral/chin_machine.png",
       "images/works/InteractiveFuneral/poku_machine.png",
       "images/works/InteractiveFuneral/app.png",
-      "images/works/InteractiveFuneral/iPortrait.png"
+      "images/works/InteractiveFuneral/iPortrait.png",
+      "images/works/InteractiveFuneral/LeapShoukou.png",
+      "images/works/InteractiveFuneral/making.png",
+      "images/works/InteractiveFuneral/node.png",
+      "images/works/InteractiveFuneral/table.png"
     ],
     "exhibition": "Gugen2013",
     "awards": ["Yahoo! JAPAN インターネットクリエイティブアワード2014 スマートデバイスイノベーション部門 ゴールド賞"]
@@ -297,11 +302,12 @@
     "year": 2010,
     "description": "影を通じて物体と対話できるインタラクティブ作品。実物に触れなくても、その影に触れることで操作が可能になる。",
     "technology": ["C#", "XNA Framework", "コンピュータビジョン"],
-    "thumbnail": "images/works/ShadowTouch/DeviceConfiguration.png",
+    "thumbnail": "images/works/ShadowTouch/ShadowTouch_02.png",
     "images": [
-      "images/banners/shadow_touch.png",
-      "images/works/ShadowTouch/DeviceConfiguration.png",
-      "images/works/ShadowTouch/news_paper.jpg"
+      "images/works/ShadowTouch/ShadowTouch_01.jpg",
+      "images/works/ShadowTouch/ShadowTouch_02.png",
+      "images/works/ShadowTouch/ShadowTouch_03.png",
+      "images/works/ShadowTouch/ShadowTouch_04.jpg"
     ],
     "exhibition": "第14回文化庁メディア芸術祭",
     "awards": ["第16回学生CGコンテスト インタラクティブ部門 優秀賞"]

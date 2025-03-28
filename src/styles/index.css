@@ -143,6 +143,7 @@ img {
 }
 
 /* カーソルを非表示 (カスタムカーソル使用時) */
+/* カスタムカーソルを無効化するためにコメントアウト
 .custom-cursor-active {
   cursor: none;
 }
@@ -151,6 +152,7 @@ img {
 .custom-cursor-active button {
   cursor: none;
 }
+*/
 
 /* ページ読み込み時のアニメーション */
 .app {

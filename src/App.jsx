@@ -26,9 +26,10 @@ function App() {
     };
     
     // 内部遷移時のイベント
-    const handleRouteChange = () => {
-      // ページ遷移が検出されたときにスクロールトップへ
-      window.scrollTo(0, 0);
+    // 特に処理が必要な場合のみイベントを追加する
+    const handleRouteChange = (event) => {
+      // 不要な処理を削除
+      // スクロール処理はRouter.jsxにScrollに移管
     };
     
     window.addEventListener('popstate', handleRouteChange);

@@ -67,120 +67,141 @@ const ContactForm = () => {
   };
   
   return (
-    <div className="contact-form-container">
-      {submitStatus === 'success' && (
-        <motion.div 
-          className="form-success-message"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-        >
-          <h3>Message Sent!</h3>
-          <p>Thank you for your message. We'll get back to you soon.</p>
-        </motion.div>
-      )}
+    <div className="form-overlay-container">
+      {/* フォームの無効化オーバーレイ */}
+      <div className="form-disabled-overlay">
+        <div className="form-disabled-icon">
+          <i className="material-icons">announcement</i>
+        </div>
+        <p className="form-disabled-message">
+          現在、お問い合わせフォームを一時的に停止しています。
+          右側の各SNSのダイレクトメッセージにてご連絡ください。
+        </p>
+        <p className="social-links-reminder">
+          お手数をおかけしますが、よろしくお願いいたします。
+        </p>
+      </div>
       
-      {submitStatus === 'error' && (
-        <motion.div 
-          className="form-error-message"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-        >
-          <h3>Something went wrong</h3>
-          <p>Please try again later or contact us directly.</p>
-        </motion.div>
-      )}
-      
-      <form onSubmit={handleSubmit} className={submitStatus ? 'form-hidden' : ''}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <motion.input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            onFocus={() => setCursor('text')}
-            onBlur={resetCursor}
-            variants={inputVariants}
-            initial="blur"
-            whileFocus="focus"
-            whileHover="focus"
-          />
-        </div>
+      {/* 元のフォームコンテンツ */}
+      <div className="contact-form-container">
+        {submitStatus === 'success' && (
+          <motion.div 
+            className="form-success-message"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+          >
+            <h3>Message Sent!</h3>
+            <p>Thank you for your message. We'll get back to you soon.</p>
+          </motion.div>
+        )}
         
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <motion.input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            onFocus={() => setCursor('text')}
-            onBlur={resetCursor}
-            variants={inputVariants}
-            initial="blur"
-            whileFocus="focus"
-            whileHover="focus"
-          />
-        </div>
+        {submitStatus === 'error' && (
+          <motion.div 
+            className="form-error-message"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+          >
+            <h3>Something went wrong</h3>
+            <p>Please try again later or contact us directly.</p>
+          </motion.div>
+        )}
         
-        <div className="form-group">
-          <label htmlFor="subject">Subject</label>
-          <motion.input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            onFocus={() => setCursor('text')}
-            onBlur={resetCursor}
-            variants={inputVariants}
-            initial="blur"
-            whileFocus="focus"
-            whileHover="focus"
-          />
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="message">Message</label>
-          <motion.textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows="5"
-            required
-            onFocus={() => setCursor('text')}
-            onBlur={resetCursor}
-            variants={inputVariants}
-            initial="blur"
-            whileFocus="focus"
-            whileHover="focus"
-          ></motion.textarea>
-        </div>
-        
-        <motion.button
-          type="submit"
-          className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
-          disabled={isSubmitting}
-          onMouseEnter={() => setCursor('hover')}
-          onMouseLeave={resetCursor}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {isSubmitting ? (
-            <span className="spinner"></span>
-          ) : (
-            'Send Message'
-          )}
-        </motion.button>
-      </form>
+        <form onSubmit={handleSubmit} className={submitStatus ? 'form-hidden' : ''}>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <motion.input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              onFocus={() => setCursor('text')}
+              onBlur={resetCursor}
+              variants={inputVariants}
+              initial="blur"
+              whileFocus="focus"
+              whileHover="focus"
+              disabled
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <motion.input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              onFocus={() => setCursor('text')}
+              onBlur={resetCursor}
+              variants={inputVariants}
+              initial="blur"
+              whileFocus="focus"
+              whileHover="focus"
+              disabled
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="subject">Subject</label>
+            <motion.input
+              type="text"
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              onFocus={() => setCursor('text')}
+              onBlur={resetCursor}
+              variants={inputVariants}
+              initial="blur"
+              whileFocus="focus"
+              whileHover="focus"
+              disabled
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <motion.textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows="5"
+              required
+              onFocus={() => setCursor('text')}
+              onBlur={resetCursor}
+              variants={inputVariants}
+              initial="blur"
+              whileFocus="focus"
+              whileHover="focus"
+              disabled
+            ></motion.textarea>
+          </div>
+          
+          <motion.button
+            type="submit"
+            className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
+            disabled={true}
+            onMouseEnter={() => setCursor('hover')}
+            onMouseLeave={resetCursor}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {isSubmitting ? (
+              <span className="spinner"></span>
+            ) : (
+              'Send Message'
+            )}
+          </motion.button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,13 +1,20 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigationType } from 'react-router-dom';
 
 // ページ遷移時に画面を一番上にスクロールする
+// ただし、ブラウザバック時はスクロール位置を復元する
 function ScrollToTop() {
   const { pathname } = useLocation();
+  const navigationType = useNavigationType();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // POPはブラウザの戻る/進むボタンによる遷移
+    // PUSHはリンクなどによる通常の遷移
+    if (navigationType !== 'POP') {
+      // ブラウザバック/フォワード以外の場合のみスクロールトップ
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, navigationType]);
 
   return null;
 }

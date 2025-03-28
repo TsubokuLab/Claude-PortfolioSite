@@ -12,7 +12,7 @@
     <meta property="og:description" content="TERUAKI TSUBOKURA - インタラクティブな映像演出やフィジカルセンシングを駆使し、現実とデジタルの境界を曖昧にする体験を創造する、メディアアーティスト/クリエイティブテクノロジスト" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://teruaki-tsubokura.com/" />
-    <meta property="og:image" content="%VITE_BASE_PATH%/images/og.png" />
+    <meta property="og:image" content="https://tsubokulab.github.io/Claude-PortfolioSite/images/ogp.png" />
     <meta property="og:site_name" content="TERUAKI TSUBOKURA PORTFOLIO" />
     <meta property="og:locale" content="ja_JP" />
 
@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@kohack_v" />
     <meta name="twitter:title" content="TERUAKI TSUBOKURA | メディアアーティスト/クリエイティブテクノロジスト" />
     <meta name="twitter:description" content="TERUAKI TSUBOKURA - インタラクティブな映像演出やフィジカルセンシングを駆使し、現実とデジタルの境界を曖昧にする体験を創造する、メディアアーティスト/クリエイティブテクノロジスト" />
-    <meta name="twitter:image" content="%VITE_BASE_PATH%/images/og.png" />
+    <meta name="twitter:image" content="https://tsubokulab.github.io/Claude-PortfolioSite/images/ogp.png" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +41,24 @@
           // 元のURLに復元
           window.history.replaceState(null, null, redirect);
         }
+      })();
+    </script>
+    
+    <!-- GitHub Pages SPA用のリロード対策 -->
+    <script>
+      // GitHub Pages上でSPAのルーティングを処理するスクリプト
+      (function() {
+        const repo = 'Claude-PortfolioSite';
+        // ページのリロード時に実行される処理
+        window.addEventListener('beforeunload', function() {
+          // 現在のパスを保存
+          const pathname = window.location.pathname;
+          // パスにリポジトリ名が含まれるか確認
+          if (pathname.indexOf(repo) !== -1) {
+            // 現在のフルパスを記録
+            sessionStorage.setItem('reloadPath', pathname);
+          }
+        });
       })();
     </script>
   </head>

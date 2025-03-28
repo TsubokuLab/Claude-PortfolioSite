@@ -1,5 +1,26 @@
 [
   {
+    "year": 2025,
+    "events": [
+      {
+        "date": "2025-04-23",
+        "type": "exhibition",
+        "title": "4/23-5/12 京都府 京都高島屋S.C.「魔法の美術館」展示",
+        "url": "https://www.takashimaya.co.jp/store/special/mahou_museum/",
+        "venue": "京都高島屋S.C.",
+        "venue_url": "https://www.takashimaya.co.jp/store/special/mahou_museum/"
+      },
+      {
+        "date": "2025-03-22",
+        "type": "exhibition",
+        "title": "3/22-6/8 群馬県 富岡市立美術博物館「魔法の美術館リミックス 光と遊ぶミュージアム」展示",
+        "url": "https://artexhibition.jp/exhibitions/20250309-AEJ2600087/",
+        "venue": "富岡市立美術博物館・福沢一郎記念美術館",
+        "venue_url": "https://www.city.tomioka.lg.jp/www/contents/1395887478508/index.html"
+      }
+    ]
+  },
+  {
     "year": 2024,
     "events": [
       {
