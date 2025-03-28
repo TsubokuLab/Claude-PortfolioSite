@@ -43,7 +43,25 @@
         }
       })();
     </script>
-    <script type="module" crossorigin src="/Claude-PortfolioSite/assets/index-DOZw_fEy.js"></script>
+    
+    <!-- GitHub Pages SPA用のリロード対策 -->
+    <script>
+      // GitHub Pages上でSPAのルーティングを処理するスクリプト
+      (function() {
+        const repo = 'Claude-PortfolioSite';
+        // ページのリロード時に実行される処理
+        window.addEventListener('beforeunload', function() {
+          // 現在のパスを保存
+          const pathname = window.location.pathname;
+          // パスにリポジトリ名が含まれるか確認
+          if (pathname.indexOf(repo) !== -1) {
+            // 現在のフルパスを記録
+            sessionStorage.setItem('reloadPath', pathname);
+          }
+        });
+      })();
+    </script>
+    <script type="module" crossorigin src="/Claude-PortfolioSite/assets/index-s-PuAtbR.js"></script>
     <link rel="stylesheet" crossorigin href="/Claude-PortfolioSite/assets/index-BisreFsv.css">
   </head>
   <body>

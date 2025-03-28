@@ -6,10 +6,9 @@
     "year": 2022,
     "description": "VRChat向けのバトルロワイヤルゲーム。VR空間でのインタラクティブな対戦体験を提供。",
     "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
-    "thumbnail": "images/works/VERTEX/VERTEX_icon_512.jpg",
+    "thumbnail": "images/works/VERTEX/VERTEX_01.jpg",
     "images": [
-      "images/works/VERTEX/VERTEX_icon_512.jpg",
-      "images/works/VERTEX/VERTEX_PR_02.png",
+      "images/works/VERTEX/VERTEX_01.jpg",
       "images/works/VERTEX/VERTEX_Training_01.jpg"
     ],
     "exhibition": "VRChat",
@@ -53,7 +52,10 @@
     "technology": ["C++", "openFrameworks", "プロジェクションマッピング"],
     "thumbnail": "images/banners/voidsailing_thumb.png",
     "images": [
-      "images/banners/voidsailing_thumb.png"
+      "images/works/VoidSailing/VoidSailing_01.png",
+      "images/works/VoidSailing/VoidSailing_02.png",
+      "images/works/VoidSailing/VoidSailing_03.png",
+      "images/works/VoidSailing/VoidSailing_04.png"
     ],
     "exhibition": "",
     "awards": []
@@ -65,9 +67,10 @@
     "year": 2017,
     "description": "現実世界のミニチュアジオラマと投影されたデジタル情報を融合させたインタラクティブな作品。",
     "technology": ["プロジェクションマッピング", "センサー技術"],
-    "thumbnail": "images/works/FantasyDiorama/FantasyDiorama_01.jpg",
+    "thumbnail": "images/works/FantasyDiorama/fantasy_diorama_thumb.png",
     "images": [
-      "images/works/FantasyDiorama/FantasyDiorama_01.jpg"
+      "images/works/FantasyDiorama/FantasyDiorama_01.jpg",
+      "images/works/FantasyDiorama/FantasyDiorama_02.jpg"
     ],
     "exhibition": "魔法の美術館",
     "awards": ["総務省 異能vation ジェネレーションアワード2018 大きく広がる分野 最優秀賞"]
@@ -139,7 +142,7 @@
     "year": 2016,
     "description": "出産時の陣痛を疑似体験できるウェアラブルデバイス。パートナーとの共感を深めるためのプロジェクト。",
     "technology": ["Arduino", "電気刺激", "センサー技術"],
-    "thumbnail": "images/works/HappyPain/HappyPain_05.png",
+    "thumbnail": "images/works/HappyPain/HappyPain_01.png",
     "images": [
       "images/works/HappyPain/HappyPain_01.jpg",
       "images/works/HappyPain/HappyPain_02.jpg",
@@ -228,7 +231,11 @@
       "images/works/InteractiveFuneral/chin_machine.png",
       "images/works/InteractiveFuneral/poku_machine.png",
       "images/works/InteractiveFuneral/app.png",
-      "images/works/InteractiveFuneral/iPortrait.png"
+      "images/works/InteractiveFuneral/iPortrait.png",
+      "images/works/InteractiveFuneral/LeapShoukou.png",
+      "images/works/InteractiveFuneral/making.png",
+      "images/works/InteractiveFuneral/node.png",
+      "images/works/InteractiveFuneral/table.png"
     ],
     "exhibition": "Gugen2013",
     "awards": ["Yahoo! JAPAN インターネットクリエイティブアワード2014 スマートデバイスイノベーション部門 ゴールド賞"]
