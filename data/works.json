@@ -35,9 +35,8 @@
     "year": 2019,
     "description": "インタラクティブなフォトブース。来場者の写真をリアルタイムで加工し、幻想的な世界の一部として表現する。",
     "technology": ["OpenCV", "Unity", "カメラシステム"],
-    "thumbnail": "images/works/FantasyTheater/FantasyTheater_banner.png",
+    "thumbnail": "images/works/FantasyTheater/FantasyTheater_01.png",
     "images": [
-      "images/works/FantasyTheater/FantasyTheater_01.png",
       "images/works/FantasyTheater/FantasyTheater_02.png"
     ],
     "exhibition": "魔法の美術館",
@@ -143,9 +142,8 @@
     "year": 2016,
     "description": "出産時の陣痛を疑似体験できるウェアラブルデバイス。パートナーとの共感を深めるためのプロジェクト。",
     "technology": ["Arduino", "電気刺激", "センサー技術"],
-    "thumbnail": "images/works/HappyPain/HappyPain_01.png",
+    "thumbnail": "images/works/HappyPain/HappyPain_01.jpg",
     "images": [
-      "images/works/HappyPain/HappyPain_01.jpg",
       "images/works/HappyPain/HappyPain_02.jpg",
       "images/works/HappyPain/HappyPain_03.jpg",
       "images/works/HappyPain/HappyPain_04.jpg",
