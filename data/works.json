@@ -6,7 +6,7 @@
     "year": 2022,
     "description": "VRChat向けのバトルロワイヤルゲーム。VR空間でのインタラクティブな対戦体験を提供。",
     "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
-    "thumbnail": "images/works/VERTEX/VERTEX_01.jpg",
+    "thumbnail": "images/works/VERTEX/VERTEX_01.png",
     "images": [
       "images/works/VERTEX/VERTEX_01.jpg",
       "images/works/VERTEX/VERTEX_Training_01.jpg"
@@ -50,7 +50,7 @@
     "year": 2018,
     "description": "仮想空間と物理的空間を融合させたインスタレーション作品。プログラムの「void」空間を航海するコンセプトで制作。",
     "technology": ["C++", "openFrameworks", "プロジェクションマッピング"],
-    "thumbnail": "images/banners/voidsailing_thumb.png",
+    "thumbnail": "images/works/VoidSailing/VoidSailing_01.png",
     "images": [
       "images/works/VoidSailing/VoidSailing_01.png",
       "images/works/VoidSailing/VoidSailing_02.png",
@@ -67,10 +67,11 @@
     "year": 2017,
     "description": "現実世界のミニチュアジオラマと投影されたデジタル情報を融合させたインタラクティブな作品。",
     "technology": ["プロジェクションマッピング", "センサー技術"],
-    "thumbnail": "images/works/FantasyDiorama/fantasy_diorama_thumb.png",
+    "thumbnail": "images/works/FantasyDiorama/FantasyDiorama_thumb.png",
     "images": [
-      "images/works/FantasyDiorama/FantasyDiorama_01.jpg",
-      "images/works/FantasyDiorama/FantasyDiorama_02.jpg"
+      "images/works/FantasyDiorama/FantasyDiorama_01.png",
+      "images/works/FantasyDiorama/FantasyDiorama_02.png",
+      "images/works/FantasyDiorama/FantasyDiorama_03.jpg"
     ],
     "exhibition": "魔法の美術館",
     "awards": ["総務省 異能vation ジェネレーションアワード2018 大きく広がる分野 最優秀賞"]
