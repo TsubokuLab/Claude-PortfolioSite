@@ -8,7 +8,6 @@
     "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
     "thumbnail": "images/works/VERTEX/VERTEX_01.png",
     "images": [
-      "images/works/VERTEX/VERTEX_01.jpg",
       "images/works/VERTEX/VERTEX_Training_01.jpg"
     ],
     "exhibition": "VRChat",
