@@ -41,6 +41,14 @@
           // 元のURLに復元
           window.history.replaceState(null, null, redirect);
         }
+        
+        // 末尾スラッシュのチェック
+        const repo = 'Claude-PortfolioSite';
+        const currentPath = window.location.pathname;
+        if (currentPath === '/' + repo) {
+          // 末尾スラッシュがない場合は追加
+          window.history.replaceState(null, null, '/' + repo + '/');
+        }
       })();
     </script>
     
@@ -55,6 +63,7 @@
           const pathname = window.location.pathname;
           // トップページの特別処理
           if (pathname === '/' + repo + '/' || pathname === '/' + repo) {
+            // 常に末尾スラッシュ付きのパスを保存
             sessionStorage.setItem('reloadPath', '/' + repo + '/');
             return;
           }
@@ -67,7 +76,7 @@
         });
       })();
     </script>
-    <script type="module" crossorigin src="/Claude-PortfolioSite/assets/index-D8Tsx4_y.js"></script>
+    <script type="module" crossorigin src="/Claude-PortfolioSite/assets/index-Dm8S2wMx.js"></script>
     <link rel="stylesheet" crossorigin href="/Claude-PortfolioSite/assets/index-dkV8ozxB.css">
   </head>
   <body>
