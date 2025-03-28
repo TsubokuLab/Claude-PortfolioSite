@@ -53,7 +53,13 @@
         window.addEventListener('beforeunload', function() {
           // 現在のパスを保存
           const pathname = window.location.pathname;
-          // パスにリポジトリ名が含まれるか確認
+          // トップページの特別処理
+          if (pathname === '/' + repo + '/' || pathname === '/' + repo) {
+            sessionStorage.setItem('reloadPath', '/' + repo + '/');
+            return;
+          }
+          
+          // その他のページの場合
           if (pathname.indexOf(repo) !== -1) {
             // 現在のフルパスを記録
             sessionStorage.setItem('reloadPath', pathname);
@@ -61,7 +67,7 @@
         });
       })();
     </script>
-    <script type="module" crossorigin src="/Claude-PortfolioSite/assets/index-DDJoXwg4.js"></script>
+    <script type="module" crossorigin src="/Claude-PortfolioSite/assets/index-D8Tsx4_y.js"></script>
     <link rel="stylesheet" crossorigin href="/Claude-PortfolioSite/assets/index-dkV8ozxB.css">
   </head>
   <body>
