@@ -1,0 +1,140 @@
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.custom-select-header:hover:not(.disabled) {
+  border-color: var(--accent);
+}
+
+.custom-select-header:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.1);
+}
+
+.custom-select-header.open {
+  border-color: var(--accent);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.custom-select.disabled .custom-select-header {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--card-bg);
+}
+
+.custom-select-value {
+  flex: 1;
+  text-align: left;
+}
+
+.custom-select-arrow {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  transition: transform 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.custom-select-arrow.open {
+  transform: rotate(180deg);
+}
+
+.custom-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--accent);
+  border-top: none;
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.custom-select-option {
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.custom-select-option:hover {
+  background: rgba(var(--accent-rgb), 0.1);
+}
+
+.custom-select-option.selected {
+  background: var(--accent);
+  color: white;
+}
+
+.custom-select-option:last-child {
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+/* スクロールバーのスタイル */
+.custom-select-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-select-dropdown::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+.custom-select-dropdown::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.custom-select-dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Firefox向けスクロールバー */
+.custom-select-dropdown {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) var(--bg-primary);
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .custom-select-dropdown {
+    max-height: 150px;
+  }
+  
+  .custom-select-option {
+    padding: 0.875rem 0.75rem;
+  }
+}
+
+/* アクセシビリティ対応 */
+@media (prefers-reduced-motion: reduce) {
+  .custom-select-header,
+  .custom-select-arrow,
+  .custom-select-option {
+    transition: none;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import AppRouter from './routes/Router';
 import CustomCursor from './components/ui/CustomCursor';
 import { useCursor } from './context/CursorContext';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   const { cursorType } = useCursor();
@@ -44,15 +45,17 @@ function App() {
   }, [handleInitialLoad]);
 
   return (
-    <div className={`app ${isLoaded ? 'app-loaded' : ''}`}>
-      <CustomCursor type={cursorType} />
-      {isLoaded && <AppRouter />}
-      
-      {/* ページ全体の初期ローディングアニメーション用オーバーレイ */}
-      <div className={`app-loading-overlay ${isLoaded ? 'hidden' : ''}`}>
-        <div className="loading-spinner"></div>
+    <AuthProvider>
+      <div className={`app ${isLoaded ? 'app-loaded' : ''}`}>
+        <CustomCursor type={cursorType} />
+        {isLoaded && <AppRouter />}
+        
+        {/* ページ全体の初期ローディングアニメーション用オーバーレイ */}
+        <div className={`app-loading-overlay ${isLoaded ? 'hidden' : ''}`}>
+          <div className="loading-spinner"></div>
+        </div>
       </div>
-    </div>
+    </AuthProvider>
   );
 }
 

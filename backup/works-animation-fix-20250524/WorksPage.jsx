@@ -9,8 +9,7 @@ const WorksPage = () => {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all'); // フィルタリング状態
   const [layout, setLayout] = useState('grid'); // 表示レイアウト (grid or list)
-  const [animationKey, setAnimationKey] = useState(0); // アニメーション再実行用
-
+  const [isFiltering, setIsFiltering] = useState(false); // フィルタリング中の状態
   const { setCursor, resetCursor } = useCursor();
 
   // 作品データの取得
@@ -40,9 +39,14 @@ const WorksPage = () => {
   // フィルター変更ハンドラ
   const handleFilterChange = (category) => {
     if (category === filter) return; // 同じカテゴリの場合は何もしない
-    setFilter(category);
-    // アニメーション再実行のためにkeyを更新
-    setAnimationKey(prev => prev + 1);
+    
+    setIsFiltering(true);
+    
+    // アニメーション用の遅延
+    setTimeout(() => {
+      setFilter(category);
+      setIsFiltering(false);
+    }, 200);
   };
 
   // レイアウト変更ハンドラ
@@ -80,7 +84,7 @@ const WorksPage = () => {
                 onClick={() => handleFilterChange(category)}
                 onMouseEnter={() => setCursor('hover')}
                 onMouseLeave={resetCursor}
-
+                disabled={isFiltering}
               >
                 {category === 'all' ? 'すべて' : getCategoryLabel(category)}
               </button>
@@ -110,7 +114,7 @@ const WorksPage = () => {
         </div>
 
         {filteredWorks.length > 0 ? (
-          <div key={animationKey} className={`works-container ${layout === 'grid' ? 'grid-layout' : 'list-layout'}`}>
+          <div className={`works-container ${layout === 'grid' ? 'grid-layout' : 'list-layout'} ${isFiltering ? 'filtering' : ''}`}>
             {filteredWorks.map((work, index) => (
               <div 
                 key={work.id}

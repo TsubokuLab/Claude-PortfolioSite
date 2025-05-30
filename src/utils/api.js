@@ -26,6 +26,45 @@ export const fetchWorkById = async (id) => {
   }
 };
 
+// アクティビティデータを取得する関数
+export const fetchActivities = async () => {
+  try {
+    const url = `${import.meta.env.BASE_URL}data/timeline.json`;
+    console.log('Fetching activities from:', url);
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch activities: ${response.status}`);
+    }
+    const timelineData = await response.json();
+    
+    // timelineデータをフラットなアクティビティ配列に変換
+    const activities = [];
+    timelineData.forEach(yearData => {
+      yearData.events.forEach((event, index) => {
+        activities.push({
+          id: `${yearData.year}-${index}`,
+          title: event.title,
+          date: event.date,
+          category: event.type,
+          description: event.title, // titleをdescriptionとして使用
+          venue: event.venue || '',
+          venue_url: event.venue_url || '',
+          url: event.url || ''
+        });
+      });
+    });
+    
+    // 日付順（新しい順）でソート
+    activities.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    console.log('Activities data processed successfully, count:', activities.length);
+    return activities;
+  } catch (error) {
+    console.error('Error fetching activities:', error);
+    return [];
+  }
+};
+
 // タイムラインデータを取得する関数
 export const fetchTimeline = async () => {
   try {

@@ -19,6 +19,13 @@
       var repoName = "Claude-PortfolioSite";
       var hasRepoName = pathSegments.indexOf(repoName) !== -1;
       
+      // トップページ特別対応
+      if (location.pathname === '/' || location.pathname === '/index.html') {
+        // トップページへのリクエストなので、リポジトリのトップページに直接リダイレクト
+        window.location.replace('/' + repoName + '/');
+        return;
+      }
+      
       // リポジトリ名が既にパスに含まれているかチェック
       var redirectPath;
       if (hasRepoName) {

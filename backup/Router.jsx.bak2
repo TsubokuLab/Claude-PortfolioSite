@@ -11,35 +11,12 @@ import WorkDetailPage from '../pages/WorkDetailPage';
 import ActivityPage from '../pages/ActivityPage';
 import ContactPage from '../pages/ContactPage';
 
-// 管理者ページインポート
-import AdminLogin from '../pages/admin/AdminLogin';
-import Dashboard from '../pages/admin/Dashboard';
-import WorksAdmin from '../pages/admin/WorksAdmin';
-import ActivityAdmin from '../pages/admin/ActivityAdmin';
-
 // BrowserRouterに変更し、basename属性を追加
 function AppRouter() {
   // リロード時の状態復元処理
   useEffect(() => {
-    // 末尾スラッシュのないURLをリダイレクトする処理
-    const handleTrailingSlash = () => {
-      const basePath = '/Claude-PortfolioSite';
-      const currentPath = window.location.pathname;
-      
-      // 末尾スラッシュのない/Claude-PortfolioSiteへのアクセスを処理
-      if (currentPath === basePath) {
-        window.history.replaceState(null, '', basePath + '/');
-        return true; // リダイレクト処理を行ったことを示す
-      }
-      return false; // リダイレクトなし
-    };
-    
     // リロード後の初期化処理
     const handleInitialLoad = () => {
-      // まず末尾スラッシュの処理を試みる
-      if (handleTrailingSlash()) {
-        return; // リダイレクトを行った場合は、他の処理をスキップ
-      }
       const savedPath = sessionStorage.getItem('reloadPath');
       if (savedPath) {
         // 保存されたパスがある場合、復元を試みる
@@ -67,23 +44,12 @@ function AppRouter() {
     };
     
     handleInitialLoad();
-    
-    // ブラウザの「戻る」「進む」ボタンでナビゲーションした時にも末尾スラッシュを確認
-    const handlePopState = () => {
-      handleTrailingSlash();
-    };
-    
-    window.addEventListener('popstate', handlePopState);
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
   }, []);
 
   return (
     <BrowserRouter basename="/Claude-PortfolioSite/">
       <ScrollToTop />
       <Routes>
-        {/* 公開ページ */}
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="profile" element={<ProfilePage />} />
@@ -91,16 +57,8 @@ function AppRouter() {
           <Route path="works/:workId" element={<WorkDetailPage />} />
           <Route path="activity" element={<ActivityPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="*" element={<div>Page Not Found</div>} />
         </Route>
-        
-        {/* 管理者ページ */}
-        <Route path="/admin" element={<Dashboard />} />
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/works" element={<WorksAdmin />} />
-        <Route path="/admin/activities" element={<ActivityAdmin />} />
-        
-        {/* 404ページ */}
-        <Route path="*" element={<div>Page Not Found</div>} />
       </Routes>
     </BrowserRouter>
   );
