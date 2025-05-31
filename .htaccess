@@ -1,0 +1,25 @@
+RewriteEngine On
+
+# HTTPS redirect (backup - usually handled by VirtualHost)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# SPA routing support for React Router
+# Exclude real files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Exclude API and data directories
+RewriteCond %{REQUEST_URI} !^/data/
+RewriteCond %{REQUEST_URI} !^/assets/
+RewriteCond %{REQUEST_URI} !^/images/
+RewriteCond %{REQUEST_URI} !^/videos/
+RewriteCond %{REQUEST_URI} !^/models/
+RewriteCond %{REQUEST_URI} !^/fonts/
+# Exclude .htaccess itself and common server files
+RewriteCond %{REQUEST_URI} !^/\.htaccess$
+RewriteCond %{REQUEST_URI} !^/robots\.txt$
+RewriteCond %{REQUEST_URI} !^/sitemap\.xml$
+# Exclude static files by extension
+RewriteCond %{REQUEST_URI} !\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|json|pdf|zip|mp4|webm|mp3)$
+# Redirect everything else to index.html for React Router
+RewriteRule ^(.*)$ /index.html [L]
