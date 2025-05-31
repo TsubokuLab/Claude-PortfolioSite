@@ -1,0 +1,49 @@
+{
+  "hash": "c109dfbb",
+  "configHash": "6c296159",
+  "lockfileHash": "b3e38235",
+  "browserHash": "31bd6eae",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "c953fa2f",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "41b24cd2",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "e0fbfc36",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "c7ede22d",
+      "needsInterop": false
+    },
+    "three": {
+      "src": "../../node_modules/three/build/three.module.js",
+      "file": "three.js",
+      "fileHash": "6be089f4",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-TITFHKQ7": {
+      "file": "chunk-TITFHKQ7.js"
+    },
+    "chunk-7DL5C2IZ": {
+      "file": "chunk-7DL5C2IZ.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
+}
