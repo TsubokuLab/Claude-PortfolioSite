@@ -3,52 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>リダイレクト中...</title>
+  <title>ページが見つかりません</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 4rem;
+      margin: 0 0 1rem 0;
+      font-weight: 300;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 0 0 2rem 0;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      margin: 0 10px;
+    }
+    .button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    #redirectMessage {
+      margin-top: 2rem;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+  </style>
   <script>
-    // GitHubページでのSPAリダイレクト処理
+    // 環境に応じたSPAリダイレクト処理
     (function() {
-      // URLから引数を取得する関数
-      function getQueryParameter(name) {
-        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-        const results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-      }
-
-      // URLパスを取得
-      var pathSegments = location.pathname.split('/');
-      var repoName = "Claude-PortfolioSite";
-      var hasRepoName = pathSegments.indexOf(repoName) !== -1;
+      // GitHub Pages環境かどうかを判定
+      const isGitHubPages = location.hostname.includes('github.io');
+      const repoName = "Claude-PortfolioSite";
       
-      // トップページ特別対応
-      if (location.pathname === '/' || location.pathname === '/index.html') {
-        // トップページへのリクエストなので、リポジトリのトップページに直接リダイレクト
-        window.location.replace('/' + repoName + '/');
-        return;
-      }
-      
-      // リポジトリ名が既にパスに含まれているかチェック
-      var redirectPath;
-      if (hasRepoName) {
-        // すでにリポジトリ名が含まれている場合
-        redirectPath = location.pathname;
+      if (isGitHubPages) {
+        // GitHub Pages環境での処理
+        handleGitHubPagesRedirect();
       } else {
-        // リポジトリ名とパスを適切に構築
-        if (pathSegments[1] === "") {
-          redirectPath = "/" + repoName + "/";
-        } else {
-          redirectPath = "/" + repoName + location.pathname;
-        }
+        // カスタムドメイン環境での処理
+        handleCustomDomainRedirect();
       }
-
-      // リダイレクト先をセッションストレージに保存
-      sessionStorage.setItem('redirect', redirectPath);
       
-      // ベースURL（リポジトリ名まで）にリダイレクト
-      window.location.replace("/" + repoName + "/");
+      function handleGitHubPagesRedirect() {
+        // URLパスを取得
+        var pathSegments = location.pathname.split('/');
+        var hasRepoName = pathSegments.indexOf(repoName) !== -1;
+        
+        // トップページ特別対応
+        if (location.pathname === '/' || location.pathname === '/index.html') {
+          window.location.replace('/' + repoName + '/');
+          return;
+        }
+        
+        // リポジトリ名が既にパスに含まれているかチェック
+        var redirectPath;
+        if (hasRepoName) {
+          redirectPath = location.pathname;
+        } else {
+          if (pathSegments[1] === "") {
+            redirectPath = "/" + repoName + "/";
+          } else {
+            redirectPath = "/" + repoName + location.pathname;
+          }
+        }
+
+        // リダイレクト先をセッションストレージに保存
+        sessionStorage.setItem('redirect', redirectPath);
+        
+        // ベースURLにリダイレクト
+        window.location.replace("/" + repoName + "/");
+      }
+      
+      function handleCustomDomainRedirect() {
+        // カスタムドメインでは.htaccessがSPAルーティングを処理するため、
+        // 404ページに到達することは通常ない
+        // 到達した場合は、本当に存在しないページなので、ホームにリダイレクト
+        
+        // 3秒後にホームページにリダイレクト
+        setTimeout(function() {
+          window.location.replace('/');
+        }, 3000);
+        
+        // ユーザーにメッセージを表示
+        document.addEventListener('DOMContentLoaded', function() {
+          const messageEl = document.getElementById('redirectMessage');
+          if (messageEl) {
+            messageEl.innerHTML = '3秒後にホームページにリダイレクトします...';
+          }
+        });
+      }
     })();
   </script>
 </head>
 <body>
-  <p>リダイレクト中です...</p>
+  <div class="container">
+    <h1>404</h1>
+    <h2>ページが見つかりません</h2>
+    <p>お探しのページは存在しないか、移動した可能性があります。</p>
+    <div>
+      <a href="/" class="button">ホームに戻る</a>
+      <a href="/works" class="button">作品を見る</a>
+    </div>
+    <div id="redirectMessage"></div>
+  </div>
 </body>
 </html>
