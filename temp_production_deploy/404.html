@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リダイレクト中...</title>
+  <script>
+    // GitHubページでのSPAリダイレクト処理
+    (function() {
+      // URLから引数を取得する関数
+      function getQueryParameter(name) {
+        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        const results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      // URLパスを取得
+      var pathSegments = location.pathname.split('/');
+      var repoName = "Claude-PortfolioSite";
+      var hasRepoName = pathSegments.indexOf(repoName) !== -1;
+      
+      // トップページ特別対応
+      if (location.pathname === '/' || location.pathname === '/index.html') {
+        // トップページへのリクエストなので、リポジトリのトップページに直接リダイレクト
+        window.location.replace('/' + repoName + '/');
+        return;
+      }
+      
+      // リポジトリ名が既にパスに含まれているかチェック
+      var redirectPath;
+      if (hasRepoName) {
+        // すでにリポジトリ名が含まれている場合
+        redirectPath = location.pathname;
+      } else {
+        // リポジトリ名とパスを適切に構築
+        if (pathSegments[1] === "") {
+          redirectPath = "/" + repoName + "/";
+        } else {
+          redirectPath = "/" + repoName + location.pathname;
+        }
+      }
+
+      // リダイレクト先をセッションストレージに保存
+      sessionStorage.setItem('redirect', redirectPath);
+      
+      // ベースURL（リポジトリ名まで）にリダイレクト
+      window.location.replace("/" + repoName + "/");
+    })();
+  </script>
+</head>
+<body>
+  <p>リダイレクト中です...</p>
+</body>
+</html>

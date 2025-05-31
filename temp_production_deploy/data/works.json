@@ -1,0 +1,315 @@
+[
+  {
+    "id": "vertex",
+    "title": "VERTEX: VRCBattleRoyale",
+    "category": "VR",
+    "year": 2022,
+    "description": "VRChat向けのバトルロワイヤルゲーム。VR空間でのインタラクティブな対戦体験を提供。",
+    "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
+    "thumbnail": "images/works/VERTEX/VERTEX_01.png",
+    "images": [
+      "images/works/VERTEX/VERTEX_Training_01.jpg"
+    ],
+    "exhibition": "VRChat",
+    "awards": []
+  },
+  {
+    "id": "exhibition-picture",
+    "title": "展覧会の絵 - Pictures at an Exhibition",
+    "category": "mediaart",
+    "year": 2022,
+    "description": "クラシック音楽「展覧会の絵」をモチーフにしたインタラクティブアート作品。音楽に合わせて展開する視覚的な体験を提供。",
+    "technology": ["Unity", "Kinect", "プロジェクションマッピング"],
+    "thumbnail": "images/works/ExhibitionPicture/ExhibitionPicture_01.jpg",
+    "images": [
+      "images/works/ExhibitionPicture/ExhibitionPicture_01.jpg"
+    ],
+    "exhibition": "魔法の美術館",
+    "awards": []
+  },
+  {
+    "id": "fantasy-theater",
+    "title": "幻想シアター / Fantasy Theater - Interactive Photo Booth",
+    "category": "mediaart",
+    "year": 2019,
+    "description": "インタラクティブなフォトブース。来場者の写真をリアルタイムで加工し、幻想的な世界の一部として表現する。",
+    "technology": ["OpenCV", "Unity", "カメラシステム"],
+    "thumbnail": "images/works/FantasyTheater/FantasyTheater_01.png",
+    "images": [
+      "images/works/FantasyTheater/FantasyTheater_02.png"
+    ],
+    "exhibition": "魔法の美術館",
+    "awards": []
+  },
+  {
+    "id": "void-sailing",
+    "title": "void Sailing();",
+    "category": "mediaart",
+    "year": 2018,
+    "description": "仮想空間と物理的空間を融合させたインスタレーション作品。プログラムの「void」空間を航海するコンセプトで制作。",
+    "technology": ["C++", "openFrameworks", "プロジェクションマッピング"],
+    "thumbnail": "images/works/VoidSailing/VoidSailing_01.png",
+    "images": [
+      "images/works/VoidSailing/VoidSailing_01.png",
+      "images/works/VoidSailing/VoidSailing_02.png",
+      "images/works/VoidSailing/VoidSailing_03.png",
+      "images/works/VoidSailing/VoidSailing_04.png"
+    ],
+    "exhibition": "",
+    "awards": []
+  },
+  {
+    "id": "fantasy-diorama",
+    "title": "空想ジオラマ - Fantasy Diorama",
+    "category": "mediaart",
+    "year": 2017,
+    "description": "現実世界のミニチュアジオラマと投影されたデジタル情報を融合させたインタラクティブな作品。",
+    "technology": ["プロジェクションマッピング", "センサー技術"],
+    "thumbnail": "images/works/FantasyDiorama/FantasyDiorama_thumb.png",
+    "images": [
+      "images/works/FantasyDiorama/FantasyDiorama_01.png",
+      "images/works/FantasyDiorama/FantasyDiorama_02.png",
+      "images/works/FantasyDiorama/FantasyDiorama_03.jpg"
+    ],
+    "exhibition": "魔法の美術館",
+    "awards": ["総務省 異能vation ジェネレーションアワード2018 大きく広がる分野 最優秀賞"]
+  },
+  {
+    "id": "during-the-night",
+    "title": "During the Night -よるのあいまに-",
+    "category": "performance",
+    "year": 2017,
+    "description": "ライブペインティングとインタラクティブパフォーマンスを組み合わせた作品。夜の不思議な時間を表現している。",
+    "technology": ["プロジェクションマッピング", "モーションセンシング"],
+    "thumbnail": "images/banners/during_the_night_thumb.png",
+    "images": [
+      "images/banners/during_the_night_thumb.png"
+    ],
+    "exhibition": "六本木アートナイト",
+    "awards": []
+  },
+  {
+    "id": "invisible-sculpture",
+    "title": "不可視彫像 / Invisible Sculpture",
+    "category": "mediaart",
+    "year": 2017,
+    "description": "目に見えない彫刻を体感するVR作品。触覚と視覚の関係性を探る実験的なインスタレーション。",
+    "technology": ["VR", "Unity", "触覚フィードバック"],
+    "thumbnail": "images/works/InvisibleSculpture/InvisibleSculpture_thumb.png",
+    "images": [
+      "images/works/InvisibleSculpture/InvisibleSculpture_thumb.png"
+    ],
+    "exhibition": "JAPAN VR EXPO 2017",
+    "awards": [
+      "VRクリエイティブアワード2017 審査員特別賞",
+      "Mashup Awards 2017 Interactive Design部門 優勝",
+      "アジアデジタルアートアワード2017 インタラクティブアート部門 入賞"
+    ]
+  },
+  {
+    "id": "achromatic-world",
+    "title": "Achromatic World -いろのないせかい-",
+    "category": "performance",
+    "year": 2016,
+    "description": "色のない世界を表現したインスタレーション作品。訪問者のインタラクションによって、少しずつ色が追加されていく。",
+    "technology": ["Unity", "センサー技術", "プログラミング"],
+    "thumbnail": "images/banners/achromatic_banner.jpg",
+    "images": [
+      "images/banners/achromatic_banner.jpg"
+    ],
+    "exhibition": "茨城県北芸術祭",
+    "awards": ["Mashup Awards 2017 Unity賞"]
+  },
+  {
+    "id": "delta-glass",
+    "title": "パンツが見える夢のメガネ「Delta Glass」",
+    "category": "device",
+    "year": 2016,
+    "description": "ARグラスを利用した実験的なデバイス。現実世界に仮想的な要素を重ねる概念を遊び心のある形で実装。",
+    "technology": ["AR", "Unity", "3Dモデリング"],
+    "thumbnail": "images/banners/deltaglass_topics_bg.png",
+    "images": [
+      "images/banners/deltaglass_topics_bg.png"
+    ],
+    "exhibition": "GUGEN2016",
+    "awards": []
+  },
+  {
+    "id": "happy-pain",
+    "title": "陣痛共有デバイス「Happy Pain」",
+    "category": "device",
+    "year": 2016,
+    "description": "出産時の陣痛を疑似体験できるウェアラブルデバイス。パートナーとの共感を深めるためのプロジェクト。",
+    "technology": ["Arduino", "電気刺激", "センサー技術"],
+    "thumbnail": "images/works/HappyPain/HappyPain_01.jpg",
+    "images": [
+      "images/works/HappyPain/HappyPain_02.jpg",
+      "images/works/HappyPain/HappyPain_03.jpg",
+      "images/works/HappyPain/HappyPain_04.jpg",
+      "images/works/HappyPain/HappyPain_05.png",
+      "images/works/HappyPain/HappyPain_06.png",
+      "images/works/HappyPain/HappyPain_07.png"
+    ],
+    "exhibition": "GUGEN2016",
+    "awards": []
+  },
+  {
+    "id": "tsukumogami",
+    "title": "つくもがみ - Tsukumogami",
+    "category": "mediaart",
+    "year": 2015,
+    "description": "日本の伝統的な「付喪神」の概念に基づいたインタラクティブインスタレーション。物に宿る魂を視覚化。",
+    "technology": ["C++", "openFrameworks", "プロジェクションマッピング"],
+    "thumbnail": "images/works/Tsukumogami/Tsukumogami_thumb.png",
+    "images": [
+      "images/banners/tsukumogami_topics_bg.png",
+      "images/works/Tsukumogami/Tsukumogami_thumb.png",
+      "images/works/Tsukumogami/Tsukumogami01.png",
+      "images/works/Tsukumogami/Tsukumogami02.png",
+      "images/works/Tsukumogami/Tsukumogami03.png"
+    ],
+    "exhibition": "魔法の美術館",
+    "awards": []
+  },
+  {
+    "id": "vertexceed",
+    "title": "Vertexceed",
+    "category": "mediaart",
+    "year": 2015,
+    "description": "インタラクティブな視覚効果を生成するソフトウェア。音楽やモーションに反応するビジュアルを作成。",
+    "technology": ["C++", "openFrameworks", "GLSL"],
+    "thumbnail": "images/works/Vertexceed/Vertexceed_01.jpg",
+    "images": [
+      "images/works/Vertexceed/Vertexceed_01.jpg",
+      "images/works/Vertexceed/vertexceed_02.png"
+    ],
+    "exhibition": "魔法の美術館",
+    "awards": []
+  },
+  {
+    "id": "miraino-piano",
+    "title": "ミライノピアノ - MIRAINO PIANO",
+    "category": "mediaart",
+    "year": 2014,
+    "description": "プロジェクションマッピングとピアノを組み合わせたインタラクティブな音楽体験。演奏に合わせて映像が変化する。",
+    "technology": ["C++", "openFrameworks", "MIDIセンシング", "プロジェクションマッピング"],
+    "thumbnail": "images/banners/mirai_no_piano.png",
+    "images": [
+      "images/banners/mirai_no_piano.png"
+    ],
+    "exhibition": "",
+    "awards": []
+  },
+  {
+    "id": "nanairo-komichi",
+    "title": "七色小道 - NANAIRO KOMICHI",
+    "category": "mediaart",
+    "year": 2014,
+    "description": "床面へのプロジェクションマッピングによるインタラクティブな通路。歩くと光の軌跡が生まれ、色が変化する。",
+    "technology": ["C++", "openFrameworks", "Kinect", "プロジェクションマッピング"],
+    "thumbnail": "images/works/NanairoKomichi/nanairo_01.jpg",
+    "images": [
+      "images/works/NanairoKomichi/nanairo_01.jpg",
+      "images/works/NanairoKomichi/nanairo_02.jpg"
+    ],
+    "exhibition": "魔法の美術館",
+    "awards": []
+  },
+  {
+    "id": "interactive-funeral",
+    "title": "インタラクティブお葬式",
+    "category": "device",
+    "year": 2014,
+    "description": "デジタル時代における葬儀の新しい形を提案する概念的プロジェクト。オンライン参加型の追悼体験をデザイン。",
+    "technology": ["Web技術", "参加型デザイン"],
+    "thumbnail": "images/works/InteractiveFuneral/interactive-funeral.jpg",
+    "images": [
+      "images/banners/funeral_banner.png",
+      "images/works/InteractiveFuneral/interactive-funeral.jpg",
+      "images/works/InteractiveFuneral/chin_machine.png",
+      "images/works/InteractiveFuneral/poku_machine.png",
+      "images/works/InteractiveFuneral/app.png",
+      "images/works/InteractiveFuneral/iPortrait.png",
+      "images/works/InteractiveFuneral/LeapShoukou.png",
+      "images/works/InteractiveFuneral/making.png",
+      "images/works/InteractiveFuneral/node.png",
+      "images/works/InteractiveFuneral/table.png"
+    ],
+    "exhibition": "Gugen2013",
+    "awards": ["Yahoo! JAPAN インターネットクリエイティブアワード2014 スマートデバイスイノベーション部門 ゴールド賞"]
+  },
+  {
+    "id": "affinbeat-vj",
+    "title": "AffinBeatVJ",
+    "category": "software",
+    "year": 2013,
+    "description": "音楽と連動して映像効果を生成するプロジェクションマッピングソフトウェア。レーザープロジェクタやDMX照明との連携も可能。",
+    "technology": ["C++", "openFrameworks", "オーディオ解析"],
+    "thumbnail": "images/works/AffinBeatVJ/AffinBeatVJ_sample01.jpg",
+    "images": [
+      "images/banners/AffinBeatVJ_01.png",
+      "images/works/AffinBeatVJ/AffinBeatVJ_sample01.jpg",
+      "images/works/AffinBeatVJ/AffinBeatVJ_sample02.jpg",
+      "images/works/AffinBeatVJ/AffinBeatVJ_sample03.jpg",
+      "images/works/AffinBeatVJ/AffinBeatVJ_sample04.jpg",
+      "images/works/AffinBeatVJ/AffinBeatVJ_sample05.jpg"
+    ],
+    "exhibition": "クラブイベント",
+    "awards": []
+  },
+  {
+    "id": "affinbeat-box",
+    "title": "AffinBeatBox",
+    "category": "mediaart",
+    "year": 2012,
+    "description": "体の動きで音楽と映像を生成できるインタラクティブなインスタレーション。身体を楽器として使える体験。",
+    "technology": ["C++", "openFrameworks", "Kinect", "サウンド生成"],
+    "thumbnail": "images/works/AffinBeatBox/AffinBeatBox.png",
+    "images": [
+      "images/banners/AffinBeatBox_banner.png",
+      "images/works/AffinBeatBox/AffinBeatBox.png",
+      "images/works/AffinBeatBox/AffinBeatBox_01.jpg",
+      "images/works/AffinBeatBox/AffinBeatBox_02.jpg",
+      "images/works/AffinBeatBox/AffinBeatBox_03.jpg",
+      "images/works/AffinBeatBox/AffinBeatBox_04.jpg"
+    ],
+    "exhibition": "dotFes2011京都",
+    "awards": []
+  },
+  {
+    "id": "ishidatami-tourou",
+    "title": "石畳燈籠",
+    "category": "mediaart",
+    "year": 2011,
+    "description": "伝統的な日本の石畳と現代のインタラクティブ技術を融合させた作品。足元の石畳が反応して光る体験。",
+    "technology": ["C++", "openFrameworks", "圧力センサー", "LED制御"],
+    "thumbnail": "images/works/ishidatami/ishidatami01.jpg",
+    "images": [
+      "images/banners/stone_pavement_lantern.png",
+      "images/works/ishidatami/higashi.jpg",
+      "images/works/ishidatami/ishidatami01.jpg",
+      "images/works/ishidatami/ishidatami02.jpg",
+      "images/works/ishidatami/ishidatami03.jpg",
+      "images/works/ishidatami/ishidatami04.jpg"
+    ],
+    "exhibition": "かなざわ燈涼会",
+    "awards": []
+  },
+  {
+    "id": "shadow-touch",
+    "title": "Shadow Touch",
+    "category": "mediaart",
+    "year": 2010,
+    "description": "影を通じて物体と対話できるインタラクティブ作品。実物に触れなくても、その影に触れることで操作が可能になる。",
+    "technology": ["C#", "XNA Framework", "コンピュータビジョン"],
+    "thumbnail": "images/works/ShadowTouch/ShadowTouch_02.png",
+    "images": [
+      "images/works/ShadowTouch/ShadowTouch_01.jpg",
+      "images/works/ShadowTouch/ShadowTouch_02.png",
+      "images/works/ShadowTouch/ShadowTouch_03.png",
+      "images/works/ShadowTouch/ShadowTouch_04.jpg"
+    ],
+    "exhibition": "第14回文化庁メディア芸術祭",
+    "awards": ["第16回学生CGコンテスト インタラクティブ部門 優秀賞"]
+  }
+]

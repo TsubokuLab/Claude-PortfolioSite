@@ -1,0 +1,64 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "path": "/images/hero/ExhibitionPicture_Moment.jpg",
+      "title": "展覧会の絵 - Pictures at an Exhibition",
+      "alt": "展覧会の絵 - Pictures at an Exhibition"
+    },
+    {
+      "id": 2,
+      "path": "/images/hero/FantasyTheater.png",
+      "title": "幻想シアター / Fantasy Theater",
+      "alt": "幻想シアター / Fantasy Theater"
+    },
+    {
+      "id": 3,
+      "path": "/images/hero/FantasyDiorama_thumb.png",
+      "title": "空想ジオラマ - Fantasy Diorama",
+      "alt": "空想ジオラマ - Fantasy Diorama"
+    },
+    {
+      "id": 4,
+      "path": "/images/hero/VoidSailing_01.png",
+      "title": "Void Sailing();",
+      "alt": "Void Sailing();"
+    },
+    {
+      "id": 5,
+      "path": "/images/hero/InvisibleSculpture_thumb.png",
+      "title": "不可視彫像 / Invisible Sculpture",
+      "alt": "不可視彫像 / Invisible Sculpture"
+    },
+    {
+      "id": 6,
+      "path": "/images/hero/Tsukumogami_thumb.png",
+      "title": "つくもがみ / Tsukumogami",
+      "alt": "つくもがみ / Tsukumogami"
+    },
+    {
+      "id": 7,
+      "path": "/images/hero/Vertexceed.jpg",
+      "title": "Vertexceed",
+      "alt": "Vertexceed"
+    },
+    {
+      "id": 8,
+      "path": "/images/hero/nanairo_01.jpg",
+      "title": "七色小道",
+      "alt": "七色小道"
+    },
+    {
+      "id": 9,
+      "path": "/images/hero/interactive-funeral.jpg",
+      "title": "インタラクティブお葬式 - Interactive Funeral",
+      "alt": "インタラクティブお葬式"
+    },
+    {
+      "id": 10,
+      "path": "/images/hero/VERTEX_icon_512.jpg",
+      "title": "VERTEX: VRCBattleRoyale",
+      "alt": "VERTEX: VRCBattleRoyale"
+    }
+  ]
+}

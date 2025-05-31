@@ -8,12 +8,15 @@
  * @returns {string} - 環境に応じて調整されたパス
  */
 export const getAssetPath = (path) => {
-  const basePath = import.meta.env.VITE_BASE_PATH || '';
+  // Viteのimport.meta.env.BASE_URLを使用（ビルド時に自動設定される）
+  const basePath = import.meta.env.BASE_URL || '/';
+  
   // パスが既にスラッシュで始まっている場合は調整
   if (path.startsWith('/')) {
-    return `${basePath}${path}`;
+    // basePath が '/' の場合はそのまま、それ以外の場合は結合
+    return basePath === '/' ? path : `${basePath.replace(/\/$/, '')}${path}`;
   }
-  return `${basePath}/${path}`;
+  return basePath === '/' ? `/${path}` : `${basePath.replace(/\/$/, '')}/${path}`;
 };
 
 /**

@@ -13,6 +13,7 @@ echo.
 echo ========================================
 echo GitHub Pages deployment completed!
 echo Demo site: https://tsubokulab.github.io/Claude-PortfolioSite/
+echo This will also trigger webhook to teruaki-tsubokura.com
 echo ========================================
 echo.
 pause

@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:github": "vite build --base=/Claude-PortfolioSite/",
+    "build:custom": "vite build --base=/",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy:github": "vite build --base=/Claude-PortfolioSite/ && gh-pages -d dist",
-    "deploy:production": "npm run build"
+    "deploy:github": "npm run build:github && gh-pages -d dist --dotfiles",
+    "deploy:custom": "npm run build:custom"
   },
   "dependencies": {
     "framer-motion": "^11.0.5",

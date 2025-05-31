@@ -55,6 +55,12 @@ export const AuthProvider = ({ children }) => {
       const inputHash = await generateHash(password);
       const expectedHash = import.meta.env.VITE_ADMIN_PASSWORD_HASH;
       
+      // デバッグ用ログ（本番では削除）
+      console.log('Input password:', password);
+      console.log('Input hash:', inputHash);
+      console.log('Expected hash:', expectedHash);
+      console.log('Environment check:', import.meta.env);
+      
       if (inputHash === expectedHash) {
         setIsAuthenticated(true);
         sessionStorage.setItem('admin_authenticated', 'true');
@@ -64,6 +70,7 @@ export const AuthProvider = ({ children }) => {
         return { success: false, error: 'パスワードが正しくありません' };
       }
     } catch (error) {
+      console.error('Login error:', error);
       return { success: false, error: '認証中にエラーが発生しました' };
     }
   };

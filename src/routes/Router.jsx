@@ -17,70 +17,81 @@ import Dashboard from '../pages/admin/Dashboard';
 import WorksAdmin from '../pages/admin/WorksAdmin';
 import ActivityAdmin from '../pages/admin/ActivityAdmin';
 
-// BrowserRouterに変更し、basename属性を追加
 function AppRouter() {
+  // 環境に応じたbasename取得
+  const getBasename = () => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    // 開発環境では常に '/'、本番環境では設定されたベースURLを使用
+    if (import.meta.env.DEV) {
+      return '/';
+    }
+    return baseUrl === '/' ? '' : baseUrl.replace(/\/$/, '');
+  };
+
+  const basename = getBasename();
+
   // リロード時の状態復元処理
   useEffect(() => {
-    // 末尾スラッシュのないURLをリダイレクトする処理
-    const handleTrailingSlash = () => {
-      const basePath = '/Claude-PortfolioSite';
-      const currentPath = window.location.pathname;
-      
-      // 末尾スラッシュのない/Claude-PortfolioSiteへのアクセスを処理
-      if (currentPath === basePath) {
-        window.history.replaceState(null, '', basePath + '/');
-        return true; // リダイレクト処理を行ったことを示す
-      }
-      return false; // リダイレクトなし
-    };
-    
-    // リロード後の初期化処理
-    const handleInitialLoad = () => {
-      // まず末尾スラッシュの処理を試みる
-      if (handleTrailingSlash()) {
-        return; // リダイレクトを行った場合は、他の処理をスキップ
-      }
-      const savedPath = sessionStorage.getItem('reloadPath');
-      if (savedPath) {
-        // 保存されたパスがある場合、復元を試みる
-        sessionStorage.removeItem('reloadPath');
+    // 開発環境では何もしない（末尾スラッシュ処理はGitHub Pages環境でのみ必要）
+    if (import.meta.env.DEV) {
+      return;
+    }
+
+    // GitHub Pages環境でのみ末尾スラッシュ処理を実行
+    if (basename) {
+      const handleTrailingSlash = () => {
+        const currentPath = window.location.pathname;
         
-        // トップページの場合の特別処理
-        const basePath = '/Claude-PortfolioSite';
-        if (savedPath === basePath + '/' || savedPath === basePath) {
-          // トップページのURLを維持する（/Claude-PortfolioSite/）
-          window.history.replaceState(null, '', basePath + '/');
+        // 末尾スラッシュのないbasename URLへのアクセスを処理
+        if (currentPath === basename) {
+          window.history.replaceState(null, '', basename + '/');
+          return true;
+        }
+        return false;
+      };
+      
+      const handleInitialLoad = () => {
+        if (handleTrailingSlash()) {
           return;
         }
         
-        // basename部分を除外して相対パスに変換
-        let relativePath = savedPath;
-        if (savedPath.startsWith(basePath)) {
-          relativePath = savedPath.substring(basePath.length) || '/';
+        const savedPath = sessionStorage.getItem('reloadPath');
+        if (savedPath) {
+          sessionStorage.removeItem('reloadPath');
+          
+          // トップページの場合の特別処理
+          if (savedPath === basename + '/' || savedPath === basename) {
+            window.history.replaceState(null, '', basename + '/');
+            return;
+          }
+          
+          // basename部分を除外して相対パスに変換
+          let relativePath = savedPath;
+          if (savedPath.startsWith(basename)) {
+            relativePath = savedPath.substring(basename.length) || '/';
+          }
+          
+          if (window.location.pathname !== savedPath) {
+            window.history.replaceState(null, '', relativePath);
+          }
         }
-        
-        // 現在のパスと異なる場合のみ復元
-        if (window.location.pathname !== savedPath) {
-          window.history.replaceState(null, '', relativePath);
-        }
-      }
-    };
-    
-    handleInitialLoad();
-    
-    // ブラウザの「戻る」「進む」ボタンでナビゲーションした時にも末尾スラッシュを確認
-    const handlePopState = () => {
-      handleTrailingSlash();
-    };
-    
-    window.addEventListener('popstate', handlePopState);
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, []);
+      };
+      
+      handleInitialLoad();
+      
+      const handlePopState = () => {
+        handleTrailingSlash();
+      };
+      
+      window.addEventListener('popstate', handlePopState);
+      return () => {
+        window.removeEventListener('popstate', handlePopState);
+      };
+    }
+  }, [basename]);
 
   return (
-    <BrowserRouter basename="/Claude-PortfolioSite/">
+    <BrowserRouter basename={basename}>
       <ScrollToTop />
       <Routes>
         {/* 公開ページ */}
