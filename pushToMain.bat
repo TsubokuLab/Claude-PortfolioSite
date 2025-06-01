@@ -11,19 +11,8 @@ git add .
 git diff --staged --quiet
 if %errorlevel% neq 0 (
     git commit -m "push from bat"
-    if %errorlevel% neq 0 (
-        echo [ERROR] Commit failed!
-        pause
-        exit /b 1
-    )
-
     git push origin main
-    if %errorlevel% neq 0 (
-        echo [ERROR] Push failed!
-        pause
-        exit /b 1
-    )
-    
+
     echo.
     echo ========================================
     echo [SUCCESS] Push to main branch completed!
