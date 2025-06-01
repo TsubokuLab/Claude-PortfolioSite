@@ -53,6 +53,12 @@ const AdminLayout = ({ children }) => {
               >
                 📅 Activity管理
               </Link>
+              <Link 
+                to="/admin/tags" 
+                className={`nav-item ${location.pathname === '/admin/tags' ? 'active' : ''}`}
+              >
+                🏷️ タグ管理
+              </Link>
             </nav>
           </div>
           <div className="admin-header-right">

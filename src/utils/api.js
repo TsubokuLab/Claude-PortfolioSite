@@ -1,3 +1,60 @@
+// タグ設定データを取得する関数
+export const fetchTags = async () => {
+  try {
+    const url = `${import.meta.env.BASE_URL}data/tags.json`;
+    console.log('Fetching tags from:', url);
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch tags: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log('Tags data fetched successfully');
+    return data;
+  } catch (error) {
+    console.error('Error fetching tags:', error);
+    // フォールバック用のデフォルトタグ設定
+    return {
+      worksTags: [
+        { id: 'VR', label: 'VR/AR', color: '#667eea' },
+        { id: 'mediaart', label: 'メディアアート', color: '#764ba2' }
+      ],
+      activityTags: [
+        { id: 'exhibition', label: '展示', color: '#33cc66' },
+        { id: 'award', label: '受賞', color: '#ff9933' },
+        { id: 'works', label: '制作', color: '#3399ff' },
+        { id: 'media', label: 'メディア', color: '#9966cc' },
+        { id: 'workshop', label: '講演・ワークショップ', color: '#ff6666' },
+        { id: 'performance', label: 'パフォーマンス', color: '#ff33cc' },
+        { id: 'collaboration', label: 'コラボレーション', color: '#ffcc33' }
+      ]
+    };
+  }
+};
+
+// Activityタグのラベルを取得する関数
+export const getActivityTagLabel = async (tagId) => {
+  try {
+    const tagsData = await fetchTags();
+    const tag = tagsData.activityTags.find(t => t.id === tagId);
+    return tag ? tag.label : 'イベント';
+  } catch (error) {
+    console.error('Error getting activity tag label:', error);
+    return 'イベント';
+  }
+};
+
+// Activityタグの色を取得する関数
+export const getActivityTagColor = async (tagId) => {
+  try {
+    const tagsData = await fetchTags();
+    const tag = tagsData.activityTags.find(t => t.id === tagId);
+    return tag ? tag.color : '#667eea';
+  } catch (error) {
+    console.error('Error getting activity tag color:', error);
+    return '#667eea';
+  }
+};
+
 // GitHub Pagesでのベースパス
 const BASE_PATH = '/tsubokura-portfolio';
 
@@ -45,8 +102,8 @@ export const fetchActivities = async () => {
           id: `${yearData.year}-${index}`,
           title: event.title,
           date: event.date,
-          category: event.type,
-          description: event.title, // titleをdescriptionとして使用
+          type: event.type || 'exhibition', // categoryからtypeに統一
+          description: event.description || event.title, // descriptionがあればそれを使用、なければtitleを使用
           venue: event.venue || '',
           venue_url: event.venue_url || '',
           url: event.url || ''

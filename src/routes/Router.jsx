@@ -16,6 +16,7 @@ import AdminLogin from '../pages/admin/AdminLogin';
 import Dashboard from '../pages/admin/Dashboard';
 import WorksAdmin from '../pages/admin/WorksAdmin';
 import ActivityAdmin from '../pages/admin/ActivityAdmin';
+import TagManagement from '../pages/admin/TagManagement';
 
 function AppRouter() {
   // 環境に応じたbasename取得
@@ -109,6 +110,7 @@ function AppRouter() {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/works" element={<WorksAdmin />} />
         <Route path="/admin/activities" element={<ActivityAdmin />} />
+        <Route path="/admin/tags" element={<TagManagement />} />
         
         {/* 404ページ */}
         <Route path="*" element={<div>Page Not Found</div>} />

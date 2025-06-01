@@ -1,0 +1,130 @@
+/* チェックボックス形式のマルチタグ選択 */
+.multi-tag-select-checkbox {
+  width: 100%;
+}
+
+.tag-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.tag-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-checkbox {
+  display: none;
+}
+
+.tag-label {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-option:hover .tag-label {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tag-option.selected .tag-label {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+.selected-tags-display {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.selected-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.selected-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.remove-tag {
+  background: none;
+  border: none;
+  color: inherit;
+  margin-left: 0.4rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-tag:hover {
+  opacity: 1;
+}
+
+/* タブレット・モバイル対応 */
+@media (max-width: 768px) {
+  .tag-options-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.25rem;
+  }
+  
+  .tag-label {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.65rem;
+    min-height: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tag-options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .selected-tags {
+    flex-direction: column;
+  }
+  
+  .selected-tag {
+    justify-content: space-between;
+    width: 100%;
+  }
+}

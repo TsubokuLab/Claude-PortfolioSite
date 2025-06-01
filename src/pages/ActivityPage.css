@@ -172,6 +172,16 @@
   color: #ff6666;
 }
 
+.event-type-badge.performance {
+  background-color: rgba(255, 51, 204, 0.1);
+  color: #ff33cc;
+}
+
+.event-type-badge.collaboration {
+  background-color: rgba(255, 204, 51, 0.1);
+  color: #ffcc33;
+}
+
 .event-type-badge.vj {
   background-color: rgba(255, 204, 0, 0.1);
   color: #ffcc00;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ScrollAnimation from '../components/animations/ScrollAnimation';
 import { useCursor } from '../context/CursorContext';
-import { fetchTimeline } from '../utils/api';
+import { fetchTimeline, fetchTags } from '../utils/api';
 import { formatDate } from '../utils/helpers';
 import './ActivityPage.css';
 
@@ -11,17 +11,32 @@ const ActivityPage = () => {
   const [timeline, setTimeline] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all'); // フィルター: all, exhibition, award, media
+  const [activityTags, setActivityTags] = useState([]);
 
-  // タイムラインデータの取得
+  // タグ設定とタイムラインデータを読み込み
   useEffect(() => {
-    const getTimeline = async () => {
-      const data = await fetchTimeline();
-      setTimeline(data);
-      setLoading(false);
+    const loadData = async () => {
+      try {
+        const [timelineData, tagsData] = await Promise.all([
+          fetchTimeline(),
+          fetchTags()
+        ]);
+        setTimeline(timelineData);
+        setActivityTags(tagsData.activityTags || []);
+      } catch (error) {
+        console.error('Failed to load data:', error);
+      } finally {
+        setLoading(false);
+      }
     };
-    
-    getTimeline();
+    loadData();
   }, []);
+
+  // タグIDからラベルを取得
+  const getActivityTagLabel = (tagId) => {
+    const tag = activityTags.find(t => t.id === tagId);
+    return tag ? tag.label : 'イベント';
+  };
 
   // フィルタリングされたイベントを取得
   const getFilteredEvents = () => {
@@ -32,10 +47,8 @@ const ActivityPage = () => {
     return timeline.map(year => ({
       ...year,
       events: year.events.filter(event => {
-        // タイプが文字列の場合、スペースまたはカンマで分割して配列に変換
-        const eventTypes = typeof event.type === 'string' 
-          ? event.type.split(/[\s,]+/) 
-          : Array.isArray(event.type) ? event.type : [event.type];
+        // typeは常に配列形式であることを想定
+        const eventTypes = Array.isArray(event.type) ? event.type : [event.type];
         
         // 選択されたフィルターがイベントのタイプ配列に含まれているかチェック
         return eventTypes.includes(filter);
@@ -43,18 +56,7 @@ const ActivityPage = () => {
     })).filter(year => year.events.length > 0);
   };
   
-  // Debug: タイムラインデータをコンソールに出力
-  useEffect(() => {
-    if (!loading && timeline.length > 0) {
-      console.log('Timeline data loaded:', timeline);
-      const sampleEvent = timeline[0]?.events[0];
-      if (sampleEvent) {
-        console.log('Sample event:', sampleEvent);
-        console.log('URL available:', !!sampleEvent.url);
-        console.log('Venue URL available:', !!sampleEvent.venue_url);
-      }
-    }
-  }, [loading, timeline]);
+
 
   const filteredTimeline = getFilteredEvents();
 
@@ -133,6 +135,22 @@ const ActivityPage = () => {
             >
               講演
             </button>
+            <button
+              className={`filter-button ${filter === 'performance' ? 'active' : ''}`}
+              onClick={() => handleFilterChange('performance')}
+              onMouseEnter={() => setCursor('hover')}
+              onMouseLeave={resetCursor}
+            >
+              パフォーマンス
+            </button>
+            <button
+              className={`filter-button ${filter === 'collaboration' ? 'active' : ''}`}
+              onClick={() => handleFilterChange('collaboration')}
+              onMouseEnter={() => setCursor('hover')}
+              onMouseLeave={resetCursor}
+            >
+              コラボレーション
+            </button>
           </div>
         </ScrollAnimation>
 
@@ -147,7 +165,7 @@ const ActivityPage = () => {
                     {yearData.events.map((event, eventIndex) => (
                       <motion.div
                         key={`${yearData.year}-${eventIndex}`}
-                        className={`event-item ${Array.isArray(event.type) ? event.type.join(' ') : typeof event.type === 'string' ? event.type.split(/[\s,]+/).join(' ') : event.type}`}
+                        className={`event-item ${Array.isArray(event.type) ? event.type.join(' ') : event.type}`}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -156,12 +174,21 @@ const ActivityPage = () => {
                         <div className="event-date">{formatDate(event.date)}</div>
                         <div className="event-content">
                         <div className="event-type-badges">
-                          {(typeof event.type === 'string' 
-                            ? event.type.split(/[\s,]+/) 
-                            : Array.isArray(event.type) ? event.type : [event.type]
-                          ).map((type, i) => (
-                            <span key={i} className={`event-type-badge ${type}`}>{getEventTypeLabel(type)}</span>
-                          ))}
+                          {(Array.isArray(event.type) ? event.type : [event.type]).map((type, i) => {
+                            const tagConfig = activityTags.find(tag => tag.id === type);
+                            return (
+                              <span 
+                                key={i} 
+                                className={`event-type-badge ${type}`}
+                                style={{
+                                  backgroundColor: tagConfig ? `${tagConfig.color}20` : 'rgba(102, 126, 234, 0.1)',
+                                  color: tagConfig ? tagConfig.color : '#667eea'
+                                }}
+                              >
+                                {getActivityTagLabel(type)}
+                              </span>
+                            );
+                          })}
                         </div>
                         {/* Debug: {JSON.stringify({url: event.url})} */}
                         {event.url ? (
@@ -306,24 +333,6 @@ const ActivityPage = () => {
   );
 };
 
-// イベントタイプのラベルを取得する関数
-const getEventTypeLabel = (type) => {
-  switch (type) {
-    case 'exhibition':
-      return '展示';
-    case 'award':
-      return '受賞';
-    case 'media':
-      return 'メディア';
-    case 'works':
-      return '制作';
-    case 'workshop':
-      return '講演';
-    case 'vj':
-      return 'VJ';
-    default:
-      return 'イベント';
-  }
-};
+
 
 export default ActivityPage;

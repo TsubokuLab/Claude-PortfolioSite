@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { fetchActivities } from '../../utils/api';
+import { fetchActivities, fetchTags } from '../../utils/api';
 import AdminLayout from './AdminLayout';
-import CustomSelect from './CustomSelect';
+import MultiTagSelect from './MultiTagSelect';
 import './ActivityAdmin.css';
 
 const ActivityAdmin = () => {
@@ -10,12 +10,40 @@ const ActivityAdmin = () => {
   const [editingActivity, setEditingActivity] = useState(null);
   const [showJsonPreview, setShowJsonPreview] = useState(false);
   const [importingFile, setImportingFile] = useState(false);
+  const [availableTags, setAvailableTags] = useState([]);
+
+  // タグ設定を読み込み
+  useEffect(() => {
+    const loadTags = async () => {
+      try {
+        const tagsData = await fetchTags();
+        setAvailableTags(tagsData.activityTags || []);
+      } catch (error) {
+        console.error('Failed to load tags:', error);
+      }
+    };
+    loadTags();
+  }, []);
 
   useEffect(() => {
     const loadActivities = async () => {
       const data = await fetchActivities();
+      
+      // データ構造の正規化（後方互換性のため）
+      const normalizedData = data.map(activity => ({
+        ...activity,
+        // 'category' フィールドを 'type' に統一
+        type: activity.type || activity.category || 'exhibition',
+        // typeを配列形式に正規化
+        type: Array.isArray(activity.type || activity.category) 
+          ? (activity.type || activity.category)
+          : typeof (activity.type || activity.category) === 'string'
+            ? (activity.type || activity.category).split(/[,\s]+/).filter(t => t.trim())
+            : ['exhibition']
+      }));
+      
       // 日付順（新しい順）でソート
-      const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      const sortedData = normalizedData.sort((a, b) => new Date(b.date) - new Date(a.date));
       setActivities(sortedData);
       setLoading(false);
     };
@@ -28,7 +56,7 @@ const ActivityAdmin = () => {
       id: Date.now().toString(),
       title: '',
       date: new Date().toISOString().split('T')[0],
-      category: 'exhibition',
+      type: ['exhibition'], // 配列形式でデフォルト値
       description: '',
       venue: '',
       venue_url: '',
@@ -39,17 +67,25 @@ const ActivityAdmin = () => {
 
   // アクティビティの保存
   const saveActivity = (updatedActivity) => {
-    if (activities.find(a => a.id === updatedActivity.id)) {
+    // typeフィールドが配列であることを確認
+    const normalizedActivity = {
+      ...updatedActivity,
+      type: Array.isArray(updatedActivity.type) 
+        ? updatedActivity.type 
+        : [updatedActivity.type || 'exhibition']
+    };
+
+    if (activities.find(a => a.id === normalizedActivity.id)) {
       // 既存アクティビティの更新
       const updatedActivities = activities.map(a => 
-        a.id === updatedActivity.id ? updatedActivity : a
+        a.id === normalizedActivity.id ? normalizedActivity : a
       );
       // 日付順でソート
       const sortedActivities = updatedActivities.sort((a, b) => new Date(b.date) - new Date(a.date));
       setActivities(sortedActivities);
     } else {
       // 新規アクティビティの追加
-      const newActivities = [...activities, updatedActivity];
+      const newActivities = [...activities, normalizedActivity];
       // 日付順でソート
       const sortedActivities = newActivities.sort((a, b) => new Date(b.date) - new Date(a.date));
       setActivities(sortedActivities);
@@ -66,9 +102,11 @@ const ActivityAdmin = () => {
 
   // JSONのクリップボードコピー
   const copyToClipboard = () => {
-    const jsonString = JSON.stringify(activities, null, 2);
+    // timeline.json形式に変換
+    const timelineData = convertToTimelineFormat(activities);
+    const jsonString = JSON.stringify(timelineData, null, 2);
     navigator.clipboard.writeText(jsonString).then(() => {
-      alert('JSONデータをクリップボードにコピーしました');
+      alert('timeline.json形式でクリップボードにコピーしました');
     }).catch(() => {
       alert('コピーに失敗しました');
     });
@@ -76,16 +114,49 @@ const ActivityAdmin = () => {
 
   // JSONファイルのダウンロード
   const downloadJson = () => {
-    const jsonString = JSON.stringify(activities, null, 2);
+    // timeline.json形式に変換
+    const timelineData = convertToTimelineFormat(activities);
+    const jsonString = JSON.stringify(timelineData, null, 2);
     const blob = new Blob([jsonString], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `activities-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `timeline-${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+  };
+
+  // timeline.json形式への変換
+  const convertToTimelineFormat = (activities) => {
+    const grouped = activities.reduce((acc, activity) => {
+      const year = new Date(activity.date).getFullYear();
+      if (!acc[year]) {
+        acc[year] = [];
+      }
+      
+      // ActivityPageと同じ形式に変換（typeは配列形式で保持）
+      const event = {
+        date: activity.date,
+        type: Array.isArray(activity.type) ? activity.type : [activity.type],
+        title: activity.title,
+        ...(activity.description && { description: activity.description }),
+        ...(activity.url && { url: activity.url }),
+        ...(activity.venue && { venue: activity.venue }),
+        ...(activity.venue_url && { venue_url: activity.venue_url })
+      };
+      
+      acc[year].push(event);
+      return acc;
+    }, {});
+
+    return Object.keys(grouped)
+      .sort((a, b) => parseInt(b) - parseInt(a))
+      .map(year => ({
+        year: parseInt(year),
+        events: grouped[year].sort((a, b) => new Date(b.date) - new Date(a.date))
+      }));
   };
 
   // JSONファイルのインポート
@@ -104,42 +175,71 @@ const ActivityAdmin = () => {
     reader.onload = (e) => {
       try {
         const jsonData = JSON.parse(e.target.result);
-        
-        // データ構造の簡単な検証
-        if (!Array.isArray(jsonData)) {
-          throw new Error('データはActivity配列である必要があります。');
-        }
-        
-        // 必須フィールドのチェック
-        const validActivities = jsonData.map((activity, index) => {
-          if (!activity.title || !activity.date) {
-            throw new Error(`アイテム ${index + 1}: titleとdateは必須です。`);
-          }
-          return {
+        let importActivities = [];
+
+        // timeline.json形式かactivity配列形式かを判定
+        if (Array.isArray(jsonData) && jsonData[0]?.events) {
+          // timeline.json形式の場合
+          jsonData.forEach(yearData => {
+            yearData.events.forEach((event, index) => {
+              const activity = {
+                id: event.id || `${yearData.year}-${index}-${Date.now()}`,
+                title: event.title,
+                date: event.date,
+                type: Array.isArray(event.type) ? event.type : [event.type || 'exhibition'],
+                description: event.description || '',
+                venue: event.venue || '',
+                venue_url: event.venue_url || '',
+                url: event.url || ''
+              };
+              importActivities.push(activity);
+            });
+          });
+        } else if (Array.isArray(jsonData)) {
+          // activity配列形式の場合
+          importActivities = jsonData.map((activity, index) => ({
             id: activity.id || Date.now().toString() + index,
-            title: activity.title,
-            date: activity.date,
-            category: activity.category || 'exhibition',
+            title: activity.title || '',
+            date: activity.date || new Date().toISOString().split('T')[0],
+            type: Array.isArray(activity.type || activity.category) 
+              ? (activity.type || activity.category)
+              : typeof (activity.type || activity.category) === 'string'
+                ? (activity.type || activity.category).split(/[,\s]+/).filter(t => t.trim())
+                : ['exhibition'],
             description: activity.description || '',
             venue: activity.venue || '',
             venue_url: activity.venue_url || '',
             url: activity.url || ''
-          };
+          }));
+        } else {
+          throw new Error('サポートされていないデータ形式です。');
+        }
+        
+        // 必須フィールドのチェック
+        const validActivities = importActivities.filter(activity => {
+          if (!activity.title || !activity.date) {
+            console.warn('titleとdateが必須です:', activity);
+            return false;
+          }
+          return true;
         });
+        
+        if (validActivities.length === 0) {
+          throw new Error('有効なActivityデータが見つかりませんでした。');
+        }
         
         // 日付順でソート
         const sortedActivities = validActivities.sort((a, b) => new Date(b.date) - new Date(a.date));
         
-        if (window.confirm(`${sortedActivities.length}件のActivityデータをインポートします。\n現在のデータが置き換えられますがよろしいですか？`)) {
+        if (window.confirm(`${sortedActivities.length}件のActivityデータをインポートします。\\n現在のデータが置き換えられますがよろしいですか？`)) {
           setActivities(sortedActivities);
           alert('正常にインポートされました。');
         }
       } catch (error) {
         console.error('JSON import error:', error);
-        alert(`JSONファイルの読み込みに失敗しました：\n${error.message}`);
+        alert(`JSONファイルの読み込みに失敗しました：\\n${error.message}`);
       } finally {
         setImportingFile(false);
-        // inputフィールドをリセット
         event.target.value = '';
       }
     };
@@ -152,21 +252,10 @@ const ActivityAdmin = () => {
     reader.readAsText(file);
   };
 
-  // カテゴリーラベルの変換
-  const getCategoryLabel = (category) => {
-    const categoryMap = {
-      'exhibition': '展示',
-      'award': '受賞',
-      'works': '制作',
-      'media': 'メディア',
-      'performance': '公演',
-      // 既存データの互換性のため
-      'exhibition award': '受賞',
-      'media award': '受賞',
-      'workshop': '公演',
-      'lecture': '公演'
-    };
-    return categoryMap[category] || category;
+  // タグラベルの取得
+  const getTagLabel = (tagId) => {
+    const tag = availableTags.find(t => t.id === tagId);
+    return tag ? tag.label : tagId;
   };
 
   if (loading) {
@@ -198,7 +287,7 @@ const ActivityAdmin = () => {
         {showJsonPreview && (
           <div className="json-preview-section">
             <div className="json-preview-header">
-              <h3>JSONプレビュー</h3>
+              <h3>timeline.json プレビュー</h3>
               <div className="json-actions">
                 <label className="btn btn-outline file-upload-btn">
                   {importingFile ? '読み込み中...' : '📁 インポート'}
@@ -219,7 +308,7 @@ const ActivityAdmin = () => {
               </div>
             </div>
             <pre className="json-preview">
-              {JSON.stringify(activities, null, 2)}
+              {JSON.stringify(convertToTimelineFormat(activities), null, 2)}
             </pre>
           </div>
         )}
@@ -248,9 +337,24 @@ const ActivityAdmin = () => {
                     <div className="activity-header">
                       <div className="activity-info">
                         <h3>{activity.title || '無題'}</h3>
-                        <span className="activity-category">
-                          {getCategoryLabel(activity.category)}
-                        </span>
+                        <div className="activity-tags">
+                          {(Array.isArray(activity.type) ? activity.type : [activity.type]).map((tagId, index) => {
+                            const tagConfig = availableTags.find(t => t.id === tagId);
+                            return (
+                              <span 
+                                key={index} 
+                                className={`activity-tag ${tagId}`}
+                                style={{
+                                  backgroundColor: tagConfig ? `${tagConfig.color}20` : 'rgba(102, 126, 234, 0.1)',
+                                  color: tagConfig ? tagConfig.color : '#667eea',
+                                  border: `1px solid ${tagConfig ? tagConfig.color : '#667eea'}`
+                                }}
+                              >
+                                {getTagLabel(tagId)}
+                              </span>
+                            );
+                          })}
+                        </div>
                       </div>
                       <div className="activity-actions">
                         <button
@@ -300,6 +404,7 @@ const ActivityAdmin = () => {
         {editingActivity && (
           <ActivityEditModal
             activity={editingActivity}
+            availableTags={availableTags}
             onSave={saveActivity}
             onCancel={() => setEditingActivity(null)}
           />
@@ -310,17 +415,11 @@ const ActivityAdmin = () => {
 };
 
 // アクティビティ編集モーダル
-const ActivityEditModal = ({ activity, onSave, onCancel }) => {
-  const [formData, setFormData] = useState(activity);
-
-  // カテゴリーオプション
-  const categoryOptions = [
-    { value: 'exhibition', label: '展示' },
-    { value: 'award', label: '受賞' },
-    { value: 'works', label: '制作' },
-    { value: 'media', label: 'メディア' },
-    { value: 'performance', label: '公演' }
-  ];
+const ActivityEditModal = ({ activity, availableTags, onSave, onCancel }) => {
+  const [formData, setFormData] = useState({
+    ...activity,
+    type: Array.isArray(activity.type) ? activity.type : [activity.type || 'exhibition']
+  });
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -336,13 +435,16 @@ const ActivityEditModal = ({ activity, onSave, onCancel }) => {
       alert('日付は必須です');
       return;
     }
+    if (!formData.type || formData.type.length === 0) {
+      alert('少なくとも1つのタイプを選択してください');
+      return;
+    }
     onSave(formData);
   };
 
   // フォーム全体でのEnterキー送信を防止
   const handleFormKeyDown = (e) => {
     if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
-      // textarea以外でのEnterキーはフォーム送信を防止
       e.preventDefault();
     }
   };
@@ -380,12 +482,12 @@ const ActivityEditModal = ({ activity, onSave, onCancel }) => {
           </div>
 
           <div className="form-group">
-            <label>カテゴリー</label>
-            <CustomSelect
-              options={categoryOptions}
-              value={formData.category}
-              onChange={(value) => handleChange('category', value)}
-              placeholder="カテゴリーを選択"
+            <label>タイプ *（複数選択可能）</label>
+            <MultiTagSelect
+              options={availableTags}
+              value={formData.type}
+              onChange={(value) => handleChange('type', value)}
+              placeholder="タイプを選択"
             />
           </div>
 
