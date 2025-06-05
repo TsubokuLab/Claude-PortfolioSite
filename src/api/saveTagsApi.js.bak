@@ -1,0 +1,86 @@
+/**
+ * タグ設定を保存するためのAPI関数
+ * 開発環境では直接ファイルに書き込み、本番環境ではエクスポート機能にフォールバック
+ */
+
+// 開発環境でのファイル保存
+export const saveTagsToFile = async (tagsData) => {
+  try {
+    // 開発環境かどうかチェック
+    if (import.meta.env.DEV) {
+      // ファイルシステムAPIを使用（開発環境のみ）
+      if ('showSaveFilePicker' in window) {
+        const fileHandle = await window.showSaveFilePicker({
+          suggestedName: 'tags.json',
+          types: [{
+            description: 'JSON files',
+            accept: { 'application/json': ['.json'] }
+          }]
+        });
+        
+        const writable = await fileHandle.createWritable();
+        await writable.write(JSON.stringify(tagsData, null, 2));
+        await writable.close();
+        
+        return { success: true, message: 'ファイルが正常に保存されました' };
+      }
+    }
+    
+    // フォールバック: ダウンロード方式
+    const jsonString = JSON.stringify(tagsData, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'tags.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    return { 
+      success: true, 
+      message: 'ファイルをダウンロードしました。/data/tags.json に配置してください。' 
+    };
+    
+  } catch (error) {
+    console.error('Save error:', error);
+    return { 
+      success: false, 
+      message: 'ファイル保存に失敗しました: ' + error.message 
+    };
+  }
+};
+
+// localStorage への保存（即座に反映される）
+export const saveTagsToLocalStorage = (tagsData) => {
+  try {
+    localStorage.setItem('portfolio_tags_config', JSON.stringify({
+      worksTags: tagsData.worksTags,
+      activityTags: tagsData.activityTags,
+      lastUpdated: new Date().toISOString()
+    }));
+    return { success: true, message: 'タグ設定がlocalStorageに保存されました' };
+  } catch (error) {
+    console.error('localStorage save error:', error);
+    return { success: false, message: 'localStorage保存に失敗しました' };
+  }
+};
+
+// localStorage からタグ設定を読み込み
+export const loadTagsFromLocalStorage = () => {
+  try {
+    const saved = localStorage.getItem('portfolio_tags_config');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return {
+        worksTags: parsed.worksTags || [],
+        activityTags: parsed.activityTags || [],
+        lastUpdated: parsed.lastUpdated || null
+      };
+    }
+  } catch (error) {
+    console.error('localStorage load error:', error);
+  }
+  return { worksTags: [], activityTags: [], lastUpdated: null };
+};

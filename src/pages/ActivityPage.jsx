@@ -77,7 +77,7 @@ const ActivityPage = () => {
   return (
     <div className="activity-page">
       <div className="container">
-        <ScrollAnimation type="fadeUp">
+        <ScrollAnimation type="fadeUp" threshold={0.05} duration={0.3}>
           <h1 className="page-title">Activity</h1>
           <p className="page-description">
             展示、イベント、メディア掲載、受賞歴などの活動記録です。
@@ -85,7 +85,7 @@ const ActivityPage = () => {
         </ScrollAnimation>
 
         {/* フィルターコントロール */}
-        <ScrollAnimation type="fadeUp" delay={0.2}>
+        <ScrollAnimation type="fadeUp" delay={0.1} threshold={0.05} duration={0.3}>
           <div className="activity-filters">
             <button
               className={`filter-button ${filter === 'all' ? 'active' : ''}`}
@@ -95,62 +95,23 @@ const ActivityPage = () => {
             >
               すべて
             </button>
-            <button
-              className={`filter-button ${filter === 'exhibition' ? 'active' : ''}`}
-              onClick={() => handleFilterChange('exhibition')}
-              onMouseEnter={() => setCursor('hover')}
-              onMouseLeave={resetCursor}
-            >
-              展示
-            </button>
-            <button
-              className={`filter-button ${filter === 'award' ? 'active' : ''}`}
-              onClick={() => handleFilterChange('award')}
-              onMouseEnter={() => setCursor('hover')}
-              onMouseLeave={resetCursor}
-            >
-              受賞
-            </button>
-            <button
-              className={`filter-button ${filter === 'works' ? 'active' : ''}`}
-              onClick={() => handleFilterChange('works')}
-              onMouseEnter={() => setCursor('hover')}
-              onMouseLeave={resetCursor}
-            >
-              制作
-            </button>
-            <button
-              className={`filter-button ${filter === 'media' ? 'active' : ''}`}
-              onClick={() => handleFilterChange('media')}
-              onMouseEnter={() => setCursor('hover')}
-              onMouseLeave={resetCursor}
-            >
-              メディア
-            </button>
-            <button
-              className={`filter-button ${filter === 'workshop' ? 'active' : ''}`}
-              onClick={() => handleFilterChange('workshop')}
-              onMouseEnter={() => setCursor('hover')}
-              onMouseLeave={resetCursor}
-            >
-              講演
-            </button>
-            <button
-              className={`filter-button ${filter === 'performance' ? 'active' : ''}`}
-              onClick={() => handleFilterChange('performance')}
-              onMouseEnter={() => setCursor('hover')}
-              onMouseLeave={resetCursor}
-            >
-              パフォーマンス
-            </button>
-            <button
-              className={`filter-button ${filter === 'collaboration' ? 'active' : ''}`}
-              onClick={() => handleFilterChange('collaboration')}
-              onMouseEnter={() => setCursor('hover')}
-              onMouseLeave={resetCursor}
-            >
-              コラボレーション
-            </button>
+            {activityTags.map((tag) => {
+              return (
+                <button
+                  key={tag.id}
+                  className={`filter-button ${filter === tag.id ? 'active' : ''}`}
+                  onClick={() => handleFilterChange(tag.id)}
+                  onMouseEnter={() => setCursor('hover')}
+                  onMouseLeave={resetCursor}
+                  style={{
+                    '--tag-color': tag.color,
+                    '--tag-bg': `${tag.color}15`
+                  }}
+                >
+                  {tag.label}
+                </button>
+              );
+            })}
           </div>
         </ScrollAnimation>
 
@@ -158,7 +119,13 @@ const ActivityPage = () => {
         <div className="activity-timeline">
           {filteredTimeline.length > 0 ? (
             filteredTimeline.map((yearData, yearIndex) => (
-              <ScrollAnimation key={yearData.year} type="fadeUp" delay={yearIndex * 0.1}>
+              <ScrollAnimation 
+                key={yearData.year} 
+                type="fadeUp" 
+                delay={0}
+                threshold={0.05}
+                duration={0.3}
+              >
                 <div className="timeline-year">
                   <div className="year-marker">{yearData.year}</div>
                   <div className="year-events">
@@ -168,8 +135,8 @@ const ActivityPage = () => {
                         className={`event-item ${Array.isArray(event.type) ? event.type.join(' ') : event.type}`}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: eventIndex * 0.1 }}
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 0.3, delay: eventIndex * 0.02 }}
                       >
                         <div className="event-date">{formatDate(event.date)}</div>
                         <div className="event-content">
@@ -240,7 +207,7 @@ const ActivityPage = () => {
 
         {/* 主な展示場所マップ */}
         <section className="exhibition-venues">
-          <ScrollAnimation type="fadeUp">
+          <ScrollAnimation type="fadeUp" threshold={0.05} duration={0.3}>
             <h2 className="section-title">主な展示場所</h2>
             <div className="venues-grid">
               <div className="venue-item">
@@ -296,7 +263,7 @@ const ActivityPage = () => {
 
         {/* 今後の予定 */}
         <section className="upcoming-events">
-          <ScrollAnimation type="fadeUp">
+          <ScrollAnimation type="fadeUp" threshold={0.05} duration={0.3}>
             <h2 className="section-title">今後の予定</h2>
             <div className="upcoming-content">
               <p className="upcoming-info">

@@ -10,6 +10,7 @@ const TagManagement = () => {
   const [editingTag, setEditingTag] = useState(null);
   const [tagType, setTagType] = useState('works'); // 'works' or 'activity'
   const [loading, setLoading] = useState(true);
+  const [showJsonPreview, setShowJsonPreview] = useState(false);
 
   // コンポーネントマウント時にJSONファイルから読み込み
   useEffect(() => {
@@ -65,17 +66,17 @@ const TagManagement = () => {
     }
   };
 
-  // JSONエクスポート機能を強化
+  // JSONエクスポート機能
   const exportTags = () => {
     const tagsData = {
       worksTags,
       activityTags,
       exportedAt: new Date().toISOString(),
       usage: {
-        note: 'このファイルを /data/tags.json として保存してください。',
+        note: 'このファイルを /public/data/tags.json として保存してください。',
         worksUsage: '作品のカテゴリ分類とフィルタリングに使用されます。',
         activityUsage: 'アクティビティのタイプ分類とフィルタリングに使用されます（複数選択可能）。',
-        instruction: 'エクスポート後、このファイルを /data/tags.json として保存し、サイトを再ビルドしてください。'
+        instruction: 'エクスポート後、このファイルを /public/data/tags.json として保存し、サイトを再ビルドしてください。'
       }
     };
     
@@ -90,8 +91,33 @@ const TagManagement = () => {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     
-    // ユーザーに指示を表示
-    alert('タグ設定をエクスポートしました。\n\n次の手順で反映してください：\n1. ダウンロードしたファイルを /data/tags.json に置き換え\n2. サイトを再ビルドまたはリロード');
+    alert('タグ設定をエクスポートしました。\n\n手順：\n1. ダウンロードしたファイルを /public/data/tags.json に置き換え\n2. サイトを再ビルドして変更を反映');
+  };
+
+  // JSONプレビュー用のデータ生成
+  const generateJsonPreview = () => {
+    return {
+      worksTags,
+      activityTags,
+      exportedAt: new Date().toISOString(),
+      usage: {
+        note: 'このファイルを /public/data/tags.json として保存してください。',
+        worksUsage: '作品のカテゴリ分類とフィルタリングに使用されます。',
+        activityUsage: 'アクティビティのタイプ分類とフィルタリングに使用されます（複数選択可能）。',
+        instruction: 'エクスポート後、このファイルを /public/data/tags.json として保存し、サイトを再ビルドしてください。'
+      }
+    };
+  };
+
+  // JSONのクリップボードコピー
+  const copyToClipboard = () => {
+    const tagsData = generateJsonPreview();
+    const jsonString = JSON.stringify(tagsData, null, 2);
+    navigator.clipboard.writeText(jsonString).then(() => {
+      alert('tags.json の内容をクリップボードにコピーしました');
+    }).catch(() => {
+      alert('コピーに失敗しました');
+    });
   };
 
   const currentTags = tagType === 'works' ? worksTags : activityTags;
@@ -113,7 +139,10 @@ const TagManagement = () => {
         <div className="tag-management-header">
           <h1>タグ管理</h1>
           <div className="header-actions">
-            <button onClick={exportTags} className="btn btn-outline">
+            <button onClick={() => setShowJsonPreview(!showJsonPreview)} className="btn btn-secondary">
+              {showJsonPreview ? 'JSONを隠す' : 'JSONプレビュー'}
+            </button>
+            <button onClick={exportTags} className="btn btn-primary">
               📥 エクスポート
             </button>
             <button onClick={createNewTag} className="btn btn-primary">
@@ -121,6 +150,26 @@ const TagManagement = () => {
             </button>
           </div>
         </div>
+
+        {/* JSONプレビューセクション */}
+        {showJsonPreview && (
+          <div className="json-preview-section">
+            <div className="json-preview-header">
+              <h3>tags.json プレビュー</h3>
+              <div className="json-actions">
+                <button onClick={copyToClipboard} className="btn btn-outline">
+                  📋 コピー
+                </button>
+                <button onClick={exportTags} className="btn btn-outline">
+                  💾 ダウンロード
+                </button>
+              </div>
+            </div>
+            <pre className="json-preview">
+              {JSON.stringify(generateJsonPreview(), null, 2)}
+            </pre>
+          </div>
+        )}
 
         {/* タブ切り替え */}
         <div className="tag-type-tabs">

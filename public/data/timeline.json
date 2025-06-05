@@ -3,6 +3,18 @@
     "year": 2025,
     "events": [
       {
+        "date": "2025-05-29",
+        "type": [
+          "works",
+          "exhibition"
+        ],
+        "title": "NHK放送技術研究所「技研公開2025」触覚と香りで体感する３次元コンテンツ制作",
+        "description": "「技研公開2025」にて、触覚と香りで体感する３次元コンテンツの制作に参加しました。",
+        "url": "https://www.nhk.or.jp/strl/open2025/",
+        "venue": "NHK放送技術研究所",
+        "venue_url": "https://www.nhk.or.jp/strl/open2025/"
+      },
+      {
         "date": "2025-04-23",
         "type": [
           "exhibition"

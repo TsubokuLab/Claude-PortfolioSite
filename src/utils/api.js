@@ -12,20 +12,24 @@ export const fetchTags = async () => {
     return data;
   } catch (error) {
     console.error('Error fetching tags:', error);
-    // フォールバック用のデフォルトタグ設定
+    // フォールバック用のデフォルトタグ設定（/public/data/tags.json と一致）
     return {
       worksTags: [
         { id: 'VR', label: 'VR/AR', color: '#667eea' },
-        { id: 'mediaart', label: 'メディアアート', color: '#764ba2' }
+        { id: 'mediaart', label: 'メディアアート', color: '#764ba2' },
+        { id: 'performance', label: 'パフォーマンス', color: '#f093fb' },
+        { id: 'device', label: 'デバイス', color: '#4facfe' },
+        { id: 'software', label: 'ソフトウェア', color: '#43e97b' },
+        { id: 'interactive', label: 'インタラクティブ', color: '#fa709a' },
+        { id: 'installation', label: 'インスタレーション', color: '#fee140' },
+        { id: 'conceptual', label: 'コンセプチュアル', color: '#a8edea' }
       ],
       activityTags: [
         { id: 'exhibition', label: '展示', color: '#33cc66' },
         { id: 'award', label: '受賞', color: '#ff9933' },
         { id: 'works', label: '制作', color: '#3399ff' },
         { id: 'media', label: 'メディア', color: '#9966cc' },
-        { id: 'workshop', label: '講演・ワークショップ', color: '#ff6666' },
-        { id: 'performance', label: 'パフォーマンス', color: '#ff33cc' },
-        { id: 'collaboration', label: 'コラボレーション', color: '#ffcc33' }
+        { id: 'workshop', label: '講演・ワークショップ', color: '#ff6666' }
       ]
     };
   }
@@ -54,9 +58,6 @@ export const getActivityTagColor = async (tagId) => {
     return '#667eea';
   }
 };
-
-// GitHub Pagesでのベースパス
-const BASE_PATH = '/tsubokura-portfolio';
 
 // 作品データを取得する関数
 export const fetchWorks = async () => {

@@ -10,7 +10,8 @@
     "build:custom": "vite build --base=/",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy:github": "npm run build:github && gh-pages -d dist --dotfiles",
+    "deploy": "npm run deploy:github",
+    "deploy:github": "npm run build:github && gh-pages -d dist",
     "deploy:custom": "npm run build:custom"
   },
   "dependencies": {

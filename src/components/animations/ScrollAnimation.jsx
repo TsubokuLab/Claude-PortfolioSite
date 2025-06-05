@@ -44,8 +44,8 @@ const animationPresets = {
 const ScrollAnimation = ({
   children,
   type = 'fadeUp',
-  duration = 0.5,
-  threshold = 0.2,
+  duration = 0.3,
+  threshold = 0.05,
   delay = 0,
   stagger = false,
   className = '',
@@ -59,25 +59,11 @@ const ScrollAnimation = ({
 
   // ページ遷移アニメーションとの連携
   useEffect(() => {
-    let isMounted = true; // マウント状態追跡用
-    
-    // 全てのアニメーションに少しの遅延を設定
-    const delay = 100;
-
-    const timer = setTimeout(() => {
-      if (!isMounted) return;
-      
-      if (inView) {
-        controls.start('visible');
-      } else if (!triggerOnce && repeatOnInView) {
-        controls.start('hidden');
-      }
-    }, delay);
-    
-    return () => {
-      isMounted = false;
-      clearTimeout(timer);
-    };
+    if (inView) {
+      controls.start('visible');
+    } else if (!triggerOnce && repeatOnInView) {
+      controls.start('hidden');
+    }
   }, [controls, inView, repeatOnInView, triggerOnce]);
 
   const animationPreset = animationPresets[type] || animationPresets.fadeUp;
@@ -97,8 +83,8 @@ const ScrollAnimation = ({
               variants={animationPresets.staggered}
               transition={{ 
                 duration, 
-                delay: delay + (i * 0.1), 
-                ease: 'easeOut' 
+                delay: delay + (i * 0.03), 
+                ease: [0.25, 0.1, 0.25, 1] 
               }}
             >
               {child}
@@ -117,7 +103,7 @@ const ScrollAnimation = ({
       initial="hidden"
       animate={controls}
       variants={animationPreset}
-      transition={{ duration, delay, ease: 'easeOut' }}
+      transition={{ duration, delay, ease: [0.25, 0.1, 0.25, 1] }}
       {...props}
     >
       {children}

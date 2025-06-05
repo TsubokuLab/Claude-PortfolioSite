@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchWorks } from '../utils/api';
+import { fetchWorks, fetchTags } from '../utils/api';
 import { useCursor } from '../context/CursorContext';
 import { Link } from 'react-router-dom';
 import './WorksPage.css';
@@ -10,18 +10,28 @@ const WorksPage = () => {
   const [filter, setFilter] = useState('all'); // フィルタリング状態
   const [layout, setLayout] = useState('grid'); // 表示レイアウト (grid or list)
   const [animationKey, setAnimationKey] = useState(0); // アニメーション再実行用
+  const [worksTags, setWorksTags] = useState([]); // タグ設定
 
   const { setCursor, resetCursor } = useCursor();
 
-  // 作品データの取得
+  // 作品データとタグ設定の取得
   useEffect(() => {
-    const getWorks = async () => {
-      const data = await fetchWorks();
-      setWorks(data);
-      setLoading(false);
+    const loadData = async () => {
+      try {
+        const [worksData, tagsData] = await Promise.all([
+          fetchWorks(),
+          fetchTags()
+        ]);
+        setWorks(worksData);
+        setWorksTags(tagsData.worksTags || []);
+      } catch (error) {
+        console.error('Failed to load data:', error);
+      } finally {
+        setLoading(false);
+      }
     };
     
-    getWorks();
+    loadData();
   }, []);
 
   // フィルタリングされた作品リスト
@@ -29,13 +39,19 @@ const WorksPage = () => {
     ? works 
     : works.filter(work => work.category === filter);
 
-  // カテゴリーリストの生成 - 「すべて」を最初に配置し、他は昇順で並べる
-  const categories = ['all', ...new Set(works.map(work => work.category))];
-  // 「all」以外のカテゴリーをソート
+  // カテゴリーリストの生成 - タグ設定から動的に生成
+  const availableCategories = [...new Set(works.map(work => work.category))];
   const sortedCategories = [
     'all',
-    ...categories.filter(category => category !== 'all').sort()
+    ...availableCategories.sort()
   ];
+
+  // タグIDからラベルを取得する関数
+  const getCategoryLabel = (category) => {
+    if (category === 'all') return 'すべて';
+    const tag = worksTags.find(t => t.id === category);
+    return tag ? tag.label : category;
+  };
 
   // フィルター変更ハンドラ
   const handleFilterChange = (category) => {
@@ -73,18 +89,24 @@ const WorksPage = () => {
 
         <div className="works-controls">
           <div className="works-filter">
-            {sortedCategories.map((category) => (
-              <button
-                key={category}
-                className={`filter-button ${filter === category ? 'active' : ''}`}
-                onClick={() => handleFilterChange(category)}
-                onMouseEnter={() => setCursor('hover')}
-                onMouseLeave={resetCursor}
-
-              >
-                {category === 'all' ? 'すべて' : getCategoryLabel(category)}
-              </button>
-            ))}
+            {sortedCategories.map((category) => {
+              const tagConfig = worksTags.find(t => t.id === category);
+              return (
+                <button
+                  key={category}
+                  className={`filter-button ${filter === category ? 'active' : ''}`}
+                  onClick={() => handleFilterChange(category)}
+                  onMouseEnter={() => setCursor('hover')}
+                  onMouseLeave={resetCursor}
+                  style={category !== 'all' && tagConfig ? {
+                    '--tag-color': tagConfig.color,
+                    '--tag-bg': `${tagConfig.color}15`
+                  } : {}}
+                >
+                  {getCategoryLabel(category)}
+                </button>
+              );
+            })}
           </div>
           
           <div className="works-layout-options">
@@ -140,7 +162,19 @@ const WorksPage = () => {
                   <div className="work-info">
                     <h2 className="work-title">{work.title}</h2>
                     <div className="work-meta">
-                      <span className="work-category">{getCategoryLabel(work.category)}</span>
+                      <span 
+                        className="work-category"
+                        style={(() => {
+                          const tagConfig = worksTags.find(t => t.id === work.category);
+                          return tagConfig ? {
+                            backgroundColor: `${tagConfig.color}20`,
+                            color: tagConfig.color,
+                            border: `1px solid ${tagConfig.color}`
+                          } : {};
+                        })()} 
+                      >
+                        {getCategoryLabel(work.category)}
+                      </span>
                       <span className="work-year">{work.year}</span>
                     </div>
                     {layout === 'list' && (
@@ -168,19 +202,6 @@ const WorksPage = () => {
   );
 };
 
-// カテゴリーのラベルを日本語に変換する関数
-const getCategoryLabel = (category) => {
-  const categoryMap = {
-    'installation': 'インスタレーション',
-    'interactive': 'インタラクティブ',
-    'mediaart': 'メディアアート',
-    'performance': 'パフォーマンス',
-    'VR': 'VR/AR',
-    'device': 'デバイス',
-    'software': 'ソフトウェア',
-    'conceptual': 'コンセプチュアル'
-  };
-  return categoryMap[category] || category;
-};
+
 
 export default WorksPage;

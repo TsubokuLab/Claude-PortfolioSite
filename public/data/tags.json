@@ -3,42 +3,32 @@
     {
       "id": "VR",
       "label": "VR/AR",
-      "color": "#667eea"
+      "color": "#4facfe"
     },
     {
       "id": "mediaart",
       "label": "メディアアート",
-      "color": "#764ba2"
+      "color": "#8737ff"
     },
     {
       "id": "performance",
       "label": "パフォーマンス",
-      "color": "#f093fb"
+      "color": "#fa709a"
     },
     {
       "id": "device",
       "label": "デバイス",
-      "color": "#4facfe"
+      "color": "#43e97b"
     },
     {
       "id": "software",
       "label": "ソフトウェア",
-      "color": "#43e97b"
+      "color": "#f0932b"
     },
     {
-      "id": "interactive",
-      "label": "インタラクティブ",
-      "color": "#fa709a"
-    },
-    {
-      "id": "installation",
-      "label": "インスタレーション",
-      "color": "#fee140"
-    },
-    {
-      "id": "conceptual",
-      "label": "コンセプチュアル",
-      "color": "#a8edea"
+      "id": "clientworks",
+      "label": "クライアントワーク",
+      "color": "#eb4d4b"
     }
   ],
   "activityTags": [
@@ -64,24 +54,15 @@
     },
     {
       "id": "workshop",
-      "label": "講演・ワークショップ",
+      "label": "ワークショップ",
       "color": "#ff6666"
-    },
-    {
-      "id": "performance",
-      "label": "パフォーマンス",
-      "color": "#ff33cc"
-    },
-    {
-      "id": "collaboration",
-      "label": "コラボレーション",
-      "color": "#ffcc33"
     }
   ],
-  "exportedAt": "2025-06-01T06:40:33.878Z",
+  "exportedAt": "2025-06-02T04:46:49.484Z",
   "usage": {
-    "note": "このファイルはTagManagementコンポーネント用のタグ設定ファイルです。",
+    "note": "このファイルを /public/data/tags.json として保存してください。",
     "worksUsage": "作品のカテゴリ分類とフィルタリングに使用されます。",
-    "activityUsage": "アクティビティのタイプ分類とフィルタリングに使用されます（複数選択可能）。"
+    "activityUsage": "アクティビティのタイプ分類とフィルタリングに使用されます（複数選択可能）。",
+    "instruction": "エクスポート後、このファイルを /public/data/tags.json として保存し、サイトを再ビルドしてください。"
   }
 }

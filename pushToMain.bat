@@ -10,14 +10,12 @@ git add .
 
 git diff --staged --quiet
 if %errorlevel% neq 0 (
-    git commit -m "push from bat"
+    git commit -m "push from .bat"
     git push origin main
 
     echo.
     echo ========================================
     echo [SUCCESS] Push to main branch completed!
-    echo.
-    echo Commit message: %commit_message%
     echo.
     echo This will trigger:
     echo - GitHub Actions workflow

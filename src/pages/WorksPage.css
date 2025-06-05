@@ -48,13 +48,14 @@
 }
 
 .filter-button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--tag-color, var(--accent));
+  color: var(--tag-color, var(--accent));
+  background-color: var(--tag-bg, rgba(var(--accent-rgb), 0.1));
 }
 
 .filter-button.active {
-  background-color: var(--accent);
-  border-color: var(--accent);
+  background-color: var(--tag-color, var(--accent));
+  border-color: var(--tag-color, var(--accent));
   color: white;
 }
 
