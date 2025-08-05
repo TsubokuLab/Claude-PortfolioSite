@@ -3,6 +3,61 @@
     "year": 2025,
     "events": [
       {
+        "date": "2025-08-02",
+        "type": [
+          "exhibition"
+        ],
+        "title": "8/2-9/21 愛知県 松坂屋美術館「魔法の美術館」展",
+        "description": "出品作品：つくもがみ、幻想シアター、展覧会の絵",
+        "url": "https://www.tokai-tv.com/events/magicmuseum2025/",
+        "venue": "愛知県　松坂屋美術館",
+        "venue_url": "https://www.tokai-tv.com/events/magicmuseum2025/"
+      },
+      {
+        "date": "2025-07-19",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/19-8/24 岡山県 岡山シティミュージアム「魔法の美術館」展",
+        "description": "出品作品：幻想シアター、展覧会の絵",
+        "url": "https://www.ohk.co.jp/mahou-museum/",
+        "venue": "岡山シティミュージアム",
+        "venue_url": "https://www.ohk.co.jp/mahou-museum/"
+      },
+      {
+        "date": "2025-07-19",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/19-8/31 福井県 福井市美術館［アートラボふくい］「魔法の美術館」展",
+        "description": "出品作品：つくもがみ、展覧会の絵",
+        "url": "https://www.city.fukui.lg.jp/kankou/bunka/sisetu/p071556.html",
+        "venue": "福井市美術館［アートラボふくい］",
+        "venue_url": "https://www.city.fukui.lg.jp/kankou/bunka/sisetu/p071556.html"
+      },
+      {
+        "date": "2025-07-15",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/15-9/7 福岡県 大野城心のふるさと館「魔法の美術館」展",
+        "description": "出品作品：七色小道、Vertexceed、つくもがみ、展覧会の絵",
+        "url": "https://www.onojo-occm.jp/li/150/20220321091734.html",
+        "venue": "大野城心のふるさと館",
+        "venue_url": "https://www.onojo-occm.jp/li/150/20220321091734.html"
+      },
+      {
+        "date": "2025-07-12",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/12-8/24 鳥取県 鳥取県立夢みなとタワー「魔法の美術館」展",
+        "description": "出品作品：つくもがみ、幻想シアター、展覧会の絵",
+        "url": "https://www.yumeminatotower.gr.jp/events/みて%E3%80%80ふれて%E3%80%80光とあそぶ%E3%80%80魔法の美術館/",
+        "venue": "夢みなとタワー",
+        "venue_url": "https://www.yumeminatotower.gr.jp/events/みて%E3%80%80ふれて%E3%80%80光とあそぶ%E3%80%80魔法の美術館/"
+      },
+      {
         "date": "2025-05-29",
         "type": [
           "works",
