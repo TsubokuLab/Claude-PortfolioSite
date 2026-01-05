@@ -18,14 +18,13 @@ const FeaturedWorks = () => {
         const data = await response.json();
         
         // 注目の作品を6つ表示
-        // VRと新しいインスタレーション中心に選択
+        // VRと代表的なインスタレーション中心に選択
         const featuredWorkIds = [
           'vertex',                // VERTEX: VRCBattleRoyale
           'exhibition-picture',    // 展覧会の絵
           'fantasy-theater',       // 幻想シアター
           'invisible-sculpture',   // 不可視彫像
-          'achromatic-world',      // Achromatic World
-          'delta-glass'            // Delta Glass
+          'achromatic-world'      // Achromatic World
         ];
         
         const featuredWorks = featuredWorkIds
