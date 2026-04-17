@@ -1,6 +1,6 @@
 [
     {
-    "id": "1776417705041",
+    "id": "volkswagen-drive-carnival",
     "title": "Volkswagen DRIVE CARnival",
     "description": "フォルクスワーゲン公式ブラウザゲームの開発を担当。全9車種・6ステージを収録し、インストール不要でスマートフォンから遊べる本格レーシングゲーム。リアルとファンタジーが交差するコースを実車モデルのVW車で駆け抜ける爽快な体験を設計・実装した。",
     "category": "clientworks",
@@ -20,7 +20,10 @@
     ],
     "exhibition": "フォルクスワーゲン公式サイト",
     "duration": "2025年12月26日-",
-    "materials": "Unity, WebGL"
+    "materials": "Unity, WebGL",
+    "links": [
+      { "label": "公式サイト", "url": "https://www.volkswagen.co.jp/ja/magazine/volkswagen_carnival.html" }
+    ]
   },
   {
     "id": "vertex",
