@@ -1,6 +1,9 @@
 # サーバー管理スクリプト（認証情報含むため除外）
 server/
 
+# Claude Code ローカル設定
+.claude/
+
 # Logs
 logs
 *.log
