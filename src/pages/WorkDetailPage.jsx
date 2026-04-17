@@ -144,6 +144,9 @@ const WorkDetailPage = () => {
               {work.exhibition && (
                 <span className="work-detail-exhibition">{work.exhibition}</span>
               )}
+              {work.duration && (
+                <span className="work-detail-duration">{work.duration}</span>
+              )}
             </div>
           </ScrollAnimation>
         </div>
@@ -256,7 +259,27 @@ const WorkDetailPage = () => {
                   </ul>
                 </div>
               )}
-              
+
+              {work.materials && (
+                <div className="work-detail-materials">
+                  <h2>素材・ツール</h2>
+                  <p>{work.materials}</p>
+                </div>
+              )}
+
+              {work.collaborators && work.collaborators.length > 0 && (
+                <div className="work-detail-collaborators">
+                  <h2>コラボレーター</h2>
+                  <ul className="collaborators-list">
+                    {work.collaborators.map((person, index) => (
+                      <li key={index} className="collaborator-item">
+                        {person}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               {work.awards && work.awards.length > 0 && (
                 <div className="work-detail-awards">
                   <h2>受賞歴</h2>

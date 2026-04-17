@@ -33,8 +33,8 @@ const WorksAdmin = () => {
       images: [],
       awards: [],
       collaborators: [],
-      technologies: [],
-      venue: '',
+      technology: [],
+      exhibition: '',
       duration: '',
       materials: ''
     };
@@ -142,8 +142,8 @@ const WorksAdmin = () => {
             images: work.images || [],
             awards: work.awards || [],
             collaborators: work.collaborators || [],
-            technologies: work.technologies || [],
-            venue: work.venue || '',
+            technology: work.technology || [],
+            exhibition: work.exhibition || '',
             duration: work.duration || '',
             materials: work.materials || ''
           };
@@ -328,7 +328,7 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
     formData.images = (formData.images || []).filter(item => item.trim() !== '');
     formData.awards = (formData.awards || []).filter(item => item.trim() !== '');
     formData.collaborators = (formData.collaborators || []).filter(item => item.trim() !== '');
-    formData.technologies = (formData.technologies || []).filter(item => item.trim() !== '');
+    formData.technology = (formData.technology || []).filter(item => item.trim() !== '');
     
     e.preventDefault();
     if (!formData.title.trim()) {
@@ -424,8 +424,8 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
               <label>会場・場所</label>
               <input
                 type="text"
-                value={formData.venue || ''}
-                onChange={(e) => handleChange('venue', e.target.value)}
+                value={formData.exhibition || ''}
+                onChange={(e) => handleChange('exhibition', e.target.value)}
                 placeholder="展示会場・イベント名"
               />
             </div>
@@ -479,8 +479,8 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
             <label>技術スタック（1行1項目）</label>
             <textarea
               className="multi-line-input"
-              value={formData.technologies?.join('\n') || ''}
-              onChange={(e) => handleArrayChange('technologies', e.target.value)}
+              value={formData.technology?.join('\n') || ''}
+              onChange={(e) => handleArrayChange('technology', e.target.value)}
               placeholder="Unity&#10;C#&#10;OpenCV&#10;Arduino&#10;Processing"
               rows="5"
             />
