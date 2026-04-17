@@ -31,6 +31,7 @@ const WorksAdmin = () => {
       year: new Date().getFullYear(),
       thumbnail: '',
       images: [],
+      youtube: '',
       awards: [],
       collaborators: [],
       technology: [],
@@ -141,6 +142,7 @@ const WorksAdmin = () => {
             year: work.year || new Date().getFullYear(),
             thumbnail: work.thumbnail || '',
             images: work.images || [],
+            youtube: work.youtube || '',
             awards: work.awards || [],
             collaborators: work.collaborators || [],
             technology: work.technology || [],
@@ -427,7 +429,17 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
                 type="text"
                 value={formData.thumbnail}
                 onChange={(e) => handleChange('thumbnail', e.target.value)}
-                placeholder="./images/works/example.jpg"
+                placeholder="images/works/example/thumbnail.jpg"
+              />
+            </div>
+
+            <div className="form-group">
+              <label>YouTube Video ID</label>
+              <input
+                type="text"
+                value={formData.youtube || ''}
+                onChange={(e) => handleChange('youtube', e.target.value)}
+                placeholder="例: dQw4w9WgXcQ"
               />
             </div>
           </div>

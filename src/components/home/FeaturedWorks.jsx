@@ -3,20 +3,34 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useCursor } from '../../context/CursorContext';
 import ScrollAnimation from '../animations/ScrollAnimation';
+import { fetchImageManifest } from '../../utils/api';
 import './FeaturedWorks.css';
+
+// マニフェストからサムネイルURLを解決する
+const resolveThumbUrl = (work, manifest) => {
+  const raw = work.thumbnail || (() => {
+    const files = manifest[work.id] || [];
+    return files.find(f => /thumbnail\.(jpe?g|png|webp|gif)$/i.test(f)) || files[0] || null;
+  })();
+  return raw ? `${import.meta.env.BASE_URL}${raw.replace(/^\.\//, '')}` : null;
+};
 
 const FeaturedWorks = () => {
   const [works, setWorks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [manifest, setManifest] = useState({});
   const { setCursor, resetCursor } = useCursor();
 
   // 作品データの取得
   useEffect(() => {
     const fetchWorks = async () => {
       try {
-        const response = await fetch(`${import.meta.env.BASE_URL}data/works.json`);
-        const data = await response.json();
-        
+        const [worksResponse, imageManifest] = await Promise.all([
+          fetch(`${import.meta.env.BASE_URL}data/works.json`),
+          fetchImageManifest()
+        ]);
+        const data = await worksResponse.json();
+
         // 注目の作品を6つ表示
         // VRと代表的なインスタレーション中心に選択
         const featuredWorkIds = [
@@ -26,12 +40,13 @@ const FeaturedWorks = () => {
           'invisible-sculpture',   // 不可視彫像
           'achromatic-world'      // Achromatic World
         ];
-        
+
         const featuredWorks = featuredWorkIds
           .map(id => data.find(work => work.id === id))
           .filter(Boolean); // undefined を除外
-        
+
         setWorks(featuredWorks);
+        setManifest(imageManifest);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching works:', error);
@@ -75,11 +90,11 @@ const FeaturedWorks = () => {
                   onMouseLeave={resetCursor}
                 >
                   <div className="work-thumbnail">
-                    <div 
-                      className="work-image" 
-                      style={{ 
-                        backgroundImage: work.thumbnail 
-                          ? `url(${import.meta.env.BASE_URL}${work.thumbnail})` 
+                    <div
+                      className="work-image"
+                      style={{
+                        backgroundImage: resolveThumbUrl(work, manifest)
+                          ? `url(${resolveThumbUrl(work, manifest)})`
                           : 'linear-gradient(-45deg, var(--accent), var(--accent-secondary))'
                       }}
                     />

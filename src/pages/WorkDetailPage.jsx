@@ -1,13 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { fetchWorks, fetchWorkById } from '../utils/api';
+import { fetchWorks, fetchWorkById, fetchImageManifest } from '../utils/api';
 import ScrollAnimation from '../components/animations/ScrollAnimation';
 import ParallaxEffect from '../components/animations/ParallaxEffect';
 import { useCursor } from '../context/CursorContext';
 import { formatDate } from '../utils/helpers';
-import { getYouTubeUrl, hasYouTubeVideo } from '../utils/youtubeMapping';
 import './WorkDetailPage.css';
+
+// YouTube video ID → embed URL
+const toEmbedUrl = (id) => id ? `https://www.youtube.com/embed/${id}` : null;
+
+// マニフェストから有効なサムネイルを取得
+const resolveThumb = (work, manifest) => {
+  if (work.thumbnail) return work.thumbnail;
+  const files = manifest[work.id] || [];
+  return files.find(f => /thumbnail\.(jpe?g|png|webp|gif)$/i.test(f)) || files[0] || null;
+};
+
+// マニフェストから有効なギャラリー画像を取得（thumbnail以外を名前順）
+const resolveImages = (work, manifest) => {
+  if (work.images && work.images.length > 0) return work.images;
+  const files = manifest[work.id] || [];
+  return files.filter(f => !/thumbnail\.(jpe?g|png|webp|gif)$/i.test(f));
+};
 
 const WorkDetailPage = () => {
   const { workId } = useParams();
@@ -16,45 +32,42 @@ const WorkDetailPage = () => {
   const [loading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isVideoActive, setIsVideoActive] = useState(false);
+  const [manifest, setManifest] = useState({});
   const navigate = useNavigate();
   const { setCursor, resetCursor } = useCursor();
-  const [youtubeUrl, setYoutubeUrl] = useState(null);
 
   // 作品データの取得
   useEffect(() => {
     const getWorkData = async () => {
       setLoading(true);
-      
-      // 対象の作品データを取得
-      const workData = await fetchWorkById(workId);
+
+      const [workData, allWorks, imageManifest] = await Promise.all([
+        fetchWorkById(workId),
+        fetchWorks(),
+        fetchImageManifest(),
+      ]);
+
       if (!workData) {
-        // 作品が見つからない場合は作品一覧ページにリダイレクト
         navigate('/works');
         return;
       }
-      
+
       setWork(workData);
-      
-      // YouTubeのURLを取得
-      const ytUrl = getYouTubeUrl(workId);
-      setYoutubeUrl(ytUrl);
-      
-      // 動画がある場合は初期選択を動画にする
-      if (ytUrl) {
+      setManifest(imageManifest);
+
+      // YouTubeがある場合は動画を初期表示
+      if (workData.youtube) {
         setIsVideoActive(true);
         setActiveIndex(0);
       }
-      
-      // 関連作品を取得（同じカテゴリーの作品を最大3つ）
-      const allWorks = await fetchWorks();
+
       const related = allWorks
         .filter(w => w.id !== workId && w.category === workData.category)
         .slice(0, 3);
-      
       setRelatedWorks(related);
       setLoading(false);
     };
-    
+
     getWorkData();
   }, [workId, navigate]);
 
@@ -71,10 +84,14 @@ const WorkDetailPage = () => {
     return null;
   }
 
+  const youtubeUrl = toEmbedUrl(work.youtube);
+  const effectiveThumbnail = resolveThumb(work, manifest);
+  const effectiveImages = resolveImages(work, manifest);
+
   // 画像ギャラリー用の画像配列を作成
   const galleryImages = [
-    ...(work.thumbnail ? [work.thumbnail] : []),
-    ...(work.images?.filter(img => img !== work.thumbnail) || [])
+    ...(effectiveThumbnail ? [effectiveThumbnail] : []),
+    ...effectiveImages.filter(img => img !== effectiveThumbnail)
   ];
 
   // サムネイル選択時の処理

@@ -142,6 +142,17 @@ export const fetchTimeline = async () => {
   }
 };
 
+// 画像マニフェストを取得する関数（Viteプラグインがビルド時に生成）
+export const fetchImageManifest = async () => {
+  try {
+    const response = await fetch(`${import.meta.env.BASE_URL}data/image-manifest.json`);
+    if (!response.ok) return {};
+    return await response.json();
+  } catch (error) {
+    return {};
+  }
+};
+
 // スキルデータを取得する関数
 export const fetchSkills = async () => {
   try {

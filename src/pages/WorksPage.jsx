@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { fetchWorks, fetchTags } from '../utils/api';
+import { fetchWorks, fetchTags, fetchImageManifest } from '../utils/api';
 import { useCursor } from '../context/CursorContext';
 import { Link } from 'react-router-dom';
 import './WorksPage.css';
+
+// マニフェストからサムネイルURLを解決する
+const resolveThumbUrl = (work, manifest) => {
+  const raw = work.thumbnail || (() => {
+    const files = manifest[work.id] || [];
+    return files.find(f => /thumbnail\.(jpe?g|png|webp|gif)$/i.test(f)) || files[0] || null;
+  })();
+  return raw ? `${import.meta.env.BASE_URL}${raw.replace(/^\.\//, '')}` : null;
+};
 
 const WorksPage = () => {
   const [works, setWorks] = useState([]);
@@ -11,6 +20,7 @@ const WorksPage = () => {
   const [layout, setLayout] = useState('grid'); // 表示レイアウト (grid or list)
   const [animationKey, setAnimationKey] = useState(0); // アニメーション再実行用
   const [worksTags, setWorksTags] = useState([]); // タグ設定
+  const [manifest, setManifest] = useState({}); // 画像マニフェスト
 
   const { setCursor, resetCursor } = useCursor();
 
@@ -18,12 +28,14 @@ const WorksPage = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [worksData, tagsData] = await Promise.all([
+        const [worksData, tagsData, imageManifest] = await Promise.all([
           fetchWorks(),
-          fetchTags()
+          fetchTags(),
+          fetchImageManifest()
         ]);
         setWorks(worksData);
         setWorksTags(tagsData.worksTags || []);
+        setManifest(imageManifest);
       } catch (error) {
         console.error('Failed to load data:', error);
       } finally {
@@ -146,11 +158,11 @@ const WorksPage = () => {
                   className="work-link"
                 >
                   <div className="work-thumbnail">
-                    <div 
-                      className="work-image" 
-                      style={{ 
-                        backgroundImage: work.thumbnail 
-                          ? `url(${import.meta.env.BASE_URL}${work.thumbnail.replace(/^\.\//, '')})` 
+                    <div
+                      className="work-image"
+                      style={{
+                        backgroundImage: resolveThumbUrl(work, manifest)
+                          ? `url(${resolveThumbUrl(work, manifest)})`
                           : 'linear-gradient(-45deg, var(--accent), var(--accent-secondary))'
                       }}
                     />

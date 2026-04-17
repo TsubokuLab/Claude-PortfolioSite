@@ -37,7 +37,8 @@
       "images/works/VERTEX/VERTEX_Training_01.jpg"
     ],
     "exhibition": "VRChat",
-    "awards": []
+    "awards": [],
+    "youtube": "0BXC4zWWILQ"
   },
   {
     "id": "exhibition-picture",
@@ -51,7 +52,8 @@
       "images/works/ExhibitionPicture/ExhibitionPicture_01.jpg"
     ],
     "exhibition": "魔法の美術館",
-    "awards": []
+    "awards": [],
+    "youtube": "VgiKP-v1eAY"
   },
   {
     "id": "fantasy-theater",
@@ -65,7 +67,8 @@
       "images/works/FantasyTheater/FantasyTheater_02.png"
     ],
     "exhibition": "魔法の美術館",
-    "awards": []
+    "awards": [],
+    "youtube": "2BZWDB1Wybg"
   },
   {
     "id": "void-sailing",
@@ -82,7 +85,8 @@
       "images/works/VoidSailing/VoidSailing_04.png"
     ],
     "exhibition": "",
-    "awards": []
+    "awards": [],
+    "youtube": "WpcsiyDJCCA"
   },
   {
     "id": "fantasy-diorama",
@@ -98,7 +102,8 @@
       "images/works/FantasyDiorama/FantasyDiorama_03.jpg"
     ],
     "exhibition": "魔法の美術館",
-    "awards": ["総務省 異能vation ジェネレーションアワード2018 大きく広がる分野 最優秀賞"]
+    "awards": ["総務省 異能vation ジェネレーションアワード2018 大きく広がる分野 最優秀賞"],
+    "youtube": "37b7BvevVHg"
   },
   {
     "id": "during-the-night",
@@ -112,7 +117,8 @@
       "images/banners/during_the_night_thumb.png"
     ],
     "exhibition": "六本木アートナイト",
-    "awards": []
+    "awards": [],
+    "youtube": "jF-yFJL_OvI"
   },
   {
     "id": "invisible-sculpture",
@@ -130,7 +136,8 @@
       "VRクリエイティブアワード2017 審査員特別賞",
       "Mashup Awards 2017 Interactive Design部門 優勝",
       "アジアデジタルアートアワード2017 インタラクティブアート部門 入賞"
-    ]
+    ],
+    "youtube": "kZ3skQQuiio"
   },
   {
     "id": "achromatic-world",
@@ -144,7 +151,8 @@
       "images/banners/achromatic_banner.jpg"
     ],
     "exhibition": "茨城県北芸術祭",
-    "awards": ["Mashup Awards 2017 Unity賞"]
+    "awards": ["Mashup Awards 2017 Unity賞"],
+    "youtube": "b1KrNsZEFic"
   },
   {
     "id": "delta-glass",
@@ -158,7 +166,8 @@
       "images/banners/deltaglass_topics_bg.png"
     ],
     "exhibition": "GUGEN2016",
-    "awards": []
+    "awards": [],
+    "youtube": "-iuGVRLfVMs"
   },
   {
     "id": "happy-pain",
@@ -177,7 +186,8 @@
       "images/works/HappyPain/HappyPain_07.png"
     ],
     "exhibition": "Hack Day 2016",
-    "awards": []
+    "awards": [],
+    "youtube": "5D7t_ZMKlqU"
   },
   {
     "id": "tsukumogami",
@@ -195,7 +205,8 @@
       "images/works/Tsukumogami/Tsukumogami03.png"
     ],
     "exhibition": "魔法の美術館",
-    "awards": []
+    "awards": [],
+    "youtube": "a3aPQhmcHTE"
   },
   {
     "id": "vertexceed",
@@ -210,7 +221,8 @@
       "images/works/Vertexceed/vertexceed_02.png"
     ],
     "exhibition": "魔法の美術館",
-    "awards": []
+    "awards": [],
+    "youtube": "8BNKmfBZFEY"
   },
   {
     "id": "miraino-piano",
@@ -224,7 +236,8 @@
       "images/banners/mirai_no_piano.png"
     ],
     "exhibition": "VISUAL SONIC / 金沢市民芸術村",
-    "awards": []
+    "awards": [],
+    "youtube": "a-3r3LKW_Sw"
   },
   {
     "id": "nanairo-komichi",
@@ -239,7 +252,8 @@
       "images/works/NanairoKomichi/nanairo_02.jpg"
     ],
     "exhibition": "VISUAL SONIC / 金沢市民芸術村",
-    "awards": []
+    "awards": [],
+    "youtube": "bhh49HVHWOA"
   },
   {
     "id": "interactive-funeral",
@@ -262,7 +276,8 @@
       "images/works/InteractiveFuneral/table.png"
     ],
     "exhibition": "Gugen2013",
-    "awards": ["Yahoo! JAPAN インターネットクリエイティブアワード2014 スマートデバイスイノベーション部門 ゴールド賞"]
+    "awards": ["Yahoo! JAPAN インターネットクリエイティブアワード2014 スマートデバイスイノベーション部門 ゴールド賞"],
+    "youtube": "QYOD_zfRwCs"
   },
   {
     "id": "affinbeat-vj",
@@ -281,7 +296,8 @@
       "images/works/AffinBeatVJ/AffinBeatVJ_sample05.jpg"
     ],
     "exhibition": "クラブイベント",
-    "awards": []
+    "awards": [],
+    "youtube": "3E8MPlrhrZU"
   },
   {
     "id": "affinbeat-box",
@@ -319,7 +335,8 @@
       "images/works/ishidatami/ishidatami04.jpg"
     ],
     "exhibition": "かなざわ燈涼会",
-    "awards": []
+    "awards": [],
+    "youtube": "uOKt8ioa614"
   },
   {
     "id": "shadow-touch",
@@ -336,6 +353,7 @@
       "images/works/ShadowTouch/ShadowTouch_04.jpg"
     ],
     "exhibition": "第14回文化庁メディア芸術祭",
-    "awards": ["第16回学生CGコンテスト インタラクティブ部門 優秀賞"]
+    "awards": ["第16回学生CGコンテスト インタラクティブ部門 優秀賞"],
+    "youtube": "3itekp9YaAs"
   }
 ]
