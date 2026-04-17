@@ -1,5 +1,26 @@
 [
   {
+    "id": "1776417705041",
+    "title": "Volkswagen DRIVE CARnival",
+    "description": "フォルクスワーゲン様の公式ブラウザゲームの開発を担当しました。\n全9車種、6ステージ、インストール不要でスマホで遊べます。\n\n=====\n\nリアルとファンタジーが交差する世界で、​気分が上がる様々なコースを走りまくれる。​そんなフォルクスワーゲン公式ゲームが誕生しました。​実車と同じ9モデルのラインアップから、あなたのパートナーをチョイス。​瞬時の判断力や指先のドライビング技術を駆使して走れば、​レースマシンと化したVW車が躍動します。​さぁ、今すぐ走り出そう。\nhttps://www.volkswagen.co.jp/ja/magazine/volkswagen_carnival.html",
+    "category": "clientworks",
+    "year": 2025,
+    "thumbnail": "",
+    "images": [],
+    "awards": [],
+    "collaborators": [
+      "車両3Dモデリング ミスミ様(@sankaku_342)"
+    ],
+    "technologies": [
+      "Unity",
+      "WebGL",
+      "C#"
+    ],
+    "venue": "フォルクスワーゲン公式サイト",
+    "duration": "2025年12月26日-",
+    "materials": "Unity, WebGL"
+  },
+  {
     "id": "vertex",
     "title": "VERTEX: VRCBattleRoyale",
     "category": "VR",
