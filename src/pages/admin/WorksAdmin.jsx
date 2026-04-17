@@ -309,7 +309,8 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
     { value: 'VR', label: 'VR/AR' },
     { value: 'device', label: 'デバイス' },
     { value: 'software', label: 'ソフトウェア' },
-    { value: 'conceptual', label: 'コンセプチュアル' }
+    { value: 'conceptual', label: 'コンセプチュアル' },
+    { value: 'clientworks', label: 'クライアントワーク' }
   ];
 
   const handleChange = (field, value) => {

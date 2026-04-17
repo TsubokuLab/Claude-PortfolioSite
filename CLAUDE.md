@@ -153,7 +153,7 @@ npm run deploy:github
 {
   "id": "string",
   "title": "string",
-  "category": "VR|mediaart|performance|device|software|interactive|installation|conceptual",
+  "category": "VR|mediaart|performance|device|software|interactive|installation|conceptual|clientworks",
   "year": 2024,
   "description": "string",
   "technology": ["Unity", "C#"],

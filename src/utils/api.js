@@ -22,7 +22,8 @@ export const fetchTags = async () => {
         { id: 'software', label: 'ソフトウェア', color: '#43e97b' },
         { id: 'interactive', label: 'インタラクティブ', color: '#fa709a' },
         { id: 'installation', label: 'インスタレーション', color: '#fee140' },
-        { id: 'conceptual', label: 'コンセプチュアル', color: '#a8edea' }
+        { id: 'conceptual', label: 'コンセプチュアル', color: '#a8edea' },
+        { id: 'clientworks', label: 'クライアントワーク', color: '#eb4d4b' }
       ],
       activityTags: [
         { id: 'exhibition', label: '展示', color: '#33cc66' },
