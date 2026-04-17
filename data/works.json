@@ -13,12 +13,12 @@
     "collaborators": [
       "車両3Dモデリング ミスミ様(@sankaku_342)"
     ],
-    "technologies": [
+    "technology": [
       "Unity",
       "WebGL",
       "C#"
     ],
-    "venue": "フォルクスワーゲン公式サイト",
+    "exhibition": "フォルクスワーゲン公式サイト",
     "duration": "2025年12月26日-",
     "materials": "Unity, WebGL"
   },
