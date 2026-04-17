@@ -241,7 +241,6 @@ const WorkDetailPage = () => {
             <ScrollAnimation type="fadeUp" delay={0.2}>
               {work.duration && (
                 <div className="work-detail-duration-block">
-                  <span className="work-detail-duration-label">期間</span>
                   <span className="work-detail-duration-value">{work.duration}</span>
                 </div>
               )}

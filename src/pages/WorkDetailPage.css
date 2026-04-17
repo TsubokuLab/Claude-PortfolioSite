@@ -227,29 +227,13 @@
   background-color: var(--accent);
 }
 
-/* 期間ブロック */
+/* 期間 */
 .work-detail-duration-block {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  padding: 0.6rem 1rem;
-  background-color: rgba(var(--text-secondary-rgb), 0.06);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-}
-
-.work-detail-duration-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
+  margin-bottom: 2rem;
 }
 
 .work-detail-duration-value {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
 }
 
@@ -301,6 +285,24 @@
 
 .award-item:last-child {
   border-bottom: none;
+}
+
+/* 素材・コラボレーター */
+.work-detail-materials,
+.work-detail-collaborators {
+  margin-bottom: 2rem;
+}
+
+.collaborators-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.collaborator-item {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
 }
 
 /* リンク */
