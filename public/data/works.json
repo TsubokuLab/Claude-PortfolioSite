@@ -1,12 +1,14 @@
 [
-  {
+    {
     "id": "1776417705041",
     "title": "Volkswagen DRIVE CARnival",
     "description": "フォルクスワーゲン様の公式ブラウザゲームの開発を担当しました。全9車種、6ステージ、インストール不要でスマホで遊べます。=====リアルとファンタジーが交差する世界で、気分が上がる様々なコースを走りまくれる。そんなフォルクスワーゲン公式ゲームが誕生しました。実車と同じ9モデルのラインアップから、あなたのパートナーをチョイス。瞬時の判断力や指先のドライビング技術を駆使して走れば、レースマシンと化したVW車が躍動します。さぁ、今すぐ走り出そう。https://www.volkswagen.co.jp/ja/magazine/volkswagen_carnival.html",
     "category": "clientworks",
     "year": 2025,
-    "thumbnail": "",
-    "images": [],
+    "thumbnail": "./images/works/volkswagen/16_9_kv_pc-10_thumb.jpg",
+    "images": [
+      "./images/works/volkswagen/16_9_contet_1_2.png"
+    ],
     "awards": [],
     "collaborators": [
       "車両3Dモデリング ミスミ様(@sankaku_342)"
