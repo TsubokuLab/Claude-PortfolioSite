@@ -144,9 +144,6 @@ const WorkDetailPage = () => {
               {work.exhibition && (
                 <span className="work-detail-exhibition">{work.exhibition}</span>
               )}
-              {work.duration && (
-                <span className="work-detail-duration">{work.duration}</span>
-              )}
             </div>
           </ScrollAnimation>
         </div>
@@ -242,6 +239,13 @@ const WorkDetailPage = () => {
           
           <div className="work-detail-info">
             <ScrollAnimation type="fadeUp" delay={0.2}>
+              {work.duration && (
+                <div className="work-detail-duration-block">
+                  <span className="work-detail-duration-label">期間</span>
+                  <span className="work-detail-duration-value">{work.duration}</span>
+                </div>
+              )}
+
               <div className="work-detail-description">
                 <h2>概要</h2>
                 <p>{work.description}</p>
@@ -287,6 +291,27 @@ const WorkDetailPage = () => {
                     {work.awards.map((award, index) => (
                       <li key={index} className="award-item">
                         {award}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {work.links && work.links.length > 0 && (
+                <div className="work-detail-links">
+                  <h2>リンク</h2>
+                  <ul className="links-list">
+                    {work.links.map((link, index) => (
+                      <li key={index} className="link-item">
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onMouseEnter={() => setCursor('hover')}
+                          onMouseLeave={resetCursor}
+                        >
+                          {link.label || link.url}
+                        </a>
                       </li>
                     ))}
                   </ul>

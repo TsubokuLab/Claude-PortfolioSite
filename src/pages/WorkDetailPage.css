@@ -227,6 +227,32 @@
   background-color: var(--accent);
 }
 
+/* 期間ブロック */
+.work-detail-duration-block {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 1rem;
+  background-color: rgba(var(--text-secondary-rgb), 0.06);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.work-detail-duration-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.work-detail-duration-value {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
 .work-detail-description {
   margin-bottom: 2rem;
 }
@@ -234,6 +260,7 @@
 .work-detail-description p {
   color: var(--text);
   line-height: 1.8;
+  white-space: pre-line;
 }
 
 .work-detail-technology {
@@ -274,6 +301,38 @@
 
 .award-item:last-child {
   border-bottom: none;
+}
+
+/* リンク */
+.work-detail-links {
+  margin-bottom: 2rem;
+}
+
+.links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link-item a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent);
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+  word-break: break-all;
+}
+
+.link-item a::before {
+  content: '↗';
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.link-item a:hover {
+  opacity: 0.7;
 }
 
 /* 関連作品 */

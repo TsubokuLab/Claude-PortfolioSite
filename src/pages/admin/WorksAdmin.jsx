@@ -36,7 +36,8 @@ const WorksAdmin = () => {
       technology: [],
       exhibition: '',
       duration: '',
-      materials: ''
+      materials: '',
+      links: []
     };
     setEditingWork(newWork);
   };
@@ -145,7 +146,8 @@ const WorksAdmin = () => {
             technology: work.technology || [],
             exhibition: work.exhibition || '',
             duration: work.duration || '',
-            materials: work.materials || ''
+            materials: work.materials || '',
+            links: work.links || []
           };
         });
         
@@ -322,6 +324,27 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
     setFormData(prev => ({ ...prev, [field]: array }));
   };
 
+  // links用: 各行を "ラベル|URL" 形式でパース
+  const handleLinksChange = (value) => {
+    const links = value.split('\n').map(line => {
+      const separatorIndex = line.indexOf('|');
+      if (separatorIndex === -1) {
+        return { label: '', url: line.trim() };
+      }
+      return {
+        label: line.substring(0, separatorIndex).trim(),
+        url: line.substring(separatorIndex + 1).trim()
+      };
+    });
+    setFormData(prev => ({ ...prev, links }));
+  };
+
+  // links表示用: [{label, url}] → "ラベル|URL" 形式に変換
+  const linksToText = (links) => {
+    if (!links || links.length === 0) return '';
+    return links.map(link => link.label ? `${link.label}|${link.url}` : link.url).join('\n');
+  };
+
   const handleSubmit = (e) => {
 
     // 送信前に空行などの削除を行う
@@ -329,6 +352,7 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
     formData.awards = (formData.awards || []).filter(item => item.trim() !== '');
     formData.collaborators = (formData.collaborators || []).filter(item => item.trim() !== '');
     formData.technology = (formData.technology || []).filter(item => item.trim() !== '');
+    formData.links = (formData.links || []).filter(item => item.url && item.url.trim() !== '');
     
     e.preventDefault();
     if (!formData.title.trim()) {
@@ -494,6 +518,17 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
               onChange={(e) => handleArrayChange('images', e.target.value)}
               placeholder="./images/works/example1.jpg&#10;./images/works/example2.jpg&#10;./images/works/example3.jpg&#10;./images/works/example4.jpg"
               rows="5"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>リンク（1行1項目 / 形式: ラベル|URL）</label>
+            <textarea
+              className="multi-line-input"
+              value={linksToText(formData.links)}
+              onChange={(e) => handleLinksChange(e.target.value)}
+              placeholder="公式サイト|https://example.com&#10;ワールドURL|https://vrchat.com/..."
+              rows="4"
             />
           </div>
 
