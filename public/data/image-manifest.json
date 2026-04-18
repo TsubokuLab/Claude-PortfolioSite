@@ -72,6 +72,12 @@
     "images/works/shadow-touch/ShadowTouch_03.png",
     "images/works/shadow-touch/ShadowTouch_04.jpg"
   ],
+  "test": [
+    "images/works/test/Tsukumogami01.png",
+    "images/works/test/Tsukumogami02.png",
+    "images/works/test/Tsukumogami03.png",
+    "images/works/test/Tsukumogami_thumb.png"
+  ],
   "tsukumogami": [
     "images/works/tsukumogami/Tsukumogami01.png",
     "images/works/tsukumogami/Tsukumogami02.png",

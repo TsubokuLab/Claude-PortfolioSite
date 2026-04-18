@@ -24,7 +24,7 @@ const WorksAdmin = () => {
   // 新規作品の雛形
   const createNewWork = () => {
     const newWork = {
-      id: Date.now().toString(),
+      id: '',
       title: '',
       description: '',
       category: 'interactive',
@@ -303,6 +303,21 @@ const WorksAdmin = () => {
 // 作品編集モーダル
 const WorkEditModal = ({ work, onSave, onCancel }) => {
   const [formData, setFormData] = useState(work);
+  const [youtubePreview, setYoutubePreview] = useState(null);
+
+  // YouTube ID が変わったらプレビューを取得
+  useEffect(() => {
+    const id = formData.youtube;
+    if (!id || !/^[\w-]{11}$/.test(id)) {
+      setYoutubePreview(null);
+      return;
+    }
+    setYoutubePreview({ loading: true });
+    fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`)
+      .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+      .then(data => setYoutubePreview({ title: data.title, thumbnail: data.thumbnail_url }))
+      .catch(() => setYoutubePreview({ error: true }));
+  }, [formData.youtube]);
 
   // カテゴリーオプション
   const categoryOptions = [
@@ -316,6 +331,24 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
     { value: 'conceptual', label: 'コンセプチュアル' },
     { value: 'clientworks', label: 'クライアントワーク' }
   ];
+
+  // YouTube URL または ID から Video ID を抽出
+  const parseYouTubeId = (input) => {
+    const str = input.trim();
+    // 既に ID のみ（英数字・ハイフン・アンダースコア 11文字）
+    if (/^[\w-]{11}$/.test(str)) return str;
+    try {
+      const url = new URL(str);
+      // https://youtu.be/VIDEO_ID
+      if (url.hostname === 'youtu.be') return url.pathname.slice(1).split('?')[0];
+      // https://www.youtube.com/watch?v=VIDEO_ID
+      if (url.searchParams.get('v')) return url.searchParams.get('v');
+      // https://www.youtube.com/embed/VIDEO_ID
+      const embedMatch = url.pathname.match(/\/embed\/([\w-]+)/);
+      if (embedMatch) return embedMatch[1];
+    } catch (_) {}
+    return str; // パース失敗時はそのまま
+  };
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -357,6 +390,10 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
     formData.links = (formData.links || []).filter(item => item.url && item.url.trim() !== '');
     
     e.preventDefault();
+    if (!formData.id.trim()) {
+      alert('Work ID は必須です');
+      return;
+    }
     if (!formData.title.trim()) {
       alert('タイトルは必須です');
       return;
@@ -446,13 +483,39 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
             </div>
 
             <div className="form-group">
-              <label>YouTube Video ID</label>
+              <label>YouTube</label>
               <input
                 type="text"
                 value={formData.youtube || ''}
-                onChange={(e) => handleChange('youtube', e.target.value)}
-                placeholder="例: dQw4w9WgXcQ"
+                onChange={(e) => handleChange('youtube', parseYouTubeId(e.target.value))}
+                placeholder="Video ID または URL をそのまま貼り付け"
               />
+              {youtubePreview && (
+                <div className="youtube-preview">
+                  {youtubePreview.loading && (
+                    <p className="youtube-preview-loading">読み込み中...</p>
+                  )}
+                  {youtubePreview.error && (
+                    <p className="youtube-preview-error">⚠ 動画が見つかりません。ID を確認してください。</p>
+                  )}
+                  {youtubePreview.title && (
+                    <div className="youtube-preview-content">
+                      <img src={youtubePreview.thumbnail} alt={youtubePreview.title} />
+                      <div className="youtube-preview-info">
+                        <p className="youtube-preview-title">{youtubePreview.title}</p>
+                        <a
+                          href={`https://www.youtube.com/watch?v=${formData.youtube}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="youtube-preview-link"
+                        >
+                          YouTubeで確認 ↗
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 
