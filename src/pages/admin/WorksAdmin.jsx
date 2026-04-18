@@ -390,6 +390,18 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
         </div>
         
         <form onSubmit={handleSubmit} onKeyDown={handleFormKeyDown} className="work-form">
+          <div className="form-group">
+            <label>Work ID *</label>
+            <input
+              type="text"
+              value={formData.id}
+              onChange={(e) => handleChange('id', e.target.value.replace(/\s+/g, '-'))}
+              placeholder="my-work-2024"
+              required
+            />
+            <p className="form-hint">URLと画像フォルダ名に使用されます（例: <code>public/images/works/<strong>{formData.id || 'my-work-2024'}</strong>/</code>）</p>
+          </div>
+
           <div className="form-grid">
             <div className="form-group">
               <label>タイトル *</label>

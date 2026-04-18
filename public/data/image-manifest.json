@@ -1,0 +1,101 @@
+{
+  "AffinBeatBox": [
+    "images/works/AffinBeatBox/AffinBeatBox.png",
+    "images/works/AffinBeatBox/AffinBeatBox_01.jpg",
+    "images/works/AffinBeatBox/AffinBeatBox_02.jpg",
+    "images/works/AffinBeatBox/AffinBeatBox_03.jpg",
+    "images/works/AffinBeatBox/AffinBeatBox_04.jpg",
+    "images/works/AffinBeatBox/AffinBeatBox_banner.png"
+  ],
+  "AffinBeatVJ": [
+    "images/works/AffinBeatVJ/AffinBeatVJ_1440x960.jpg",
+    "images/works/AffinBeatVJ/AffinBeatVJ_icon.png",
+    "images/works/AffinBeatVJ/AffinBeatVJ_sample01.jpg",
+    "images/works/AffinBeatVJ/AffinBeatVJ_sample02.jpg",
+    "images/works/AffinBeatVJ/AffinBeatVJ_sample03.jpg",
+    "images/works/AffinBeatVJ/AffinBeatVJ_sample04.jpg",
+    "images/works/AffinBeatVJ/AffinBeatVJ_sample05.jpg"
+  ],
+  "ExhibitionPicture": [
+    "images/works/ExhibitionPicture/ExhibitionPicture_01.jpg"
+  ],
+  "FantasyDiorama": [
+    "images/works/FantasyDiorama/FantasyDiorama_01.png",
+    "images/works/FantasyDiorama/FantasyDiorama_02.png",
+    "images/works/FantasyDiorama/FantasyDiorama_03.jpg",
+    "images/works/FantasyDiorama/FantasyDiorama_thumb.png"
+  ],
+  "FantasyTheater": [
+    "images/works/FantasyTheater/FantasyTheater_01.png",
+    "images/works/FantasyTheater/FantasyTheater_02.png",
+    "images/works/FantasyTheater/FantasyTheater_banner.png"
+  ],
+  "HappyPain": [
+    "images/works/HappyPain/HappyPain_01.jpg",
+    "images/works/HappyPain/HappyPain_02.jpg",
+    "images/works/HappyPain/HappyPain_03.jpg",
+    "images/works/HappyPain/HappyPain_04.jpg",
+    "images/works/HappyPain/HappyPain_05.png",
+    "images/works/HappyPain/HappyPain_06.png",
+    "images/works/HappyPain/HappyPain_07.png"
+  ],
+  "InteractiveFuneral": [
+    "images/works/InteractiveFuneral/LeapShoukou.png",
+    "images/works/InteractiveFuneral/app.png",
+    "images/works/InteractiveFuneral/chin_machine.png",
+    "images/works/InteractiveFuneral/funeral_banner.png",
+    "images/works/InteractiveFuneral/iPortrait.png",
+    "images/works/InteractiveFuneral/ilust.png",
+    "images/works/InteractiveFuneral/interactive-funeral.jpg",
+    "images/works/InteractiveFuneral/making.png",
+    "images/works/InteractiveFuneral/node.png",
+    "images/works/InteractiveFuneral/poku_machine.png",
+    "images/works/InteractiveFuneral/table.png"
+  ],
+  "InvisibleSculpture": [
+    "images/works/InvisibleSculpture/InvisibleSculpture_thumb.png"
+  ],
+  "ishidatami": [
+    "images/works/ishidatami/higashi.jpg",
+    "images/works/ishidatami/ishidatami01.jpg",
+    "images/works/ishidatami/ishidatami02.jpg",
+    "images/works/ishidatami/ishidatami03.jpg",
+    "images/works/ishidatami/ishidatami04.jpg"
+  ],
+  "NanairoKomichi": [
+    "images/works/NanairoKomichi/nanairo_01.jpg",
+    "images/works/NanairoKomichi/nanairo_02.jpg"
+  ],
+  "ShadowTouch": [
+    "images/works/ShadowTouch/ShadowTouch_01.jpg",
+    "images/works/ShadowTouch/ShadowTouch_02.png",
+    "images/works/ShadowTouch/ShadowTouch_03.png",
+    "images/works/ShadowTouch/ShadowTouch_04.jpg"
+  ],
+  "Tsukumogami": [
+    "images/works/Tsukumogami/Tsukumogami01.png",
+    "images/works/Tsukumogami/Tsukumogami02.png",
+    "images/works/Tsukumogami/Tsukumogami03.png",
+    "images/works/Tsukumogami/Tsukumogami_thumb.png"
+  ],
+  "VERTEX": [
+    "images/works/VERTEX/VERTEX_01.png",
+    "images/works/VERTEX/VERTEX_Training_01.jpg",
+    "images/works/VERTEX/VERTEX_web_thumb.jpg"
+  ],
+  "Vertexceed": [
+    "images/works/Vertexceed/Vertexceed_01.jpg",
+    "images/works/Vertexceed/vertexceed_02.png"
+  ],
+  "VoidSailing": [
+    "images/works/VoidSailing/VoidSailing_01.png",
+    "images/works/VoidSailing/VoidSailing_02.png",
+    "images/works/VoidSailing/VoidSailing_03.png",
+    "images/works/VoidSailing/VoidSailing_04.png",
+    "images/works/VoidSailing/VoidSailing_thumb.png"
+  ],
+  "volkswagen": [
+    "images/works/volkswagen/16_9_contet_1_2.png",
+    "images/works/volkswagen/16_9_kv_pc-10_thumb.jpg"
+  ]
+}
