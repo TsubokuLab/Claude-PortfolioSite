@@ -60,14 +60,15 @@ export const getActivityTagColor = async (tagId) => {
   }
 };
 
-// 作品データを取得する関数
+// 作品データを取得する関数（公開年の新しい順にソート、同年内はJSONの並び順を維持）
 export const fetchWorks = async () => {
   try {
     const response = await fetch(`${import.meta.env.BASE_URL}data/works.json`);
     if (!response.ok) {
       throw new Error(`Failed to fetch works: ${response.status}`);
     }
-    return await response.json();
+    const data = await response.json();
+    return data.sort((a, b) => b.year - a.year);
   } catch (error) {
     console.error('Error fetching works:', error);
     return [];
