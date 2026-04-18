@@ -26,6 +26,121 @@
     ]
   },
   {
+    "id": "pico-carnival",
+    "title": "PICO Carnival VRChatイベントワールド",
+    "category": "clientworks",
+    "year": 2025,
+    "description": "PICOの新商品「PICO Motion Tracker Waist Version」発売に合わせて開催されたVRChatイベント「PICO Carnival」のワールド制作とステージオペレーションを担当。\nPICO XR Japan公式イベントとして、製品の魅力を体感できるインタラクティブなバーチャル空間を設計・実装した。",
+    "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
+    "exhibition": "PICO Carnival",
+    "duration": "2025年4月",
+    "awards": [],
+    "youtube": "5ERUT-eqqrA",
+    "links": []
+  },
+  {
+    "id": "nhk-showa-100-experience",
+    "title": "触覚と香りで体感する3次元コンテンツ「昭和100年商店街」",
+    "category": "clientworks",
+    "year": 2025,
+    "description": "NHK放送技術研究所・砧ラボが制作した「触覚と香りで体感する3次元コンテンツ」の開発に協力。\n昭和100年をテーマにした商店街を3次元空間で体感できるコンテンツで、触覚・嗅覚フィードバックを組み合わせた没入体験を実現。\n最先端表現技術推進協会「第9回羽倉賞」受賞作品。",
+    "technology": ["Unity", "C#", "触覚フィードバック", "VR"],
+    "exhibition": "NHK放送技術研究所",
+    "awards": ["最先端表現技術推進協会 第9回羽倉賞"],
+    "youtube": "",
+    "links": [
+      { "label": "受賞記事", "url": "https://uandc.forum8.co.jp/magazine/uc/article/uc153-saisentan" }
+    ]
+  },
+  {
+    "id": "sanrio-pochacco-vfes",
+    "title": "ポチャッコのぱくぱく大作戦",
+    "category": "clientworks",
+    "year": 2024,
+    "description": "サンリオVfes 2024にて公開した、VRChat上のPVPシューティングゲームワールド。\n企画・ワールド制作・プログラミングを全て担当し、Quest対応ワールドとして実装。\nイベント期間中（2024年2月19日〜3月17日）サンリオVfes公式サイトに掲載・公開された。",
+    "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
+    "exhibition": "サンリオVfes 2024",
+    "awards": [],
+    "youtube": "H_wzNtaDqBg",
+    "links": []
+  },
+  {
+    "id": "sanrio-kitty-popcorn-vfes",
+    "title": "ハローキティのポンポンパック2",
+    "category": "clientworks",
+    "year": 2024,
+    "description": "サンリオVfes 2024にて公開した、VRChat上のミニゲームワールド。\nキティちゃんのポップコーンマシーンをモチーフにしたミニゲームを企画・3Dモデリング・ギミック開発まで一貫して担当した。",
+    "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
+    "exhibition": "サンリオVfes 2024",
+    "awards": [],
+    "youtube": "T44u_ME-5BM",
+    "links": []
+  },
+  {
+    "id": "voyage-virtual-fashion",
+    "title": "Virtual Fashion Collection \"Voyage\"",
+    "category": "clientworks",
+    "year": 2022,
+    "description": "VRChat上で開催されるバーチャルファッションショー「Voyage」のワールド制作・演出・ステージオペレーションを担当。\n2022 Winter・2023 SpringSummer・2023 Winter・2024 Summerの全4シーズンに渡り参加。\nリアルタイムレンダリングならではの没入感ある映像演出と、スムーズなステージ進行を実現した。",
+    "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
+    "exhibition": "Virtual Fashion Collection Voyage",
+    "awards": [],
+    "youtube": "iIXig7xn_2Y",
+    "links": [
+      { "label": "2023 SpringSummer アーカイブ", "url": "https://www.youtube.com/watch?v=-Dn2hKsBpv4" },
+      { "label": "2023 Winter アーカイブ", "url": "https://www.youtube.com/watch?v=dQUpnPTsX_8" },
+      { "label": "2022 Winter アーカイブ", "url": "https://www.youtube.com/watch?v=_sX29wPTtDs" }
+    ]
+  },
+  {
+    "id": "kodansha-pk-challenge",
+    "title": "講談社「Where Impossible Happens展」PK体験アトラクション",
+    "category": "clientworks",
+    "year": 2019,
+    "description": "講談社主催「Where Impossible Happens展」にて展示されたPK体験アトラクションの開発を担当。\n来場者が漫画の主人公になり、サッカー試合のPKシーンに挑戦できるインタラクティブ体験。\nゲーム終了後は自分が主人公になった漫画が表示され、QRコードで持ち帰ることができる。Microsoft Kinect V2とUnityを用いて開発した。",
+    "technology": ["Unity", "Kinect V2", "C#"],
+    "exhibition": "Where Impossible Happens展 / 講談社",
+    "awards": [],
+    "youtube": "Jm2qWU2rv0E",
+    "links": []
+  },
+  {
+    "id": "moominvalley-winter-2019",
+    "title": "ムーミンバレーパーク「WINTER WONDERLAND」イルミネーション・アトラクション",
+    "category": "clientworks",
+    "year": 2019,
+    "description": "ムーミンバレーパーク初の冬シーズン「WINTER WONDERLAND」のインタラクティブアトラクション制作を担当。\n「ムーミン谷の冬」のストーリーに沿った夜の散歩体験として、来場者が参加できるデジタル演出を設計・実装した。",
+    "technology": ["Unity", "C#", "プロジェクションマッピング", "センサー技術"],
+    "exhibition": "ムーミンバレーパーク WINTER WONDERLAND 2019",
+    "awards": [],
+    "youtube": "fgFIR8TXvDE",
+    "links": []
+  },
+  {
+    "id": "kabuki-hikari",
+    "title": "カブキノヒカリ展",
+    "category": "clientworks",
+    "year": 2019,
+    "description": "歌舞伎の照明芸術をテーマにしたデジタルアート展「カブキノヒカリ展」のインタラクティブコンテンツ制作を担当。\n2019年3月9日〜31日、渋谷MODI内HMV museumにて開催。",
+    "technology": ["Unity", "C#", "プロジェクションマッピング"],
+    "exhibition": "カブキノヒカリ展 / HMV museum（渋谷MODI）",
+    "awards": [],
+    "youtube": "vgYMGowBHAU",
+    "links": []
+  },
+  {
+    "id": "king-of-prism-show",
+    "title": "体感プリズムショー『KING OF PRISM -PRIDE the HERO-』",
+    "category": "clientworks",
+    "year": 2017,
+    "description": "映画「KING OF PRISM -PRIDE the HERO-」公開記念の体感型インスタレーション制作を担当。\nスクリーン前でプリズムジャンプをすると実際にエフェクトや映像が発動する参加型コンテンツ。\n新宿バルト9 カフェ・オアゼにて実施した。",
+    "technology": ["Unity", "C#", "モーションセンサー", "プロジェクションマッピング"],
+    "exhibition": "KING OF PRISM -PRIDE the HERO- 公開記念 / 新宿バルト9",
+    "awards": [],
+    "youtube": "WekYR-Dq_mY",
+    "links": []
+  },
+  {
     "id": "vertex",
     "title": "VERTEX: VRCBattleRoyale",
     "category": "VR",
