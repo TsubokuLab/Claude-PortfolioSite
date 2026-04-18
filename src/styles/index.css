@@ -72,11 +72,6 @@ p {
   margin-bottom: 1rem;
 }
 
-/* カード・コンテナ内の最後のpはマージン不要 */
-p:last-child {
-  margin-bottom: 0;
-}
-
 img {
   max-width: 100%;
   height: auto;

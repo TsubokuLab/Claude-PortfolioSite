@@ -270,24 +270,33 @@
   font-size: 0.9rem;
 }
 
-.awards-list {
+/* 作品詳細の受賞リスト（ProfilePage.cssのaward-itemと競合しないようスコープ限定） */
+.work-detail-awards .awards-list {
   list-style: none;
 }
 
-.award-item {
-  padding: 0.8rem 0;
+.work-detail-awards .award-item {
+  padding: 0.75rem 0;
   border-bottom: 1px solid var(--border);
   color: var(--text);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 0.6rem;
 }
 
-.award-item::before {
-  content: '🏆';
-  margin-right: 0.5rem;
+.work-detail-awards .award-item::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 0.2em;
+  background-color: var(--accent);
+  /* 六角形（アワードっぽい形）*/
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
 }
 
-.award-item:last-child {
+.work-detail-awards .award-item:last-child {
   border-bottom: none;
 }
 
