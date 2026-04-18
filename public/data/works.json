@@ -39,8 +39,8 @@
     "title": "触覚と香りで体感する３次元コンテンツ 「体感！ 昭和100年商店街」",
     "category": "clientworks",
     "year": 2025,
-    "description": "NHK放送技術研究所が制作した触覚と香りで体感する３次元コンテンツの開発に協力しました。\n正式タイトルは「触覚と香りで体感する３次元コンテンツ　～体感！ 昭和100年商店街　砧ラボと一緒におでかけリポート～」で、キャラクター「砧ラボ」と一緒に昭和100年の商店街を巡る体験型コンテンツです。\n触覚・嗅覚フィードバックを組み合わせた没入体験を実現しました。\n最先端表現技術推進協会「第9回羽倉賞」を受賞しました。",
-    "technology": ["Unity", "C#", "触覚フィードバック", "VR"],
+    "description": "NHK放送技術研究所が制作した触覚と香りで体感する３次元コンテンツの開発に協力しました。\n正式タイトルは「触覚と香りで体感する３次元コンテンツ　～体感！ 昭和100年商店街　砧ラボと一緒におでかけリポート～」で、NHK放送技術研究所のキャラクター「砧ラボ」ちゃんと一緒に昭和100年の商店街を巡る体験型コンテンツです。\n触覚・嗅覚フィードバックを組み合わせた没入体験を実現しました。\n最先端表現技術推進協会「第9回羽倉賞」を受賞しました。",
+    "technology": ["Unity", "C#", "モーションキャプチャ", "触覚デバイス", "匂いデバイス", "空間ディスプレイ"],
     "exhibition": "NHK放送技術研究所",
     "awards": ["最先端表現技術推進協会 第9回羽倉賞"],
     "youtube": "",
@@ -54,7 +54,7 @@
     "category": "clientworks",
     "year": 2024,
     "description": "サンリオVfes 2024にて公開した、VRChat上のPVPシューティングゲームワールドです。\n企画・ワールド制作・プログラミングをすべて担当し、Quest対応ワールドとして実装しました。\nイベント期間中（2024年2月19日〜3月17日）、サンリオVfes公式サイトにて掲載・公開されました。",
-    "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
+    "technology": ["Unity", "VRChat SDK", "Udon", "C#", "VR"],
     "exhibition": "サンリオVfes 2024",
     "awards": [],
     "youtube": "H_wzNtaDqBg",
@@ -66,7 +66,7 @@
     "category": "clientworks",
     "year": 2024,
     "description": "サンリオVfes 2024にて公開した、VRChat上のミニゲームマシンです。\nキティちゃんのポップコーンマシーンをモチーフにしたミニゲームの3Dモデリング・ギミック開発を担当しました。",
-    "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
+    "technology": ["Unity", "VRChat SDK", "Udon", "C#", "VR"],
     "exhibition": "サンリオVfes 2024",
     "awards": [],
     "youtube": "T44u_ME-5BM",
@@ -78,7 +78,7 @@
     "category": "clientworks",
     "year": 2022,
     "description": "VRChat上で開催されるバーチャルファッションショー「Voyage」のワールド制作・演出・ステージオペレーションを担当しました。\n2022 Winter・2023 Spring/Summer・2023 Winter・2024 Summerの全4シーズンに渡って参加しました。\nランウェイモデル・カメラ・照明・VJ映像のすべてをリアルタイムで演出し、VR空間内でのバーチャルファッションショーを実現しました。",
-    "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
+    "technology": ["Unity", "VRChat SDK", "Udon", "C#", "VR"],
     "exhibition": "Virtual Fashion Collection Voyage",
     "awards": [],
     "youtube": "iIXig7xn_2Y",
@@ -95,7 +95,7 @@
     "category": "clientworks",
     "year": 2019,
     "description": "講談社主催「Where Impossible Happens展」にて展示されたPK体験アトラクションの開発を担当しました。\n来場者が漫画の主人公になり、サッカー試合のPKシーンに挑戦できるインタラクティブな体験です。\nゲーム終了後は自分が主人公になった漫画が表示され、QRコードで持ち帰ることができます。\nMicrosoft Kinect V2とUnityを用いて開発しました。",
-    "technology": ["Unity", "Kinect V2", "C#"],
+    "technology": ["Unity", "Kinect", "C#"],
     "exhibition": "Where Impossible Happens展 / 講談社",
     "awards": [],
     "youtube": "Jm2qWU2rv0E",
@@ -107,7 +107,7 @@
     "category": "clientworks",
     "year": 2019,
     "description": "ムーミンバレーパーク初の冬シーズン「WINTER WONDERLAND」のインタラクティブアトラクション制作を担当しました。\n「ムーミン谷の冬」のストーリーに沿った夜の散歩体験として、来場者が参加できるデジタル演出を設計・実装しました。",
-    "technology": ["Unity", "C#", "プロジェクションマッピング", "センサー技術"],
+    "technology": ["Unity", "C#", "プロジェクションマッピング", "LED", "Kinect", "測域センサ"],
     "exhibition": "ムーミンバレーパーク WINTER WONDERLAND 2019",
     "awards": [],
     "youtube": "fgFIR8TXvDE",
@@ -119,7 +119,7 @@
     "category": "clientworks",
     "year": 2019,
     "description": "歌舞伎の照明芸術をテーマにしたデジタルアート展「カブキノヒカリ展」のインタラクティブコンテンツ制作を担当しました。\n2019年3月9日〜31日、渋谷MODI内HMV museumにて開催されました。",
-    "technology": ["Unity", "C#", "プロジェクションマッピング"],
+    "technology": ["Unity", "C#", "プロジェクションマッピング", "Kinect", "測域センサ", "空中ディスプレイ"],
     "exhibition": "カブキノヒカリ展 / HMV museum（渋谷MODI）",
     "awards": [],
     "youtube": "vgYMGowBHAU",
@@ -131,7 +131,7 @@
     "category": "clientworks",
     "year": 2017,
     "description": "映画「KING OF PRISM -PRIDE the HERO-」公開記念の体感型インスタレーション制作を担当しました。\nスクリーン前でプリズムジャンプをすると実際にエフェクトや映像が発動する参加型コンテンツです。\n新宿バルト9 カフェ・オアゼにて実施しました。",
-    "technology": ["Unity", "C#", "モーションセンサー", "プロジェクションマッピング"],
+    "technology": ["Unity", "C#", "Kinect"],
     "exhibition": "KING OF PRISM -PRIDE the HERO- 公開記念 / 新宿バルト9",
     "awards": [],
     "youtube": "WekYR-Dq_mY",
@@ -143,7 +143,7 @@
     "category": "VR",
     "year": 2022,
     "description": "VRSNSプラットフォーム「VRChat」上で動作する個人制作のバトルロワイヤルFPSです。\n広大なフィールドで最大6チーム18人が対戦する、1試合約6分のカジュアルなバトルロワイヤルゲームを制作しました。\nインストール不要・無料でプレイできるVR本格FPS体験として設計・公開しています。",
-    "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
+    "technology": ["Unity", "VRChat SDK", "Udon", "C#", "VR"],
     "thumbnail": "images/works/vertex/VERTEX_01.png",
     "images": [
       "images/works/vertex/VERTEX_Training_01.jpg"
@@ -158,7 +158,7 @@
     "category": "mediaart",
     "year": 2022,
     "description": "一見普通の絵画ですが、前に立つと来場者自身が絵画の中に登場する参加型インタラクティブアートです。\n絵の中の人物と同じ衣装・ポーズをとったり絵の中の物に触れたりと、鑑賞者が作品の一部となって完成させる新しい絵画体験をご提供しています。\n見覚えのある名画に自分が溶け込む驚きを通じて、絵画鑑賞の魅力をお伝えする作品です。",
-    "technology": ["Unity", "Kinect", "プロジェクションマッピング"],
+    "technology": ["Unity", "C#", "Kinect"],
     "thumbnail": "images/works/exhibition-picture/ExhibitionPicture_01.jpg",
     "images": [
       "images/works/exhibition-picture/ExhibitionPicture_01.jpg"
@@ -173,7 +173,7 @@
     "category": "mediaart",
     "year": 2019,
     "description": "画面の前に立つと来場者自身が伝説上の生き物に変身して登場するインタラクティブフォトブースです。\nさまざまなキャラクターになりきりながら劇場の舞台で自由に物語を演じていただけます。\n変身した姿での記念撮影もお楽しみいただける体験型メディアアート作品です。",
-    "technology": ["OpenCV", "Unity", "カメラシステム"],
+    "technology": ["Unity", "C#", "Kinect"],
     "thumbnail": "images/works/fantasy-theater/FantasyTheater_01.png",
     "images": [
       "images/works/fantasy-theater/FantasyTheater_02.png"
@@ -188,7 +188,7 @@
     "category": "mediaart",
     "year": 2018,
     "description": "実際には水のない空間に、小さな帆船が水面に浮かんでいるように見えるインスタレーション作品です。\n人間の想像力が作り出す「虚無の水面」を、存在しない風を受けながら航海する帆船を表現しました。\nタイトルはプログラミング言語で「空の型」を意味する「void」に由来しており、現実と仮想が交差する境界を探る作品です。",
-    "technology": ["C++", "openFrameworks", "プロジェクションマッピング"],
+    "technology": ["自作CNCデバイス","C++", "openFrameworks", "プロジェクションマッピング", "赤外線カメラ", "OpenCV"],
     "thumbnail": "images/works/void-sailing/VoidSailing_01.png",
     "images": [
       "images/works/void-sailing/VoidSailing_01.png",
@@ -206,7 +206,7 @@
     "category": "mediaart",
     "year": 2017,
     "description": "おもちゃの車をテーブルの上で走らせると道や風景が出現し、空中に掲げると飛行機・ヘリコプターに変身、連結させると電車へと変化するインタラクティブインスタレーションです。\n子どもの「くるまあそび」から生まれる空想の世界をリアルタイムに可視化し、プレイヤーの想像力そのものが作品となります。",
-    "technology": ["プロジェクションマッピング", "センサー技術"],
+    "technology": ["プロジェクションマッピング", "HTC Vive", "Vive Tracker", "Lighthouse"],
     "thumbnail": "images/works/fantasy-diorama/FantasyDiorama_thumb.png",
     "images": [
       "images/works/fantasy-diorama/FantasyDiorama_01.png",
@@ -238,7 +238,7 @@
     "category": "mediaart",
     "year": 2017,
     "description": "展示物のない展示台に、確かな「存在感」だけを与えるインスタレーション作品です。\n見えない彫刻を体験者自らが行動して探し、形を想像しながら鑑賞していただくアート体験です。\nテクノロジーで存在しないものの存在感を生み出すことで、現実と仮想現実の境界を問いかけています。",
-    "technology": ["VR", "Unity", "触覚フィードバック"],
+    "technology": ["VR", "Unity", "HTC Vive", "プロジェクションマッピング"],
     "thumbnail": "images/works/invisible-sculpture/InvisibleSculpture_thumb.png",
     "images": [
       "images/works/invisible-sculpture/InvisibleSculpture_thumb.png"
@@ -257,7 +257,7 @@
     "category": "performance",
     "year": 2016,
     "description": "体験者が森の動物となり色を奪われた絵本の世界へと入り込む、物語参加型ライブペインティングショーです。\n全長20mの巨大プロジェクションマッピング・立体音響・風・香りなど空間全体が物語と連動し、参加者全員で協力しながら絵本の世界に色を取り戻していきます。\n茨城県北芸術祭にて2016年9月〜11月に22回のパフォーマンスを実施しました。",
-    "technology": ["Unity", "プロジェクションマッピング", "センサー技術"],
+    "technology": ["Unity", "プロジェクションマッピング", "NFC", "ムービングライト", "自作CNCデバイス", "指向性スピーカー", "振動スピーカー"],
     "thumbnail": "images/banners/achromatic_banner.jpg",
     "images": [
       "images/banners/achromatic_banner.jpg"
@@ -272,7 +272,7 @@
     "category": "device",
     "year": 2016,
     "description": "3Dテレビ用の液晶シャッター技術を応用し、装着者のみに特定の視覚情報を見せるウェアラブルデバイスです。\n秒間120回高速点滅するフロアライトとメガネの液晶シャッターを同期させ、特定の光源からの反射光だけを選択的に透過させる仕組みを独自に実装しました。\nテクノロジーの遊び心あふれる応用を体現したデバイス作品です。",
-    "technology": ["Arduino", "液晶シャッター", "3Dメガネ改造"],
+    "technology": ["Arduino", "液晶シャッター3Dメガネ"],
     "thumbnail": "images/banners/deltaglass_topics_bg.png",
     "images": [
       "images/banners/deltaglass_topics_bg.png"
@@ -287,7 +287,7 @@
     "category": "device",
     "year": 2016,
     "description": "出産時の陣痛をリアルタイムに男性側へシェアするウェアラブルデバイスです。\nYahoo! JAPAN主催「Hack Day 2016」にて24時間で開発し、Twitterを中心に大きな反響を呼びました。\n夫婦が同じ苦難を共有することで絆を深めるというコンセプトのもと、現代における出産への向き合い方に問いかける社会派デバイス作品です。",
-    "technology": ["Arduino", "電気刺激", "センサー技術"],
+    "technology": ["Arduino", "低周波治療器", "筋電センサ"],
     "thumbnail": "images/works/happy-pain/HappyPain_01.jpg",
     "images": [
       "images/works/happy-pain/HappyPain_02.jpg",
@@ -306,8 +306,8 @@
     "title": "つくもがみ - Tsukumogami",
     "category": "mediaart",
     "year": 2015,
-    "description": "日本古来の信仰「付喪神」をテーマに、廃棄物が人の形となって動き出す体験型インスタレーションです。\nKinect V2で骨格をトラッキングし、40種類以上の廃棄物オブジェクトが15万通り以上の組み合わせで体に吸い付きます。\n物理演算と独自サウンド生成アルゴリズムにより廃棄物の重量感をリアルに体感でき、物を大切にすることの意味を問いかける作品です。",
-    "technology": ["Unity", "Kinect V2", "物理演算", "サウンド生成"],
+    "description": "日本古来の信仰「付喪神」をテーマに、廃棄物が人の形となって動き出す体験型インスタレーションです。\nKinectセンサーで骨格をトラッキングし、40種類以上の廃棄物オブジェクトが15万通り以上の組み合わせで体に吸い付きます。\n物理演算と独自サウンド生成アルゴリズムにより廃棄物の重量感をリアルに体感でき、体験者が楽しむ様子がそのまま大量消費社会への問題提起となります。",
+    "technology": ["Unity", "C#", "Kinect"],
     "thumbnail": "images/works/tsukumogami/Tsukumogami_thumb.png",
     "images": [
       "images/banners/tsukumogami_topics_bg.png",
@@ -357,7 +357,7 @@
     "category": "mediaart",
     "year": 2014,
     "description": "通路を歩くだけで足元に色と光が溢れ出し、他の来場者の色と混ざり合って唯一無二のアートが生まれる参加型インスタレーションです。\n誰もが無意識に影響し合いながら共同制作するという体験をお届けし、時間とともに形を変えて消えていくため同じ作品は二度と生まれません。\n2013年、金沢市民芸術村「VISUAL SONIC」展にて展示しました。",
-    "technology": ["C++", "openFrameworks", "Kinect", "プロジェクションマッピング"],
+    "technology": ["C++", "openFrameworks", "Kinect", "プロジェクションマッピング", "赤外線カメラ", "OpenCV"],
     "thumbnail": "images/works/nanairo-komichi/nanairo_01.jpg",
     "images": [
       "images/works/nanairo-komichi/nanairo_01.jpg",
@@ -373,7 +373,7 @@
     "category": "device",
     "year": 2014,
     "description": "世界中からWebとスマートフォンで参加できる未来型お葬式体験です。\nArduinoで制御された木魚・鈴の遠隔演奏、LeapMotionによるお焼香、SNSアイコンが映し出されるi遺影など、デジタルとフィジカルを融合させた革新的な葬儀体験を設計しました。\nYahoo! JAPANインターネットクリエイティブアワード2014 スマートデバイスイノベーション部門 ゴールド賞を受賞しました。",
-    "technology": ["Node.js", "Arduino", "LeapMotion", "Web技術"],
+    "technology": ["Node.js", "Arduino", "LeapMotion", "Web"],
     "thumbnail": "images/works/interactive-funeral/interactive-funeral.jpg",
     "images": [
       "images/banners/funeral_banner.png",
@@ -436,7 +436,7 @@
     "category": "mediaart",
     "year": 2011,
     "description": "石川県金沢市・ひがし茶屋街の石畳を舞台に展示されたインタラクティブアートです。\n人が近づくと石畳の輪郭が光り、石畳に乗ると光の粒とともに発光して涼しげな音を奏でます。\nKinect 2台とプロジェクター2台によるプロジェクションマッピングで、金沢の伝統的な街並みとデジタル表現を融合させました。\n2011年「かなざわ燈涼会」にて展示しました。",
-    "technology": ["C++", "openFrameworks", "Kinect", "プロジェクションマッピング", "LED制御"],
+    "technology": ["C++", "openFrameworks", "Kinect", "プロジェクションマッピング", "OpenCV"],
     "thumbnail": "images/works/ishidatami-tourou/ishidatami01.jpg",
     "images": [
       "images/banners/stone_pavement_lantern.png",
