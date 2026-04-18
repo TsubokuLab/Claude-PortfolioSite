@@ -357,12 +357,15 @@ const WorkDetailPage = () => {
                       onMouseLeave={resetCursor}
                     >
                       <div className="related-thumbnail">
-                        <div 
-                          className="related-image" 
-                          style={{ 
-                            backgroundImage: relatedWork.thumbnail 
-                              ? `url(${import.meta.env.BASE_URL}${relatedWork.thumbnail.replace(/^\.\//, '')})` 
-                              : 'linear-gradient(-45deg, var(--accent), var(--accent-secondary))'
+                        <div
+                          className="related-image"
+                          style={{
+                            backgroundImage: (() => {
+                              const thumb = resolveThumb(relatedWork, manifest);
+                              return thumb
+                                ? `url(${import.meta.env.BASE_URL}${thumb.replace(/^\.\//, '')})`
+                                : 'linear-gradient(-45deg, var(--accent), var(--accent-secondary))';
+                            })()
                           }}
                         />
                       </div>
