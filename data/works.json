@@ -5,10 +5,6 @@
     "description": "フォルクスワーゲン公式ブラウザゲームの開発を担当。\n全9車種・6ステージを収録し、インストール不要でスマートフォンから遊べる本格レーシングゲーム。\nリアルとファンタジーが交差するコースを実車モデルのVW車で駆け抜ける爽快な体験を設計・実装した。",
     "category": "clientworks",
     "year": 2025,
-    "thumbnail": "images/works/volkswagen-drive-carnival/16_9_kv_pc-10_thumb.jpg",
-    "images": [
-      "images/works/volkswagen-drive-carnival/16_9_contet_1_2.png"
-    ],
     "awards": [],
     "collaborators": [
       "車両3Dモデリング ミスミ様(@sankaku_342)"
