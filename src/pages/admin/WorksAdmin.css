@@ -86,12 +86,14 @@
 }
 
 .btn-danger {
-  background: #e74c3c;
+  --danger: #e74c3c;
+  --danger-hover: #c0392b;
+  background: var(--danger);
   color: white;
 }
 
 .btn-danger:hover {
-  background: #c0392b;
+  background: var(--danger-hover);
 }
 
 .btn-small {

@@ -1,21 +1,5 @@
-/* SNSリンクセクション */
-.social-links-section .social-icon {
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  min-height: 48px;
-  max-width: 48px;
-  max-height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-  font-size: 1.5rem;
-  color: var(--accent);
-  flex-shrink: 0;
-}.profile-page {
-  padding: 6rem 0;
+.profile-page {
+  padding: 4rem 0 6rem;
 }
 
 .page-title {
@@ -292,7 +276,7 @@
 
 .awards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -363,21 +347,33 @@
   }
 }
 
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .profile-content {
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+  }
+
+  .skill-cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  }
+}
+
 /* モバイル対応 */
 @media (max-width: 768px) {
   .page-title {
     font-size: 2.5rem;
   }
-  
+
   .profile-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .skill-cards-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .awards-grid {
     grid-template-columns: 1fr;
   }

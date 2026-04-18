@@ -1,5 +1,5 @@
 .works-page {
-  padding: 6rem 0;
+  padding: 4rem 0 6rem;
 }
 
 .page-header {
@@ -120,7 +120,7 @@
 /* グリッドレイアウト */
 .grid-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -323,27 +323,39 @@
   color: var(--text-secondary);
 }
 
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .list-layout .work-thumbnail {
+    width: 260px;
+    min-width: 260px;
+  }
+}
+
 /* モバイル対応 */
 @media (max-width: 768px) {
   .works-controls {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .list-layout .work-item {
     flex-direction: column;
   }
-  
+
   .list-layout .work-link {
     flex-direction: column;
   }
-  
+
   .list-layout .work-thumbnail {
     width: 100%;
     aspect-ratio: 16 / 9;
   }
-  
+
   .grid-layout {
     grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
   }
 }

@@ -21,25 +21,17 @@
 
 .section-description {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
   max-width: 800px;
   margin: 0 auto 4rem;
   line-height: 1.8;
-  white-space: nowrap;
-}
-
-@media (max-width: 900px) {
-  .section-description {
-    white-space: normal;
-    padding: 0 1rem;
-  }
 }
 
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 2rem;
   margin-bottom: 4rem;
 }
 
@@ -164,13 +156,25 @@
   color: var(--text-secondary);
 }
 
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .works-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+    gap: 1.5rem;
+  }
+}
+
 /* モバイル対応 */
 @media (max-width: 768px) {
   .works-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .section-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
   }
 }

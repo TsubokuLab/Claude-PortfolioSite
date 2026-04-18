@@ -15,7 +15,6 @@
       "C#"
     ],
     "exhibition": "フォルクスワーゲン公式サイト",
-    "duration": "2025年12月26日",
     "materials": "Unity, WebGL",
     "links": [
       { "label": "公式サイト", "url": "https://www.volkswagen.co.jp/ja/magazine/volkswagen_carnival.html" }
@@ -29,7 +28,6 @@
     "description": "PICOの新商品「PICO Motion Tracker Waist Version」発売に合わせて開催されたVRChatイベント「PICO Carnival」のワールド制作とステージオペレーションを担当しました。\nPICO XR Japan公式イベントとして、製品の魅力を体感できるインタラクティブなバーチャル空間を設計・実装しました。",
     "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
     "exhibition": "PICO Carnival",
-    "duration": "2025年4月",
     "awards": [],
     "youtube": "5ERUT-eqqrA",
     "links": []
@@ -93,8 +91,8 @@
     "id": "kodansha-pk-challenge",
     "title": "講談社「Where Impossible Happens展」PK体験アトラクション",
     "category": "clientworks",
-    "year": 2019,
-    "description": "講談社主催「Where Impossible Happens展」にて展示されたPK体験アトラクションの開発を担当しました。\n来場者が漫画の主人公になり、サッカー試合のPKシーンに挑戦できるインタラクティブな体験です。\nゲーム終了後は自分が主人公になった漫画が表示され、QRコードで持ち帰ることができます。\nMicrosoft Kinect V2とUnityを用いて開発しました。",
+    "year": 2025,
+    "description": "講談社主催「Where Impossible Happens展」にて展示されたPK体験アトラクションの開発を担当しました。\n来場者が漫画の主人公になり、サッカー試合のPKシーンに挑戦できるインタラクティブな体験です。\nゲーム終了後は自分が主人公になった漫画が表示され、QRコードで持ち帰ることができます。\nKinectセンサーとUnityを用いて開発しました。",
     "technology": ["Unity", "Kinect", "C#"],
     "exhibition": "Where Impossible Happens展 / 講談社",
     "awards": [],

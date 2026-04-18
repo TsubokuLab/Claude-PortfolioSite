@@ -1,5 +1,14 @@
+/* イベント種別カラー（セマンティックカラー） */
+:root {
+  --color-exhibition: #33cc66;
+  --color-award: #ff9933;
+  --color-media: #9966cc;
+  --color-works: #3399ff;
+  --color-workshop: #ff6666;
+}
+
 .activity-page {
-  padding: 6rem 0;
+  padding: 4rem 0 6rem;
 }
 
 .page-title {
@@ -109,15 +118,15 @@
 }
 
 .event-item.exhibition::before {
-  background-color: #33cc66; /* 緑 */
+  background-color: var(--color-exhibition);
 }
 
 .event-item.award::before {
-  background-color: #ff9933; /* オレンジ */
+  background-color: var(--color-award);
 }
 
 .event-item.media::before {
-  background-color: #9966cc; /* 紫 */
+  background-color: var(--color-media);
 }
 
 .event-date {
@@ -149,28 +158,28 @@
 }
 
 .event-type-badge.exhibition {
-  background-color: rgba(51, 204, 102, 0.1);
-  color: #33cc66;
+  background-color: rgba(51, 204, 102, 0.12);
+  color: var(--color-exhibition);
 }
 
 .event-type-badge.award {
-  background-color: rgba(255, 153, 51, 0.1);
-  color: #ff9933;
+  background-color: rgba(255, 153, 51, 0.12);
+  color: var(--color-award);
 }
 
 .event-type-badge.media {
-  background-color: rgba(153, 102, 204, 0.1);
-  color: #9966cc;
+  background-color: rgba(153, 102, 204, 0.12);
+  color: var(--color-media);
 }
 
 .event-type-badge.works {
-  background-color: rgba(51, 153, 255, 0.1);
-  color: #3399ff;
+  background-color: rgba(51, 153, 255, 0.12);
+  color: var(--color-works);
 }
 
 .event-type-badge.workshop {
-  background-color: rgba(255, 102, 102, 0.1);
-  color: #ff6666;
+  background-color: rgba(255, 102, 102, 0.12);
+  color: var(--color-workshop);
 }
 
 .event-type-badge.performance {
@@ -352,34 +361,45 @@
   }
 }
 
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .activity-timeline {
+    max-width: 100%;
+  }
+
+  .venues-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  }
+}
+
 /* モバイル対応 */
 @media (max-width: 768px) {
   .page-title {
     font-size: 2.5rem;
   }
-  
+
   .year-events {
     padding-left: 1rem;
     margin-left: 1rem;
   }
-  
+
   .event-item {
     padding-left: 1rem;
   }
-  
+
   .event-item::before {
     left: -1.625rem;
   }
-  
+
   .event-date,
   .event-content {
     padding-right: 1rem;
   }
-  
+
   .venues-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .social-links {
     flex-direction: column;
     gap: 1rem;

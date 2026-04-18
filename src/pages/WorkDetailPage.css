@@ -1,5 +1,5 @@
 .work-detail-page {
-  padding: 6rem 0;
+  padding: 4rem 0 6rem;
 }
 
 .back-to-works {
@@ -107,18 +107,22 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(var(--background-rgb), 0.8);
-  color: var(--text);
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .gallery-nav:hover {
   background-color: var(--accent);
+  border-color: var(--accent);
   color: white;
 }
 
@@ -198,8 +202,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--background-dark);
-  color: var(--text-light);
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
   font-size: 0.8rem;
 }
 
@@ -344,7 +348,7 @@
 
 .related-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   margin-bottom: 2rem;
 }
 
@@ -391,18 +395,29 @@
   text-align: center;
 }
 
-/* モバイル対応 */
-@media (max-width: 768px) {
+/* タブレット対応 */
+@media (max-width: 1024px) {
   .work-detail-content {
     grid-template-columns: 1fr;
   }
-  
+
   .work-detail-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
-  
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .work-detail-title {
+    font-size: 2.2rem;
+  }
+
   .gallery-thumbnail {
     width: 60px;
     height: 45px;
+  }
+
+  .related-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
   }
 }
