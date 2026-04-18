@@ -8,8 +8,8 @@ import { useCursor } from '../context/CursorContext';
 import { formatDate } from '../utils/helpers';
 import './WorkDetailPage.css';
 
-// YouTube video ID → embed URL
-const toEmbedUrl = (id) => id ? `https://www.youtube.com/embed/${id}` : null;
+// YouTube video ID → embed URL（youtube-nocookie.com でFirefox 153エラー回避）
+const toEmbedUrl = (id) => id ? `https://www.youtube-nocookie.com/embed/${id}` : null;
 
 // マニフェストから有効なサムネイルを取得
 const resolveThumb = (work, manifest) => {
@@ -176,7 +176,8 @@ const WorkDetailPage = () => {
                       src={youtubeUrl}
                       title={work.title}
                       frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
                       allowFullScreen
                     ></iframe>
                   </div>
