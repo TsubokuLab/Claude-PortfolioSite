@@ -62,25 +62,40 @@
     "images/works/ishidatami-tourou/ishidatami03.jpg",
     "images/works/ishidatami-tourou/ishidatami04.jpg"
   ],
+  "kabuki-hikari": [
+    "images/works/kabuki-hikari/thumbnail.jpg"
+  ],
+  "king-of-prism-show": [
+    "images/works/king-of-prism-show/thumbnail.jpg"
+  ],
+  "kodansha-pk-challenge": [
+    "images/works/kodansha-pk-challenge/thumbnail.jpg"
+  ],
+  "moominvalley-winter-2019": [
+    "images/works/moominvalley-winter-2019/thumbnail.jpg"
+  ],
   "nanairo-komichi": [
     "images/works/nanairo-komichi/nanairo_01.jpg",
     "images/works/nanairo-komichi/nanairo_02.jpg"
   ],
-  "nhk-spatialdisplay": [
-    "images/works/nhk-spatialdisplay/image_01.jpg",
-    "images/works/nhk-spatialdisplay/thumbnail.jpg"
+  "nhk-showa-100-experience": [
+    "images/works/nhk-showa-100-experience/nhk_02.jpg",
+    "images/works/nhk-showa-100-experience/thumbnail.jpg"
+  ],
+  "pico-carnival": [
+    "images/works/pico-carnival/thumbnail.jpg"
+  ],
+  "sanrio-kitty-popcorn-vfes": [
+    "images/works/sanrio-kitty-popcorn-vfes/thumbnail.jpg"
+  ],
+  "sanrio-pochacco-vfes": [
+    "images/works/sanrio-pochacco-vfes/thumbnail.jpg"
   ],
   "shadow-touch": [
     "images/works/shadow-touch/ShadowTouch_01.jpg",
     "images/works/shadow-touch/ShadowTouch_02.png",
     "images/works/shadow-touch/ShadowTouch_03.png",
     "images/works/shadow-touch/ShadowTouch_04.jpg"
-  ],
-  "test": [
-    "images/works/test/Tsukumogami01.png",
-    "images/works/test/Tsukumogami02.png",
-    "images/works/test/Tsukumogami03.png",
-    "images/works/test/Tsukumogami_thumb.png"
   ],
   "tsukumogami": [
     "images/works/tsukumogami/Tsukumogami01.png",
@@ -105,7 +120,11 @@
     "images/works/void-sailing/VoidSailing_thumb.png"
   ],
   "volkswagen-drive-carnival": [
-    "images/works/volkswagen-drive-carnival/16_9_contet_1_2.png",
-    "images/works/volkswagen-drive-carnival/16_9_kv_pc-10_thumb.jpg"
+    "images/works/volkswagen-drive-carnival/image_01.png",
+    "images/works/volkswagen-drive-carnival/thumbnail.jpg"
+  ],
+  "voyage-virtual-fashion": [
+    "images/works/voyage-virtual-fashion/image_01.jpg",
+    "images/works/voyage-virtual-fashion/thumbnail.jpg"
   ]
 }
