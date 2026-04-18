@@ -62,10 +62,10 @@
   },
   {
     "id": "sanrio-kitty-popcorn-vfes",
-    "title": "ハローキティのポンポンパック2",
+    "title": "ハローキティのポップコーンマシーンVR",
     "category": "clientworks",
     "year": 2024,
-    "description": "サンリオVfes 2024にて公開した、VRChat上のミニゲームワールド。\nキティちゃんのポップコーンマシーンをモチーフにしたミニゲームを企画・3Dモデリング・ギミック開発まで一貫して担当した。",
+    "description": "サンリオVfes 2024にて公開した、VRChat上のミニゲームマシン。\nキティちゃんのポップコーンマシーンをモチーフにしたミニゲームの3Dモデリング・ギミック開発を担当した。",
     "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
     "exhibition": "サンリオVfes 2024",
     "awards": [],
@@ -77,15 +77,16 @@
     "title": "Virtual Fashion Collection \"Voyage\"",
     "category": "clientworks",
     "year": 2022,
-    "description": "VRChat上で開催されるバーチャルファッションショー「Voyage」のワールド制作・演出・ステージオペレーションを担当。\n2022 Winter・2023 SpringSummer・2023 Winter・2024 Summerの全4シーズンに渡り参加。\nリアルタイムレンダリングならではの没入感ある映像演出と、スムーズなステージ進行を実現した。",
+    "description": "VRChat上で開催されるバーチャルファッションショー「Voyage」のワールド制作・演出・ステージオペレーションを担当。\n2022 Winter ・ 2023 Spring/Summer ・ 2023 Winter ・ 2024 Summerの全4シーズンに渡り参加。\nランウェイモデル・カメラ・照明・VJ映像の全てがリアルタイムの演出で、VR空間内でのバーチャルファッションショーを実現。",
     "technology": ["Unity", "VRChat SDK", "Udon", "C#"],
     "exhibition": "Virtual Fashion Collection Voyage",
     "awards": [],
     "youtube": "iIXig7xn_2Y",
     "links": [
-      { "label": "2023 SpringSummer アーカイブ", "url": "https://www.youtube.com/watch?v=-Dn2hKsBpv4" },
-      { "label": "2023 Winter アーカイブ", "url": "https://www.youtube.com/watch?v=dQUpnPTsX_8" },
-      { "label": "2022 Winter アーカイブ", "url": "https://www.youtube.com/watch?v=_sX29wPTtDs" }
+      { "label": "Voyage 2024 Summer アーカイブ", "url": "https://www.youtube.com/watch?v=iIXig7xn_2Y" },
+      { "label": "Voyage 2023 Winter アーカイブ", "url": "https://www.youtube.com/watch?v=dQUpnPTsX_8" },
+      { "label": "Voyage 2023 Spring/Summer アーカイブ", "url": "https://www.youtube.com/watch?v=-Dn2hKsBpv4" },
+      { "label": "Voyage 2022 Winter アーカイブ", "url": "https://www.youtube.com/watch?v=_sX29wPTtDs" }
     ]
   },
   {
