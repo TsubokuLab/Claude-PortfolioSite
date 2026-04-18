@@ -291,7 +291,8 @@
   border-bottom: none;
 }
 
-/* 素材・コラボレーター */
+/* 受賞歴・素材・コラボレーター */
+.work-detail-awards,
 .work-detail-materials,
 .work-detail-collaborators {
   margin-bottom: 2rem;

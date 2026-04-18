@@ -1,3 +1,29 @@
+/* SNSリンクセクション内のアイコン（ContactPage.cssの.social-iconと競合するため詳細度を高めて上書き） */
+.social-links-section .social-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  /* ContactPage.cssの上書きをリセット */
+  padding: 0;
+  background-color: unset;
+  box-shadow: none;
+  gap: unset;
+  width: 48px;
+  text-decoration: none;
+  justify-content: center;
+}
+
 .profile-page {
   padding: 4rem 0 6rem;
 }

@@ -1,11 +1,13 @@
 .hero {
-  min-height: 100vh;
+  /* ヘッダー分(72px)を差し引いてぴったり1画面 */
+  min-height: calc(100vh - 72px);
+  max-height: calc(100vh - 72px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 5rem 0;
+  padding: 2rem 0 4rem;
 }
 
 .hero-content {
@@ -144,6 +146,8 @@
   position: relative;
   width: 100%;
   max-width: 500px;
+  /* 縦方向に収まるよう高さに上限を設定（ヘッダー+padding分を除いた残り高さの約70%） */
+  max-height: calc((100vh - 72px) * 0.72);
   aspect-ratio: 1 / 1;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -281,8 +285,14 @@
   }
 }
 
-/* モバイル対応 */
+/* モバイル対応（縦積みレイアウトでは高さ制限を解除） */
 @media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 72px);
+    max-height: none;
+    padding: 2rem 0 5rem;
+  }
+
   .hero-content {
     flex-direction: column;
     text-align: center;
