@@ -343,14 +343,10 @@
   padding: 1.25rem 1rem;
 }
 
-/* 受賞アイコン（SVG clip-pathで六角形メダル風） */
-.award-year::before {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 20px;
-  background-color: var(--accent);
-  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+/* トロフィーアイコン */
+.award-year i {
+  font-size: 1.2rem;
+  color: var(--accent);
   flex-shrink: 0;
 }
 

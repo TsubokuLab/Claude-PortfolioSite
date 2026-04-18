@@ -319,71 +319,98 @@ const ProfilePage = () => {
             <h2 className="section-title">Awards</h2>
             <div className="awards-grid">
               <div className="award-item">
-                <div className="award-year">2018</div>
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
+                  2018
+                </div>
                 <div className="award-details">
                   <h3 className="award-title">総務省 異能vation ジェネレーションアワード2018</h3>
                   <p className="award-subtitle">大きく広がる分野 最優秀賞</p>
                 </div>
               </div>
-              
+
               <div className="award-item">
-                <div className="award-year">2017</div>
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
+                  2017
+                </div>
                 <div className="award-details">
                   <h3 className="award-title">VRクリエイティブアワード2017</h3>
                   <p className="award-subtitle">審査員特別賞</p>
                 </div>
               </div>
-              
+
               <div className="award-item">
-                <div className="award-year">2017</div>
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
+                  2017
+                </div>
                 <div className="award-details">
                   <h3 className="award-title">アジアデジタルアートアワード2017</h3>
                   <p className="award-subtitle">入賞</p>
                 </div>
               </div>
-              
+
               <div className="award-item">
-                <div className="award-year">2017</div>
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
+                  2017
+                </div>
                 <div className="award-details">
                   <h3 className="award-title">Mashup Awards 2017</h3>
                   <p className="award-subtitle">Unity賞・Interactive Design部門優勝</p>
                 </div>
               </div>
-              
+
               <div className="award-item">
-                <div className="award-year">2015</div>
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
+                  2015
+                </div>
                 <div className="award-details">
                   <h3 className="award-title">ArtHackDay2015</h3>
                   <p className="award-subtitle">アート部門 最優秀賞</p>
                 </div>
               </div>
-              
+
               <div className="award-item">
-                <div className="award-year">2014</div>
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
+                  2014
+                </div>
                 <div className="award-details">
                   <h3 className="award-title">Yahoo! JAPAN インターネットクリエイティブアワード2014</h3>
                   <p className="award-subtitle">＜一般の部＞スマートデバイスイノベーション部門 ゴールド賞</p>
                 </div>
               </div>
-              
+
               <div className="award-item">
-                <div className="award-year">2014</div>
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
+                  2014
+                </div>
                 <div className="award-details">
                   <h3 className="award-title">デジタルサイネージアワード2014</h3>
                   <p className="award-subtitle">ゴールド賞</p>
                 </div>
               </div>
-              
+
               <div className="award-item">
-                <div className="award-year">2013</div>
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
+                  2013
+                </div>
                 <div className="award-details">
                   <h3 className="award-title">カンヌライオンズ 国際クリエイティビティ・フェスティバル2013</h3>
                   <p className="award-subtitle">モバイル部門ゴールド</p>
                 </div>
               </div>
-              
+
               <div className="award-item">
-                <div className="award-year">2013</div>
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
+                  2013
+                </div>
                 <div className="award-details">
                   <h3 className="award-title">第66回広告電通賞</h3>
                   <p className="award-subtitle">モバイル・コミュニケーション部門 最優秀賞</p>
