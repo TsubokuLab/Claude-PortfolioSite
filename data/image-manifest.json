@@ -94,7 +94,9 @@
   "pico-carnival": [
     "images/works/pico-carnival/thumbnail.jpg"
   ],
-  "reality-signage": [],
+  "reality-signage": [
+    "images/works/reality-signage/thumbnail.jpg"
+  ],
   "sanrio-kitty-popcorn-vfes": [
     "images/works/sanrio-kitty-popcorn-vfes/thumbnail.jpg"
   ],
