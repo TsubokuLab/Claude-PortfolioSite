@@ -71,6 +71,15 @@
   "kodansha-pk-challenge": [
     "images/works/kodansha-pk-challenge/thumbnail.jpg"
   ],
+  "manga-performance-w3": [
+    "images/works/manga-performance-w3/thumbnail.png"
+  ],
+  "masuda-monet": [
+    "images/works/masuda-monet/thumbnail.jpg"
+  ],
+  "miraikan-project": [
+    "images/works/miraikan-project/thumbnail.png"
+  ],
   "moominvalley-winter-2019": [
     "images/works/moominvalley-winter-2019/thumbnail.jpg"
   ],
@@ -85,6 +94,7 @@
   "pico-carnival": [
     "images/works/pico-carnival/thumbnail.jpg"
   ],
+  "reality-signage": [],
   "sanrio-kitty-popcorn-vfes": [
     "images/works/sanrio-kitty-popcorn-vfes/thumbnail.jpg"
   ],
@@ -123,8 +133,13 @@
     "images/works/volkswagen-drive-carnival/image_01.png",
     "images/works/volkswagen-drive-carnival/thumbnail.jpg"
   ],
+  "volkswagen-electricgirl": [],
   "voyage-virtual-fashion": [
     "images/works/voyage-virtual-fashion/image_01.jpg",
+    "images/works/voyage-virtual-fashion/image_02.jpg",
+    "images/works/voyage-virtual-fashion/image_03.jpg",
+    "images/works/voyage-virtual-fashion/image_04.jpg",
+    "images/works/voyage-virtual-fashion/image_05.jpg",
     "images/works/voyage-virtual-fashion/thumbnail.jpg"
   ]
 }
