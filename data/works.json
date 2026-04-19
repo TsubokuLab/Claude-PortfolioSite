@@ -1,7 +1,7 @@
 [
   {
     "id": "manga-performance-w3",
-    "title": "舞台「W3【ワンダースリー】」　映像演出システム開発",
+    "title": "舞台 W3【ワンダースリー】 映像演出システム開発",
     "description": "手塚治虫原作の舞台「MANGA Performance W3【ワンダースリー】」\n複数台のPCやプロジェクターを同期させて再生するプロジェクションマッピングシステムや、小型無線カメラ、無線ディスプレイ等を活用した映像演出用システムを開発しました。",
     "category": "clientworks",
     "year": 2017,
@@ -184,7 +184,7 @@
   },
   {
     "id": "moominvalley-winter-2019",
-    "title": "ムーミンバレーパーク「WINTER WONDERLAND」イルミネーション・アトラクション",
+    "title": "ムーミンバレーパーク「WINTER WONDERLAND」アトラクション",
     "category": "clientworks",
     "year": 2019,
     "description": "ムーミンバレーパーク初の冬シーズン「WINTER WONDERLAND」のインタラクティブアトラクション制作を担当しました。\n「ムーミン谷の冬」のストーリーに沿った夜の散歩体験として、来場者が参加できるデジタル演出を設計・実装しました。",
