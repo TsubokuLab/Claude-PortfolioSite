@@ -133,7 +133,9 @@
     "images/works/volkswagen-drive-carnival/image_01.png",
     "images/works/volkswagen-drive-carnival/thumbnail.jpg"
   ],
-  "volkswagen-electricgirl": [],
+  "volkswagen-electricgirl": [
+    "images/works/volkswagen-electricgirl/thumbnail.jpg"
+  ],
   "voyage-virtual-fashion": [
     "images/works/voyage-virtual-fashion/image_01.jpg",
     "images/works/voyage-virtual-fashion/image_02.jpg",
