@@ -32,13 +32,14 @@
     "technology": [
       "Unity",
       "C#",
-      "Photoshop"
+      "Kinect"
     ],
-    "exhibition": "日本科学未来館",
-    "materials": "Unity, Photoshop",
-    "YouTube" : "jGFnDo7oodE",
+    "exhibition": "REALITY株式会社",
+    "materials": "Unity",
+    "YouTube" : "-upUuypgrME",
     "links": [
-      { "label": "公式サイト", "url": "https://www.miraikan.jst.go.jp/sp/picture_happiness/" }
+      { "label": "スタジオエントランス バ美肉サイネージ", "url": "https://youtu.be/-upUuypgrME" },
+      { "label": "スタジオ使用状況可視化イルミネーション", "url": "https://youtu.be/eUSH89S9u8g" }
     ]
   },
   {
@@ -80,6 +81,26 @@
     "materials": "Unity, WebGL",
     "links": [
       { "label": "公式サイト", "url": "https://www.volkswagen.co.jp/ja/magazine/volkswagen_carnival.html" }
+    ]
+  },
+  {
+    "id": "volkswagen-electricgirl",
+    "title": "Volkswagen「ID.SQUARE」 エレクトリック・ガール フォトブース",
+    "description": "六本木ミッドタウンで行われたフォルクスワーゲンのイベント「ID.SQUARE」にて、来場者がCMの「エレクトリック・ガール」になりきって写真撮影が行えるインタラクティブなフォトブースを開発しました。",
+    "category": "clientworks",
+    "year": 2022,
+    "awards": [],
+    "collaborators": [],
+    "technology": [
+      "Unity",
+      "C#",
+      "Kinect"
+    ],
+    "exhibition": "フォルクスワーゲン公式サイト",
+    "materials": "Unity, Kinect",
+    "youtube": "U7N7xedFEN0",
+    "links": [
+      { "label": "イベント概要", "url": "https://www.youtube.com/watch?v=IZo_AIm3G_M" }
     ]
   },
   {
