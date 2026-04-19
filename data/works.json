@@ -1,5 +1,67 @@
 [
-    {
+  {
+    "id": "manga-performance-w3",
+    "title": "舞台「W3【ワンダースリー】」　映像演出システム開発",
+    "description": "手塚治虫原作の舞台「MANGA Performance W3【ワンダースリー】」\n複数台のPCやプロジェクターを同期させて再生するプロジェクションマッピングシステムや、小型無線カメラ、無線ディスプレイ等を活用した映像演出用システムを開発しました。",
+    "category": "clientworks",
+    "year": 2017,
+    "awards": [],
+    "collaborators": [],
+    "technology": [
+      "Unity",
+      "C#",
+      "プロジェクションマッピング"
+    ],
+    "exhibition": "DDD青山クロスシアター",
+    "materials": "Unity",
+    "YouTube" : "reEFI48MAzE",
+    "links": [
+      { "label": "x", "url": "https://x.com/manga_p_W3" },
+      { "label": "instagram", "url": "https://www.instagram.com/manga_performance_w3/" },
+      { "label": "youtube", "url": "https://www.youtube.com/@mangaperformancew38" }
+    ]
+  },
+  {
+    "id": "reality-signage",
+    "title": "REALITY株式会社 スタジオエントランスサイネージ",
+    "description": "アジア太平洋10の国と地域の科学館と連携し、「幸せってなんだろう？」をテーマに、2015年から2017年にかけてワークショップを開催しました。\n各国の中高生が考える「幸せ」のかたちを、日本の女子中高生が地球ディスプレイ「ジオ･コスモス」の映像作品として表現。\nUnityで映像作品を作るワークショップの講師を担当しました",
+    "category": "clientworks",
+    "year": 2017,
+    "awards": [],
+    "collaborators": [],
+    "technology": [
+      "Unity",
+      "C#",
+      "Photoshop"
+    ],
+    "exhibition": "日本科学未来館",
+    "materials": "Unity, Photoshop",
+    "YouTube" : "jGFnDo7oodE",
+    "links": [
+      { "label": "公式サイト", "url": "https://www.miraikan.jst.go.jp/sp/picture_happiness/" }
+    ]
+  },
+  {
+    "id": "miraikan-project",
+    "title": "日本科学未来館「PICTURE HAPPINESS ON EARTH」",
+    "description": "アジア太平洋10の国と地域の科学館と連携し、「幸せってなんだろう？」をテーマに、2015年から2017年にかけてワークショップを開催しました。\n各国の中高生が考える「幸せ」のかたちを、日本の女子中高生が地球ディスプレイ「ジオ･コスモス」の映像作品として表現。\nUnityで映像作品を作るワークショップの講師を担当しました",
+    "category": "clientworks",
+    "year": 2017,
+    "awards": [],
+    "collaborators": [],
+    "technology": [
+      "Unity",
+      "C#",
+      "Photoshop"
+    ],
+    "exhibition": "日本科学未来館",
+    "materials": "Unity, Photoshop",
+    "YouTube" : "jGFnDo7oodE",
+    "links": [
+      { "label": "公式サイト", "url": "https://www.miraikan.jst.go.jp/sp/picture_happiness/" }
+    ]
+  },
+  {
     "id": "volkswagen-drive-carnival",
     "title": "Volkswagen DRIVE CARnival",
     "description": "フォルクスワーゲン公式ブラウザゲームの開発を担当しました。\n全9車種・6ステージを収録し、インストール不要でスマートフォンからお楽しみいただける本格レーシングゲームです。\nリアルとファンタジーが交差するコースを実車モデルのVW車で駆け抜ける爽快な体験を設計・実装しました。",
