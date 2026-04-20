@@ -116,7 +116,9 @@
     "exhibition": "PICO Carnival",
     "awards": [],
     "youtube": "5ERUT-eqqrA",
-    "links": []
+    "links": [
+      {"label":"VRChatワールド", "url":"https://vrchat.com/home/launch?worldId=wrld_e4e843b8-a2ef-450f-8bc9-1aedcd205160"}
+    ]
   },
   {
     "id": "nhk-showa-100-experience",
