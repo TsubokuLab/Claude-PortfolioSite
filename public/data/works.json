@@ -158,16 +158,17 @@
     "title": "Virtual Fashion Collection \"Voyage\"",
     "category": "clientworks",
     "year": 2022,
-    "description": "VRChat上で開催されるバーチャルファッションショー「Voyage」のワールド制作・演出・ステージオペレーションを担当しました。\n2022 Winter・2023 Spring/Summer・2023 Winter・2024 Summerの全4シーズンに渡って参加しました。\nランウェイモデル・カメラ・照明・VJ映像のすべてをリアルタイムで演出し、VR空間内でのバーチャルファッションショーを実現しました。",
+    "description": "VRChat上で開催されるバーチャルファッションショー「Voyage」のワールド制作・演出・ステージオペレーションを担当しました。\n2022 Winter | 2023 Spring/Summer | 2023 Winter | 2024 Summerの全4シーズンに渡って参加しました。\nランウェイモデル・カメラ・照明・VJ映像のすべてをリアルタイムで演出し、VR空間内でのバーチャルファッションショーを実現しました。",
     "technology": ["Unity", "VRChat SDK", "Udon", "C#", "VR"],
     "exhibition": "Virtual Fashion Collection Voyage",
     "awards": [],
-    "youtube": "iIXig7xn_2Y",
+    "youtube": "dQUpnPTsX_8",
     "links": [
       { "label": "Voyage 2024 Summer アーカイブ", "url": "https://www.youtube.com/watch?v=iIXig7xn_2Y" },
       { "label": "Voyage 2023 Winter アーカイブ", "url": "https://www.youtube.com/watch?v=dQUpnPTsX_8" },
       { "label": "Voyage 2023 Spring/Summer アーカイブ", "url": "https://www.youtube.com/watch?v=-Dn2hKsBpv4" },
-      { "label": "Voyage 2022 Winter アーカイブ", "url": "https://www.youtube.com/watch?v=_sX29wPTtDs" }
+      { "label": "Voyage 2022 Winter アーカイブ", "url": "https://www.youtube.com/watch?v=_sX29wPTtDs" },
+      { "label": "技術解説記事", "url":"https://tsubokulab.fanbox.cc/posts/4992243"}
     ]
   },
   {
