@@ -70,7 +70,7 @@
     "year": 2025,
     "awards": [],
     "collaborators": [
-      "車両3Dモデリング ミスミ様(@sankaku_342)"
+      "ミスミ様(@sankaku_342) - 車両3Dモデリング"
     ],
     "technology": [
       "Unity",
@@ -138,6 +138,9 @@
     "technology": ["Unity", "VRChat SDK", "Udon", "C#", "VR"],
     "exhibition": "サンリオVfes 2024",
     "awards": [],
+    "collaborators": [
+      "ゆいぴ(@yuipxq) - 3Dモデリング"
+    ],
     "youtube": "H_wzNtaDqBg",
     "links": []
   },
