@@ -1,7 +1,67 @@
 [
   {
+    "year": 2026,
+    "events": [
+      {
+        "date": "2026-07-14",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/14- 福岡県 BOSS E・ZO FUKUOKA「魔法の美術館」展",
+        "description": "新作を含む作品を出展。設営から担当。",
+        "url": "https://e-zofukuoka.com/special/mahou_museum/",
+        "venue": "BOSS E・ZO FUKUOKA",
+        "venue_url": "https://e-zofukuoka.com/special/mahou_museum/"
+      },
+      {
+        "date": "2026-07-11",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/11-7/26 バーチャルマーケット2026 Summer 出展",
+        "description": "VRChat内で開催されたバーチャルマーケット2026 Summer に「Deep Mist」ワールドで出展。",
+        "url": "https://vket.com/2026Summer/world/25",
+        "venue": "VRChat（Vket2026 Summer）",
+        "venue_url": "https://vket.com/2026Summer/world/25"
+      },
+      {
+        "date": "2026-04-25",
+        "type": [
+          "works"
+        ],
+        "title": "TOPPAN 印刷博物館 VRChatワールド「Printing Playground」「GRAPHIC TRIAL」展 制作",
+        "description": "TOPPAN株式会社・株式会社Vと共同で、印刷博物館のVRChatワールドおよび「GRAPHIC TRIAL」展の展示ワールド、計3ワールドの制作を担当。",
+        "url": "https://prtimes.jp/main/html/rd/p/000000171.000049339.html",
+        "venue": "VRChat",
+        "venue_url": "https://prtimes.jp/main/html/rd/p/000000171.000049339.html"
+      }
+    ]
+  },
+  {
     "year": 2025,
     "events": [
+      {
+        "date": "2025-12-13",
+        "type": [
+          "workshop"
+        ],
+        "title": "東海大学「情報メディア先端技術論」講演",
+        "description": "東海大学の講義「情報メディア先端技術論」にて、これまでの制作と技術について講演。",
+        "url": "",
+        "venue": "東海大学",
+        "venue_url": ""
+      },
+      {
+        "date": "2025-10-07",
+        "type": [
+          "exhibition"
+        ],
+        "title": "10/7-12/14 埼玉県 SKIPシティ 映像ミュージアム「光のラビリンス」展",
+        "description": "出品作品：七色小道、展覧会の絵",
+        "url": "https://www.skipcity.jp/event/vm/labyrinth/",
+        "venue": "SKIPシティ 映像ミュージアム",
+        "venue_url": "https://www.skipcity.jp/event/vm/labyrinth/"
+      },
       {
         "date": "2025-08-02",
         "type": [
