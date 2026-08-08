@@ -4,16 +4,8 @@ import { motion } from 'framer-motion';
 import { useCursor } from '../../context/CursorContext';
 import ScrollAnimation from '../animations/ScrollAnimation';
 import { fetchImageManifest } from '../../utils/api';
+import { resolveThumbUrl } from '../../utils/thumbnails';
 import './FeaturedWorks.css';
-
-// マニフェストからサムネイルURLを解決する
-const resolveThumbUrl = (work, manifest) => {
-  const raw = work.thumbnail || (() => {
-    const files = manifest[work.id] || [];
-    return files.find(f => /thumbnail\.(jpe?g|png|webp|gif)$/i.test(f)) || files[0] || null;
-  })();
-  return raw ? `${import.meta.env.BASE_URL}${raw.replace(/^\.\//, '')}` : null;
-};
 
 const FeaturedWorks = () => {
   const [works, setWorks] = useState([]);
@@ -31,7 +23,7 @@ const FeaturedWorks = () => {
         ]);
         const data = await worksResponse.json();
 
-        // 注目の作品を6つ表示
+        // 注目の作品を表示
         // VRと代表的なインスタレーション中心に選択
         const featuredWorkIds = [
           'vertex',                // VERTEX: VRCBattleRoyale

@@ -17,9 +17,10 @@ if %errorlevel% neq 0 (
     echo ========================================
     echo [SUCCESS] Push to main branch completed!
     echo.
-    echo This will trigger:
-    echo - GitHub Actions workflow
-    echo - Automatic deployment to production
+    echo NOTE: This does NOT publish anything.
+    echo   main is the source branch only.
+    echo   To publish, run deployToGithubPages.bat
+    echo   ^(gh-pages push triggers the server webhook^)
     echo ========================================
 ) else (
     echo No changes to commit.

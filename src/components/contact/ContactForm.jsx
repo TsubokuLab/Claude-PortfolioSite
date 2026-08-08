@@ -92,7 +92,7 @@ const ContactForm = () => {
             exit={{ opacity: 0 }}
           >
             <h3>Message Sent!</h3>
-            <p>Thank you for your message. We'll get back to you soon.</p>
+            <p>Thank you for your message. We&apos;ll get back to you soon.</p>
           </motion.div>
         )}
         

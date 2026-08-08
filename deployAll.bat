@@ -2,13 +2,16 @@
 
 echo ========================================
 echo   Deploy All
-echo   1. Push to Main
-echo   2. Deploy to GitHub Pages / Server
+echo   1. Push source to main (backup only)
+echo   2. Build and push to gh-pages
+echo      -^> GitHub Pages + production server
 echo ========================================
 echo.
 
-rem --- Step 1: Push to main branch (only if changes exist) ---
-echo [1/2] Pushing to main branch...
+rem --- Step 1: Push source to main (backup only; does not publish) ---
+rem     No GitHub Actions workflow is configured, so pushing to main
+rem     has no side effects. Publishing happens in step 2.
+echo [1/2] Pushing source to main branch...
 echo.
 
 git add .

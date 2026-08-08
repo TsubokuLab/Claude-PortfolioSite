@@ -1,7 +1,133 @@
 [
   {
+    "year": 2026,
+    "events": [
+      {
+        "date": "2026-08-01",
+        "type": [
+          "exhibition"
+        ],
+        "title": "8/1-8/30 鹿児島県 リナシティかのや「光のラビリンス」展",
+        "description": "出品作品：七色小道、Vertexceed、つくもがみ",
+        "url": "https://www.kanoyashimin.jp/art/doc/2026061000016",
+        "venue": "鹿児島県　リナシティかのや（鹿屋市市民交流センター）",
+        "venue_url": "https://www.kanoyashimin.jp/art/doc/2026061000016"
+      },
+      {
+        "date": "2026-07-18",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/18-9/6 新潟県 新潟県立自然科学館「魔法の美術館」展",
+        "description": "出品作品：幻想シアター、展覧会の絵",
+        "url": "https://nsttv.com/event_info/magic_world/",
+        "venue": "新潟県　新潟県立自然科学館",
+        "venue_url": "https://nsttv.com/event_info/magic_world/"
+      },
+      {
+        "date": "2026-07-18",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/18-9/27 富山県 朝日町立ふるさと美術館「光・巡る・遊ぶ」展",
+        "description": "出品作品：幻想シアター",
+        "url": "https://www.town.asahi.toyama.jp/section/buntai/R8_hikari%20meguru%20asobu.html",
+        "venue": "富山県　朝日町立ふるさと美術館",
+        "venue_url": "https://www.town.asahi.toyama.jp/section/buntai/R8_hikari%20meguru%20asobu.html"
+      },
+      {
+        "date": "2026-07-17",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/17-8/30 北海道 北海道立近代美術館「魔法の美術館」展",
+        "description": "出品作品：つくもがみ、幻想シアター、展覧会の絵",
+        "url": "https://event.hokkaido-np.co.jp/mahou-museum/",
+        "venue": "北海道　北海道立近代美術館",
+        "venue_url": "https://event.hokkaido-np.co.jp/mahou-museum/"
+      },
+      {
+        "date": "2026-07-14",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/14-9/27 福岡県 BOSS E・ZO FUKUOKA「魔法の美術館」展",
+        "description": "出品作品：Cosmic Square、睡蓮の庭（新作）",
+        "url": "https://e-zofukuoka.com/special/mahou_museum/",
+        "venue": "福岡県　BOSS E・ZO FUKUOKA",
+        "venue_url": "https://e-zofukuoka.com/special/mahou_museum/"
+      },
+      {
+        "date": "2026-07-11",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/11-7/26 バーチャルマーケット2026 Summer 出展",
+        "description": "VRChat内で開催されたバーチャルマーケット2026 Summer に「Deep Mist」ワールドで出展。",
+        "url": "https://vket.com/2026Summer/world/25",
+        "venue": "VRChat（Vket2026 Summer）",
+        "venue_url": "https://vket.com/2026Summer/world/25"
+      },
+      {
+        "date": "2026-07-01",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/1-9/6 滋賀県 佐川美術館「魔法の美術館Ⅳ」展",
+        "description": "出品作品：七色小道、展覧会の絵",
+        "url": "https://www.sagawa-artmuseum.or.jp/plan/2026/04/post-175.html",
+        "venue": "滋賀県　佐川美術館",
+        "venue_url": "https://www.sagawa-artmuseum.or.jp/plan/2026/04/post-175.html"
+      },
+      {
+        "date": "2026-04-25",
+        "type": [
+          "works"
+        ],
+        "title": "TOPPAN 印刷博物館 VRChatワールド「Printing Playground」「GRAPHIC TRIAL」展 制作",
+        "description": "TOPPAN株式会社・株式会社Vと共同で、印刷博物館のVRChatワールドおよび「GRAPHIC TRIAL」展の展示ワールド、計3ワールドの制作を担当。",
+        "url": "https://prtimes.jp/main/html/rd/p/000000171.000049339.html",
+        "venue": "VRChat",
+        "venue_url": "https://prtimes.jp/main/html/rd/p/000000171.000049339.html"
+      }
+    ]
+  },
+  {
     "year": 2025,
     "events": [
+      {
+        "date": "2025-12-13",
+        "type": [
+          "workshop"
+        ],
+        "title": "東海大学「情報メディア先端技術論」講演",
+        "description": "東海大学の講義「情報メディア先端技術論」にて、これまでの制作と技術について講演。",
+        "url": "",
+        "venue": "東海大学",
+        "venue_url": ""
+      },
+      {
+        "date": "2025-12-01",
+        "type": [
+          "works"
+        ],
+        "title": "Volkswagen ブラウザゲーム「DRIVE CARnival」開発",
+        "description": "フォルクスワーゲン様のブラウザゲームを開発。全9車種・6ステージ、インストール不要でスマートフォンから遊べる。",
+        "url": "https://www.volkswagen.co.jp/ja/magazine/volkswagen_carnival.html",
+        "venue": "",
+        "venue_url": "https://www.volkswagen.co.jp/ja/magazine/volkswagen_carnival.html"
+      },
+      {
+        "date": "2025-10-07",
+        "type": [
+          "exhibition"
+        ],
+        "title": "10/7-12/14 埼玉県 SKIPシティ 映像ミュージアム「光のラビリンス」展",
+        "description": "出品作品：七色小道、展覧会の絵",
+        "url": "https://www.skipcity.jp/event/vm/labyrinth/",
+        "venue": "SKIPシティ 映像ミュージアム",
+        "venue_url": "https://www.skipcity.jp/event/vm/labyrinth/"
+      },
       {
         "date": "2025-08-02",
         "type": [
@@ -12,6 +138,18 @@
         "url": "https://www.tokai-tv.com/events/magicmuseum2025/",
         "venue": "愛知県　松坂屋美術館",
         "venue_url": "https://www.tokai-tv.com/events/magicmuseum2025/"
+      },
+      {
+        "date": "2025-07-28",
+        "type": [
+          "works",
+          "exhibition"
+        ],
+        "title": "講談社「Where Impossible Happens」展 Supported by JAL コンテンツ開発",
+        "description": "リバプールFC来日にあわせて渋谷で開催された展示イベント。漫画の主人公になって自分だけの漫画が持ち帰れるイマーシブ体験コンテンツを、CALAR.ink のチームで企画から担当。",
+        "url": "https://prtimes.jp/main/html/rd/p/000007483.000001719.html",
+        "venue": "東京都　渋谷",
+        "venue_url": ""
       },
       {
         "date": "2025-07-19",
@@ -58,6 +196,17 @@
         "venue_url": "https://www.yumeminatotower.gr.jp/events/みて%E3%80%80ふれて%E3%80%80光とあそぶ%E3%80%80魔法の美術館/"
       },
       {
+        "date": "2025-06-07",
+        "type": [
+          "works"
+        ],
+        "title": "VRChat向けアセット「ハイライト表示シェーダー」公開",
+        "description": "VRChatワールド制作やゲーム開発向けのシェーダー。pixivFANBOX 支援者向けに先行配布。",
+        "url": "https://tsubokulab.fanbox.cc/posts/10014118",
+        "venue": "",
+        "venue_url": ""
+      },
+      {
         "date": "2025-05-29",
         "type": [
           "works",
@@ -101,12 +250,56 @@
         "url": "https://artexhibition.jp/exhibitions/20250309-AEJ2600087/",
         "venue": "富岡市立美術博物館・福沢一郎記念美術館",
         "venue_url": "https://www.city.tomioka.lg.jp/www/contents/1395887478508/index.html"
+      },
+      {
+        "date": "2025-02-13",
+        "type": [
+          "works"
+        ],
+        "title": "「Virtual Motion Sender」β公開",
+        "description": "SteamVRのトラッカー・コントローラー入力を複数PCへ転送するアプリ。pixivFANBOX 支援者向けにβ公開。",
+        "url": "https://tsubokulab.fanbox.cc/posts/9372391",
+        "venue": "",
+        "venue_url": ""
       }
     ]
   },
   {
     "year": 2024,
     "events": [
+      {
+        "date": "2024-12-07",
+        "type": [
+          "workshop"
+        ],
+        "title": "東海大学「情報メディア先端技術論」講演",
+        "description": "東海大学の講義「情報メディア先端技術論」にて、これまでの制作と技術について講演。",
+        "url": "",
+        "venue": "東海大学",
+        "venue_url": ""
+      },
+      {
+        "date": "2024-08-20",
+        "type": [
+          "media"
+        ],
+        "title": "Webラジオ「モーリーのメタバース居住区」第98回 出演",
+        "description": "「マルチバースと地方創生の未来」。VRChatの魅力や、企業視点でのメタバース戦略について。",
+        "url": "https://audee.jp/voice/show/87892",
+        "venue": "",
+        "venue_url": ""
+      },
+      {
+        "date": "2024-08-06",
+        "type": [
+          "media"
+        ],
+        "title": "Webラジオ「モーリーのメタバース居住区」第97回 出演",
+        "description": "「坪倉輝明とはナニモノなのか！？」バックグラウンドやメディアアート周りについて。",
+        "url": "https://podcasts.apple.com/jp/podcast/id1611511630?i=1000664473571",
+        "venue": "",
+        "venue_url": ""
+      },
       {
         "date": "2024-07-13",
         "type": [
@@ -141,6 +334,17 @@
         "venue_url": "https://e-zofukuoka.com/special/mahou_museum/"
       },
       {
+        "date": "2024-04-29",
+        "type": [
+          "media"
+        ],
+        "title": "ポッドキャスト「normalizeFM」出演",
+        "description": "過去の制作の話から近況まで。",
+        "url": "",
+        "venue": "",
+        "venue_url": ""
+      },
+      {
         "date": "2024-04-24",
         "type": [
           "exhibition"
@@ -150,6 +354,28 @@
         "url": "https://www.takashimaya.co.jp/store/special/mahou_museum/index.html",
         "venue": "京都高島屋S.C.",
         "venue_url": "https://www.takashimaya.co.jp/store/special/mahou_museum/index.html"
+      },
+      {
+        "date": "2024-04-12",
+        "type": [
+          "works"
+        ],
+        "title": "広重美術館 VRChatワールド第二弾「Hiroshige World 2」技術協力",
+        "description": "TOPPAN株式会社様の「MiraVerse ミュージアム」として公開された、山形県天童市・広重美術館のVRChatワールド第二弾。ワールドアセットの制作と、ミュージアム向けUnityフレームワークの開発で技術協力。",
+        "url": "https://www.hiroshige-tendo.jp/miraverse/",
+        "venue": "VRChat",
+        "venue_url": "https://www.hiroshige-tendo.jp/miraverse/"
+      },
+      {
+        "date": "2024-04-06",
+        "type": [
+          "media"
+        ],
+        "title": "「メタバース生存戦略座談会」出演",
+        "description": "メタバースでの活動の続け方について、クリエイター・企業関係者と議論。",
+        "url": "https://www.youtube.com/watch?v=5bcCCP-rKnA",
+        "venue": "",
+        "venue_url": ""
       },
       {
         "date": "2024-03-16",
@@ -223,6 +449,17 @@
         "venue_url": "https://mocopi-devcamp.com/"
       },
       {
+        "date": "2023-12-02",
+        "type": [
+          "exhibition"
+        ],
+        "title": "12/2-12/17 バーチャルマーケット2023 Winter ブース出展",
+        "description": "「ワールドエンドユートピア Reboot XX 3980年」内に個人ブースを出展。初代Vketから連続11回目の出展。",
+        "url": "https://event.vket.com",
+        "venue": "VRChat（Vket2023 Winter）",
+        "venue_url": "https://event.vket.com"
+      },
+      {
         "date": "2023-08-01",
         "type": [
           "exhibition"
@@ -232,6 +469,28 @@
         "url": "https://www.artagenda.jp/exhibition/detail/8312",
         "venue": "横浜 そごう美術館",
         "venue_url": "https://www.artagenda.jp/exhibition/detail/8312"
+      },
+      {
+        "date": "2023-07-29",
+        "type": [
+          "works"
+        ],
+        "title": "「バーチャルマーケット2023 リアル in アキバ」ソニー株式会社 協力展示 制作",
+        "description": "ソニー株式会社の空間再現ディスプレイと嗅覚提示装置を組み合わせ、視覚と嗅覚が連動するメタバース体験を制作。7/29・30 開催。",
+        "url": "",
+        "venue": "東京都　秋葉原",
+        "venue_url": ""
+      },
+      {
+        "date": "2023-07-27",
+        "type": [
+          "media"
+        ],
+        "title": "配信番組「VRクリエイターズトーク」出演",
+        "description": "VRChatのワールド制作について。",
+        "url": "",
+        "venue": "",
+        "venue_url": ""
       },
       {
         "date": "2023-07-22",
@@ -267,6 +526,17 @@
         "venue_url": "https://tokushu.saga-s.co.jp/mahobisaga/"
       },
       {
+        "date": "2023-07-15",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/15-7/30 バーチャルマーケット2023 Summer ブース出展",
+        "description": "「スターシップオーケストラ ＜ダークマタ＞」内に個人ブースを出展。初代Vketから連続10回目の出展。",
+        "url": "https://event.vket.com",
+        "venue": "VRChat（Vket2023 Summer）",
+        "venue_url": "https://event.vket.com"
+      },
+      {
         "date": "2023-07-14",
         "type": [
           "exhibition"
@@ -298,6 +568,17 @@
         "url": "https://www.ntsec.gov.tw/article/detail.aspx?a=5070",
         "venue": "国立台湾科学教育館 ",
         "venue_url": "https://www.ntsec.gov.tw/article/detail.aspx?a=5070"
+      },
+      {
+        "date": "2023-06-18",
+        "type": [
+          "media"
+        ],
+        "title": "ラジオ番組「そのらじ」出演",
+        "description": "VRChatのワールド内でも収録の様子を公開しながら配信。",
+        "url": "",
+        "venue": "VRChat",
+        "venue_url": ""
       },
       {
         "date": "2023-05-27",
@@ -349,6 +630,17 @@
         "venue_url": "https://www.youtube.com/watch?v=_sX29wPTtDs"
       },
       {
+        "date": "2022-12-17",
+        "type": [
+          "media"
+        ],
+        "title": "バーチャル学会2022 オーガナイズドセッション「感覚提示」登壇",
+        "description": "cluster会場およびYouTube配信で開催。",
+        "url": "https://panora.tokyo/archives/57986",
+        "venue": "",
+        "venue_url": ""
+      },
+      {
         "date": "2022-12-15",
         "type": [
           "workshop"
@@ -360,11 +652,22 @@
         "venue_url": "https://www.do-johodai.ac.jp/"
       },
       {
+        "date": "2022-12-15",
+        "type": [
+          "exhibition"
+        ],
+        "title": "12/15-2023/10/15 韓国・金浦「HULIHULI 4」展示",
+        "description": "出品作品：展覧会の絵、つくもがみ、幻想シアター",
+        "url": "https://www.instagram.com/hulihuliseason",
+        "venue": "韓国　京畿道金浦市",
+        "venue_url": "https://www.instagram.com/hulihuliseason"
+      },
+      {
         "date": "2022-12-03",
         "type": [
           "exhibition"
         ],
-        "title": "バーチャルマーケット202 Winter ブース出展",
+        "title": "バーチャルマーケット2022 Winter ブース出展",
         "description": "バーチャルマーケット202 Winter ブース出展",
         "url": "https://winter2022.vket.com/world/7",
         "venue": "バーチャルマーケット2022 Winter",
@@ -1513,7 +1816,7 @@
           "exhibition"
         ],
         "title": "12/9 - 2/12 滋賀県「魔法の美術館Ⅱ」展",
-        "description": "12/9 - 2/12 滋賀県「魔法の美術館Ⅱ」展",
+        "description": "「Cosmic Square」初出展示。",
         "url": "http://www.sagawa-artmuseum.or.jp/plan/2017/07/post-78.html",
         "venue": "佐川美術館",
         "venue_url": "http://www.sagawa-artmuseum.or.jp/plan/2017/07/post-78.html"

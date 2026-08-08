@@ -16,6 +16,9 @@
     "images/works/affinbeat-vj/AffinBeatVJ_sample04.jpg",
     "images/works/affinbeat-vj/AffinBeatVJ_sample05.jpg"
   ],
+  "cosmic-square": [
+    "images/works/cosmic-square/CosmicSquare_thumbnail.jpg"
+  ],
   "exhibition-picture": [
     "images/works/exhibition-picture/ExhibitionPicture_01.jpg"
   ],
@@ -38,6 +41,9 @@
     "images/works/happy-pain/HappyPain_05.png",
     "images/works/happy-pain/HappyPain_06.png",
     "images/works/happy-pain/HappyPain_07.png"
+  ],
+  "hiroshige-world-2": [
+    "images/works/hiroshige-world-2/HiroshigeWorld2_thumbnail.webp"
   ],
   "interactive-funeral": [
     "images/works/interactive-funeral/LeapShoukou.png",
@@ -92,7 +98,7 @@
     "images/works/nhk-showa-100-experience/thumbnail.jpg"
   ],
   "pico-carnival": [
-    "images/works/pico-carnival/thumbnail.jpg"
+    "images/works/pico-carnival/thmbnail.png"
   ],
   "reality-signage": [
     "images/works/reality-signage/image_01.png",
@@ -110,6 +116,12 @@
     "images/works/shadow-touch/ShadowTouch_03.png",
     "images/works/shadow-touch/ShadowTouch_04.jpg"
   ],
+  "toppan-printing-playground": [
+    "images/works/toppan-printing-playground/PrintingPlayground_thumbnail.jpg"
+  ],
+  "tsubokura-virtual-museum": [
+    "images/works/tsubokura-virtual-museum/TsubokuraVirtualMuseum_thumbnail.jpg"
+  ],
   "tsukumogami": [
     "images/works/tsukumogami/Tsukumogami01.png",
     "images/works/tsukumogami/Tsukumogami02.png",
@@ -124,6 +136,10 @@
   "vertexceed": [
     "images/works/vertexceed/Vertexceed_01.jpg",
     "images/works/vertexceed/vertexceed_02.png"
+  ],
+  "virtual-motion-sender": [
+    "images/works/virtual-motion-sender/VirtualMotionSender_Example.png",
+    "images/works/virtual-motion-sender/VirtualMotionSender_thumbnail.png"
   ],
   "void-sailing": [
     "images/works/void-sailing/VoidSailing_01.png",
@@ -146,5 +162,12 @@
     "images/works/voyage-virtual-fashion/image_04.jpg",
     "images/works/voyage-virtual-fashion/image_05.jpg",
     "images/works/voyage-virtual-fashion/thumbnail.jpg"
+  ],
+  "vrchaptics": [
+    "images/works/vrchaptics/VRCHaptics_system.png",
+    "images/works/vrchaptics/VRCHaptics_thumbnail.jpg"
+  ],
+  "water-lily-garden": [
+    "images/works/water-lily-garden/WaterLilyGarden_thumbnail.jpg"
   ]
 }

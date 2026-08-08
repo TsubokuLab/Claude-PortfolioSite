@@ -32,10 +32,8 @@ const ActivityAdmin = () => {
       // データ構造の正規化（後方互換性のため）
       const normalizedData = data.map(activity => ({
         ...activity,
-        // 'category' フィールドを 'type' に統一
-        type: activity.type || activity.category || 'exhibition',
-        // typeを配列形式に正規化
-        type: Array.isArray(activity.type || activity.category) 
+        // 'category' フィールドを 'type' に統一したうえで、配列形式に正規化する
+        type: Array.isArray(activity.type || activity.category)
           ? (activity.type || activity.category)
           : typeof (activity.type || activity.category) === 'string'
             ? (activity.type || activity.category).split(/[,\s]+/).filter(t => t.trim())

@@ -54,13 +54,15 @@ export const AuthProvider = ({ children }) => {
     try {
       const inputHash = await generateHash(password);
       const expectedHash = import.meta.env.VITE_ADMIN_PASSWORD_HASH;
-      
-      // デバッグ用ログ（本番では削除）
-      console.log('Input password:', password);
-      console.log('Input hash:', inputHash);
-      console.log('Expected hash:', expectedHash);
-      console.log('Environment check:', import.meta.env);
-      
+
+      // ハッシュ未設定のビルドでは、undefined 同士の比較で素通りしないように明示的に弾く
+      if (!expectedHash) {
+        return {
+          success: false,
+          error: 'このビルドには管理者パスワードが設定されていません（VITE_ADMIN_PASSWORD_HASH 未定義）'
+        };
+      }
+
       if (inputHash === expectedHash) {
         setIsAuthenticated(true);
         sessionStorage.setItem('admin_authenticated', 'true');

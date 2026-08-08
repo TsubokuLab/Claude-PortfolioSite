@@ -1,0 +1,45 @@
+.notfound-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xxl) 0;
+  text-align: center;
+}
+
+.notfound-code {
+  font-size: clamp(5rem, 18vw, 10rem);
+  line-height: 1;
+  font-weight: var(--font-weight-light);
+  letter-spacing: 0.05em;
+  margin: 0 0 var(--spacing-md);
+  background: linear-gradient(120deg, var(--accent), var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.notfound-title {
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: var(--font-weight-medium);
+  margin: 0 0 var(--spacing-md);
+  color: var(--text);
+}
+
+.notfound-description {
+  color: var(--text-secondary);
+  margin: 0 0 var(--spacing-xl);
+  line-height: 1.8;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .notfound-actions .button {
+    width: 100%;
+  }
+}

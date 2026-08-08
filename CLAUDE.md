@@ -44,9 +44,7 @@ React + Vite で構築された SPA で、インタラクティブな 3D アニ�
 │   │   └── ThemeContext.jsx  # ライト/ダークテーマ
 │   ├── hooks/
 │   │   ├── useWindowSize.js
-│   │   ├── useMousePosition.js
-│   │   ├── useScrollPosition.js
-│   │   └── useInView.js
+│   │   └── useMousePosition.js
 │   ├── pages/
 │   │   ├── HomePage.jsx
 │   │   ├── ProfilePage.jsx
@@ -54,7 +52,7 @@ React + Vite で構築された SPA で、インタラクティブな 3D アニ�
 │   │   ├── WorkDetailPage.jsx
 │   │   ├── ActivityPage.jsx
 │   │   ├── ContactPage.jsx
-│   │   ├── AboutPage.jsx
+│   │   ├── NotFoundPage.jsx  # 404（Layout 配下）
 │   │   └── admin/            # 管理パネル（6ページ）
 │   ├── routes/
 │   │   ├── Router.jsx        # React Router 設定
@@ -67,13 +65,13 @@ React + Vite で構築された SPA で、インタラクティブな 3D アニ�
 │       ├── api.js            # JSON データ取得
 │       ├── helpers.js        # WebGL 検出・ユーティリティ
 │       ├── paths.js          # URL パス管理
-│       ├── youtubeUtils.js
-│       └── youtubeMapping.js
+│       ├── thumbnails.js     # 作品サムネイルの解決
+│       └── youtubeUtils.js
 ├── public/
 │   ├── data/
 │   │   ├── works.json        # ポートフォリオ作品データ
 │   │   ├── timeline.json     # 活動履歴タイムライン
-│   │   ├── skills.json       # スキルマトリクス
+│   │   ├── skills.json       # スキル一覧（ProfilePage が参照）
 │   │   ├── tags.json         # タグ定義
 │   │   └── heroImages.json   # ヒーロー画像設定
 │   ├── .htaccess             # Apache SPA ルーティング設定
@@ -92,19 +90,19 @@ React + Vite で構築された SPA で、インタラクティブな 3D アニ�
 # 開発サーバー起動（ポート 3000）
 npm run dev
 
-# コード品質チェック
+# コード品質チェック（eslint 9 / eslint.config.js の flat config）
 npm run lint
 
 # ビルド（環境別）
 npm run build           # デフォルト
-npm run build:github    # GitHub Pages 用（base path 付き）
-npm run build:custom    # カスタムドメイン用（ルートパス）
+npm run build:github    # base = /Claude-PortfolioSite/ 。デプロイで使うのはこれ
+npm run build:custom    # base = / 。ローカル確認用。デプロイには使わない
 
 # プロダクションビルドのプレビュー
 npm run preview
 
-# GitHub Pages へデプロイ
-npm run deploy:github
+# デプロイ（gh-pages へ push → GitHub Pages と本番の両方に反映）
+npm run deploy
 ```
 
 ---
@@ -117,6 +115,22 @@ npm run deploy:github
 | `VITE_ADMIN_PASSWORD_HASH` | `240be518...` (admin123) | （要変更）| 管理者パスワードの SHA-256 ハッシュ |
 
 **重要**: 本番環境では `VITE_ADMIN_PASSWORD_HASH` を必ず安全な値に変更すること。
+現状 `.env.production` にこの変数は定義されておらず、本番ビルドでは管理画面に
+ログインできない（未定義の場合は明示的にエラーを返す実装になっている）。
+
+---
+
+## 画像アセットの規約
+
+- 作品画像は `public/images/works/{作品のid}/` に置く（ディレクトリ名は works.json の `id` と一致させる）
+- **ディレクトリ名・ファイル名は大文字小文字まで works.json の記述と一致させること。**
+  Windows のローカル環境では大文字小文字を区別しないため気付けないが、
+  本番の Linux + Apache では 404 になる
+- `vite.config.js` の `imageManifestPlugin` が `public/images/works/` をスキャンして
+  `public/data/image-manifest.json` を生成するため、`thumbnail` を書かなくても
+  ディレクトリに画像を置けば自動で拾われる
+- ローカル画像も `thumbnail` も無い場合、`src/utils/thumbnails.js` が
+  works.json の `youtube`（動画ID）から YouTube のサムネイルにフォールバックする
 
 ---
 
@@ -196,19 +210,54 @@ npm run deploy:github
 
 ## デプロイ構成
 
-### GitHub Pages（デモ）
+**公開の起点は `gh-pages` ブランチへの push だけ**。本番・デモの両方がこのブランチを見ている。
 
-```bash
-npm run deploy:github
+```
+  src/ + public/
+        │  npm run deploy（手動）
+        ↓
+      dist/  ──push──→  gh-pages ─┬─→ GitHub Pages（デモ、そのまま配信）
+                                  │
+                                  └─→ Webhook → deploy.php → deploy.sh → 本番サーバー
 ```
 
-`gh-pages` パッケージが `dist/` を `gh-pages` ブランチに push する。
+### 手順
 
-### 本番サーバー（カスタムドメイン）
+```bash
+npm run deploy          # = build:github してから gh-pages へ push
+```
 
-- Apache サーバー + `.htaccess` で SPA ルーティングを処理
-- GitHub Actions + Webhook による自動デプロイ
-- `main` ブランチへの push でトリガー
+`deployToGithubPages.bat` は `npm run deploy` を呼ぶだけ。
+`deployAll.bat` はその前に `main` への push を行うが、**`main` への push では何も自動実行されない**
+（GitHub Actions のワークフローはリポジトリに存在しない）。`main` はあくまでソースの保管場所。
+
+### 本番サーバー（カスタムドメイン）側の処理
+
+`gh-pages` への push で Webhook が発火し、`/var/www/scripts/deploy.sh` が動く。
+
+1. `gh-pages` を checkout（HMAC-SHA256 で署名を検証したうえで実行される）
+2. 一時ディレクトリへ rsync
+3. **`sed` で `/Claude-PortfolioSite/` を `/` に置換**
+4. パーミッション設定
+5. `Lab` / `sqlbuddy` / `tmp` を引き継ぎ（リポジトリ管理外・FTPで手動管理）
+6. 本番ディレクトリと atomic に入れ替え（直前の状態はバックアップとして3世代保持）
+
+**ビルドは常に `build:github`（base = `/Claude-PortfolioSite/`）で行う。**
+本番のルートパスへの変換は上記3のサーバー側 `sed` が担当する。`build:custom` を使うと
+GitHub Pages 側のデモが壊れるため、通常は使わない。
+
+### 注意点
+
+- **データに `/Claude-PortfolioSite/` を含む文字列を書かないこと。**
+  上記3の `sed` は `*.html` `*.css` `*.js` `*.json` すべてに掛かるため、
+  works.json 等にデモサイトへのURLを書くと本番で `/` に置換されて壊れる
+- **サーバーの Git は 1.8.3.1。** `git fetch origin <branch>` ではリモート追跡ref が
+  更新されない（自動更新は Git 1.8.4 以降の挙動）。deploy.sh では
+  `git fetch origin +refs/heads/gh-pages:refs/remotes/origin/gh-pages` と
+  **コロン付きで書き先を明示している**。ここを短く書き換えると、
+  毎回同じ古いコミットを展開し続ける状態になる
+- deploy.sh の `log()` は `/var/log/deploy.log` に、コマンドの標準出力・エラーは
+  同じログに集約している。`Checked out: <hash>` の行で実際に展開されたコミットを確認できる
 
 ---
 
@@ -225,5 +274,10 @@ npm run deploy:github
 
 - `public/data/*.json` が CMS のデータストア（バックエンド DB なし）
 - WebGL が利用不可の環境では Three.js バックグラウンドは自動で無効化される
-- GitHub Pages デプロイ時は `build:github` を使用（base path が異なる）
-- SPA ルーティングのため `public/404.html` と `.htaccess` が必須
+- デプロイは常に `build:github`（base path 付き）。本番のパス変換はサーバー側の `sed` が行う
+- SPA ルーティングのため `public/404.html` と `public/.htaccess` が必須
+- `public/.htaccess` はドットファイルへの直接アクセスを 403 で拒否している。
+  `/.well-known/` だけは除外（Let's Encrypt の証明書更新に使われるため、塞ぐと更新が失敗する）
+- ビルド成果物（`dist/` `.vite/` `assets/`）は `.gitignore` 済み。
+  `pushToMain.bat` 等の `git add .` で再び混入しないようにするための措置なので、
+  除外設定を外さないこと

@@ -4,6 +4,16 @@ server/
 # Claude Code ローカル設定
 .claude/
 
+# ビルド成果物・キャッシュ
+# （pushToMain.bat / deployAll.bat の `git add .` で再混入しないように明示的に除外）
+dist/
+.vite/
+/assets/
+
+# 旧サイト構成の残骸。画像の正は public/images/ 、404の正は public/404.html
+/images/
+/404.html
+
 # Logs
 logs
 *.log
