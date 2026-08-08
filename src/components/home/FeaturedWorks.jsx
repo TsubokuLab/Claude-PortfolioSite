@@ -67,7 +67,7 @@ const FeaturedWorks = () => {
         <ScrollAnimation type="fadeUp">
           <h2 className="section-title">Featured Works</h2>
           <p className="section-description">
-            デジタルとフィジカルの垣根を超えた、インタラクティブな体験の創出
+            美術館の展示、企業案件、VRChat のワールド。実際に人が体験したものを並べています。
           </p>
         </ScrollAnimation>
         

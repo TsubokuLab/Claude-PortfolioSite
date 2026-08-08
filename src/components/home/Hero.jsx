@@ -197,8 +197,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            インタラクティブな映像演出やフィジカルセンシングを駆使し、
-            現実とデジタルの境界を曖昧にする体験を創造します。
+            センサーと映像を組み合わせて、現実とデジタルの境目があいまいな体験をつくっています。
+            美術館の展示から、VRChat のワールド、手のひらサイズの電子工作まで。
           </motion.p>
           
           <motion.div className="hero-buttons"

@@ -112,6 +112,23 @@
   opacity: 0.9;
 }
 
+.view-all-activity {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* グラデーション背景の上に置くボタン。枠と文字を白に寄せる */
+.button.secondary.light {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: white;
+}
+
+.button.secondary.light:hover {
+  border-color: white;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* コンタクトCTA */
 .contact-cta {
   padding: 6rem 0;
