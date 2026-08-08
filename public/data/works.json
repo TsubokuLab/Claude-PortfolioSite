@@ -796,7 +796,7 @@
     "title": "坪倉仮想美術館 - Tsubokura Virtual Museum",
     "description": "これまで制作してきたメディアアート作品を、VRChat上でいつでも見られるようにした常設の美術館ワールド。実物の展示は会期が終われば解体されてしまうため、作品を残し続けるための場所として作りました。",
     "category": "VR",
-    "year": 2022,
+    "year": 2020,
     "awards": [],
     "collaborators": [],
     "technology": [
@@ -917,7 +917,7 @@
     "title": "VRCHaptics",
     "description": "触覚スーツ「bHaptics」をVRChatで動作させるアプリとUnityアセットのセット。VRChatの画面から接触判定を読み取ってスーツを振動させる仕組みで、アバター側のセットアップ用ヘルパーも同梱しています。pixivFANBOXで公開中。",
     "category": "software",
-    "year": 2020,
+    "year": 2019,
     "awards": [],
     "collaborators": [],
     "technology": [
