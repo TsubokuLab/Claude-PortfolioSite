@@ -8,11 +8,18 @@
   background-color: var(--background-secondary);
 }
 
+/* カード4枚を2x2で見せる。3+1で最終行が余るのを避ける */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .skill-card {

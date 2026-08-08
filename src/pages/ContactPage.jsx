@@ -48,8 +48,8 @@ const ContactPage = () => {
         <ScrollAnimation type="fadeUp">
           <h1 className="page-title">Contact</h1>
           <p className="page-description">
-            お仕事のご依頼やご質問など、お気軽にお問い合わせください。
-            プロジェクトについてのご相談も歓迎します。
+            お仕事のご依頼、取材、講演のご相談など。
+            実現できるかどうかの技術的な相談だけでも構いません。
           </p>
         </ScrollAnimation>
 

@@ -24,13 +24,14 @@ const FeaturedWorks = () => {
         const data = await worksResponse.json();
 
         // 注目の作品を6つ表示
-        // VRと代表的なインスタレーション中心に選択
+        // 代表的なインスタレーションと、VRChat上の制作物をあわせて選択
         const featuredWorkIds = [
-          'vertex',                // VERTEX: VRCBattleRoyale
-          'exhibition-picture',    // 展覧会の絵
-          'fantasy-theater',       // 幻想シアター
-          'invisible-sculpture',   // 不可視彫像
-          'achromatic-world'      // Achromatic World
+          'tsubokura-virtual-museum', // 坪倉仮想美術館
+          'vertex',                   // VERTEX: VRCBattleRoyale
+          'exhibition-picture',       // 展覧会の絵
+          'fantasy-theater',          // 幻想シアター
+          'invisible-sculpture',      // 不可視彫像
+          'achromatic-world'          // Achromatic World
         ];
 
         const featuredWorks = featuredWorkIds
