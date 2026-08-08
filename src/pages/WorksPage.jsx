@@ -85,8 +85,9 @@ const WorksPage = () => {
         <div className="page-header">
           <h1 className="page-title">Works</h1>
           <p className="page-description">
-            美術館やイベントでの展示作品、クライアントワーク、VRChatのワールド、
-            公開しているソフトウェアまで。これまでにつくったものの記録です。
+            インタラクティブなメディアアート作品や展示の記録です。
+            現実世界での「体験」をデジタル技術で拡張し、
+            現実とデジタルの境界を曖昧にする作品を中心に制作しています。
           </p>
         </div>
 

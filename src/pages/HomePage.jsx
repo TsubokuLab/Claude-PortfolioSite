@@ -9,38 +9,6 @@ import { isWebGLSupported } from '../utils/helpers';
 import { fetchActivities } from '../utils/api';
 import './HomePage.css';
 
-// トップに並べるスキルカード。ProfilePage の skills.json とは粒度が違うため個別に持つ
-const SKILL_CARDS = [
-  {
-    icon: 'fa-solid fa-cube',
-    title: 'インタラクティブ・インスタレーション',
-    description:
-      'Unity / C# を中心に、美術館の展示作品やテーマパークのアトラクションを制作。' +
-      'センサーで人の動きを拾い、映像や音で返す仕組みを組み立てています。',
-  },
-  {
-    icon: 'fa-solid fa-vr-cardboard',
-    title: 'VRChat / メタバース',
-    description:
-      'VRChat のワールド制作と企業出展。Udon でのギミック実装から、' +
-      'シェーダを書いての見た目づくり、Quest / PICO 向けの軽量化まで手がけます。',
-  },
-  {
-    icon: 'fa-solid fa-microchip',
-    title: 'フィジカルコンピューティング',
-    description:
-      'M5Stack / ESP32 / Arduino を使った電子工作。センサーと通信を組み合わせて、' +
-      '作品に必要な装置はだいたい自分で作ってしまいます。',
-  },
-  {
-    icon: 'fa-solid fa-wand-magic-sparkles',
-    title: 'AI を使ったものづくり',
-    description:
-      'LLM を使って、思いついた道具やWebアプリをその日のうちに形にする。' +
-      '企画出しから実装まで、制作のスピードそのものを変えにいっています。',
-  },
-];
-
 // 「2026-04-25」→「2026.04」
 const formatYearMonth = (dateString) => {
   if (!dateString) return '';
@@ -85,17 +53,44 @@ const HomePage = () => {
           </ScrollAnimation>
 
           <div className="skills-grid">
-            {SKILL_CARDS.map((skill, index) => (
-              <ScrollAnimation key={skill.title} type="fadeUp" delay={0.1 + index * 0.1}>
-                <div className="skill-card">
-                  <div className="skill-icon">
-                    <i className={skill.icon}></i>
-                  </div>
-                  <h3>{skill.title}</h3>
-                  <p>{skill.description}</p>
+            <ScrollAnimation type="fadeLeft" delay={0.2}>
+              <div className="skill-card">
+                <div className="skill-icon">
+                  <i className="skill-icon-unity">Unity</i>
                 </div>
-              </ScrollAnimation>
-            ))}
+                <h3>インタラクティブ開発</h3>
+                <p>
+                  Unity/C#を用いたVR/MR/AR開発、テーマパークアトラクション、
+                  プロジェクションマッピングなど様々なインタラクティブコンテンツの制作。
+                </p>
+              </div>
+            </ScrollAnimation>
+
+            <ScrollAnimation type="fadeUp" delay={0.3}>
+              <div className="skill-card">
+                <div className="skill-icon">
+                  <i className="skill-icon-code">Code</i>
+                </div>
+                <h3>クリエイティブコーディング</h3>
+                <p>
+                  C++/openFrameworks、Processing、WebGLなどを用いた
+                  表現技法によるビジュアルプログラミングやメディアアート作品の制作。
+                </p>
+              </div>
+            </ScrollAnimation>
+
+            <ScrollAnimation type="fadeRight" delay={0.4}>
+              <div className="skill-card">
+                <div className="skill-icon">
+                  <i className="skill-icon-hardware">Hardware</i>
+                </div>
+                <h3>フィジカルコンピューティング</h3>
+                <p>
+                  各種センサーデバイスの連携、Arduino、Kinect、
+                  Leap Motionなどを用いたハードウェアインタラクション設計。
+                </p>
+              </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -141,10 +136,10 @@ const HomePage = () => {
       <section className="contact-cta">
         <div className="container">
           <ScrollAnimation type="fadeUp">
-            <h2 className="cta-title">Contact</h2>
+            <h2 className="cta-title">Let&apos;s Work Together</h2>
             <p className="cta-description">
-              展示やイベントの演出、テーマパークのアトラクション、VRChat のワールド制作や企業出展、
-              技術的に成立するかどうかの検証まで。まだざっくりした構想の段階でも構いません。
+              新しいプロジェクトや依頼についてのご相談をお待ちしています。
+              あなたのアイデアを一緒に形にしましょう。
             </p>
             <Link to="/contact" className="button primary">お問い合わせ</Link>
           </ScrollAnimation>
