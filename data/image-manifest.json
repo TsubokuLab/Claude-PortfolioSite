@@ -16,6 +16,9 @@
     "images/works/affinbeat-vj/AffinBeatVJ_sample04.jpg",
     "images/works/affinbeat-vj/AffinBeatVJ_sample05.jpg"
   ],
+  "cosmic-square": [
+    "images/works/cosmic-square/CosmicSquare_thumbnail.jpg"
+  ],
   "exhibition-picture": [
     "images/works/exhibition-picture/ExhibitionPicture_01.jpg"
   ],
@@ -38,6 +41,9 @@
     "images/works/happy-pain/HappyPain_05.png",
     "images/works/happy-pain/HappyPain_06.png",
     "images/works/happy-pain/HappyPain_07.png"
+  ],
+  "hiroshige-world-2": [
+    "images/works/hiroshige-world-2/HiroshigeWorld2_thumbnail.webp"
   ],
   "interactive-funeral": [
     "images/works/interactive-funeral/LeapShoukou.png",
@@ -157,5 +163,8 @@
   "vrchaptics": [
     "images/works/vrchaptics/VRCHaptics_system.png",
     "images/works/vrchaptics/VRCHaptics_thumbnail.jpg"
+  ],
+  "water-lily-garden": [
+    "images/works/water-lily-garden/WaterLilyGarden_thumbnail.jpg"
   ]
 }

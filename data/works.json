@@ -1025,6 +1025,10 @@
         "label": "メディア掲載",
         "url": "https://metacul-frontier.com/?p=11346"
       }
+    ],
+    "thumbnail": "images/works/hiroshige-world-2/HiroshigeWorld2_thumbnail.webp",
+    "images": [
+      "images/works/hiroshige-world-2/HiroshigeWorld2_thumbnail.webp"
     ]
   },
   {
@@ -1048,6 +1052,10 @@
         "label": "会場情報",
         "url": "https://e-zofukuoka.com/special/mahou_museum/"
       }
+    ],
+    "thumbnail": "images/works/water-lily-garden/WaterLilyGarden_thumbnail.jpg",
+    "images": [
+      "images/works/water-lily-garden/WaterLilyGarden_thumbnail.jpg"
     ]
   },
   {
@@ -1071,6 +1079,10 @@
         "label": "初出展示",
         "url": "http://www.sagawa-artmuseum.or.jp/plan/2017/07/post-78.html"
       }
+    ],
+    "thumbnail": "images/works/cosmic-square/CosmicSquare_thumbnail.jpg",
+    "images": [
+      "images/works/cosmic-square/CosmicSquare_thumbnail.jpg"
     ]
   }
 ]
