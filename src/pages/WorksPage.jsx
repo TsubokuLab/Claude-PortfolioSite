@@ -2,16 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { fetchWorks, fetchTags, fetchImageManifest } from '../utils/api';
 import { useCursor } from '../context/CursorContext';
 import { Link } from 'react-router-dom';
+import { resolveThumbUrl } from '../utils/thumbnails';
 import './WorksPage.css';
-
-// マニフェストからサムネイルURLを解決する
-const resolveThumbUrl = (work, manifest) => {
-  const raw = work.thumbnail || (() => {
-    const files = manifest[work.id] || [];
-    return files.find(f => /thumbnail\.(jpe?g|png|webp|gif)$/i.test(f)) || files[0] || null;
-  })();
-  return raw ? `${import.meta.env.BASE_URL}${raw.replace(/^\.\//, '')}` : null;
-};
 
 const WorksPage = () => {
   const [works, setWorks] = useState([]);

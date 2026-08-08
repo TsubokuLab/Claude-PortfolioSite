@@ -255,6 +255,17 @@ const ProfilePage = () => {
               <div className="award-item">
                 <div className="award-year">
                   <i className="fa-solid fa-trophy"></i>
+                  2025
+                </div>
+                <div className="award-details">
+                  <h3 className="award-title">最先端表現技術推進協会 第9回羽倉賞</h3>
+                  <p className="award-subtitle">「体感！ 昭和100年商店街」（NHK放送技術研究所 技研公開2025）</p>
+                </div>
+              </div>
+
+              <div className="award-item">
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
                   2018
                 </div>
                 <div className="award-details">
@@ -348,6 +359,17 @@ const ProfilePage = () => {
                 <div className="award-details">
                   <h3 className="award-title">第66回広告電通賞</h3>
                   <p className="award-subtitle">モバイル・コミュニケーション部門 最優秀賞</p>
+                </div>
+              </div>
+
+              <div className="award-item">
+                <div className="award-year">
+                  <i className="fa-solid fa-trophy"></i>
+                  2010
+                </div>
+                <div className="award-details">
+                  <h3 className="award-title">第16回学生CGコンテスト</h3>
+                  <p className="award-subtitle">「Shadow Touch」 インタラクティブ部門 優秀賞</p>
                 </div>
               </div>
             </div>
