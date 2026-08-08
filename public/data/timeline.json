@@ -268,6 +268,17 @@
     "year": 2024,
     "events": [
       {
+        "date": "2024-12-07",
+        "type": [
+          "workshop"
+        ],
+        "title": "東海大学「情報メディア先端技術論」講演",
+        "description": "東海大学の講義「情報メディア先端技術論」にて、これまでの制作と技術について講演。",
+        "url": "",
+        "venue": "東海大学",
+        "venue_url": ""
+      },
+      {
         "date": "2024-08-20",
         "type": [
           "media"
@@ -1805,7 +1816,7 @@
           "exhibition"
         ],
         "title": "12/9 - 2/12 滋賀県「魔法の美術館Ⅱ」展",
-        "description": "12/9 - 2/12 滋賀県「魔法の美術館Ⅱ」展",
+        "description": "「Cosmic Square」初出展示。",
         "url": "http://www.sagawa-artmuseum.or.jp/plan/2017/07/post-78.html",
         "venue": "佐川美術館",
         "venue_url": "http://www.sagawa-artmuseum.or.jp/plan/2017/07/post-78.html"

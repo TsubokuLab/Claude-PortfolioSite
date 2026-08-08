@@ -1030,17 +1030,19 @@
   {
     "id": "water-lily-garden",
     "title": "睡蓮の庭 - Water Lily Garden",
-    "description": "2026年の新作インスタレーション。「魔法の美術館」2026年 BOSS E・ZO FUKUOKA 会場（7/14-9/27）で初公開しました。",
+    "description": "モネが生涯描き続けたジヴェルニーの池は、水面を介して空と自然が溶け合い、無数の命が静かに息づく、美しい場所でした。その豊かな情景に影響を受け、水面がゆらめくたびに現実世界と絵画世界の境界が曖昧になっていく——そんな体験のできる没入型インスタレーションです。床には鯉が泳ぎ、木陰からは動物たちが姿を現す。来場者の動きに呼応して反応するこの空間で、絵画の世界をただ鑑賞するのではなく、その中に溶け込む体験として制作しました。",
     "category": "mediaart",
     "year": 2026,
     "awards": [],
     "collaborators": [],
     "technology": [
       "Unity",
-      "C#"
+      "C#",
+      "プロジェクションマッピング",
+      "測域センサ"
     ],
     "exhibition": "魔法の美術館（BOSS E・ZO FUKUOKA）",
-    "materials": "Unity",
+    "materials": "Unity / 短焦点プロジェクター / 測域センサ / スピーカー",
     "links": [
       {
         "label": "会場情報",
@@ -1051,17 +1053,24 @@
   {
     "id": "cosmic-square",
     "title": "Cosmic Square",
-    "description": "「魔法の美術館」を中心に各地を巡回しているインスタレーション作品。長野県 上田市立美術館（2022）、広島県 ふくやま美術館（2024）、福岡県 BOSS E・ZO FUKUOKA（2026）などで展示しています。",
+    "description": "「宇宙・重力」をテーマにした作品です。床には地上、水中、月面、宇宙などシーンが映し出され、その変化に合わせて重力も変わります。その上を歩くと、足跡がついて色とりどりのオブジェが転がるなど、異なる次元とともに重力の違いを楽しむことが出来ます。",
     "category": "mediaart",
-    "year": 2022,
+    "year": 2017,
     "awards": [],
     "collaborators": [],
     "technology": [
       "Unity",
-      "C#"
+      "C#",
+      "プロジェクションマッピング",
+      "測域センサ"
     ],
-    "exhibition": "魔法の美術館",
-    "materials": "Unity",
-    "links": []
+    "exhibition": "魔法の美術館Ⅱ（佐川美術館）ほか",
+    "materials": "Unity / プロジェクター / 測域センサ",
+    "links": [
+      {
+        "label": "初出展示",
+        "url": "http://www.sagawa-artmuseum.or.jp/plan/2017/07/post-78.html"
+      }
+    ]
   }
 ]
