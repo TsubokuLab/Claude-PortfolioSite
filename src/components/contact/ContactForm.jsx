@@ -91,8 +91,8 @@ const ContactForm = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
           >
-            <h3>Message Sent!</h3>
-            <p>Thank you for your message. We'll get back to you soon.</p>
+            <h3>送信しました</h3>
+            <p>お問い合わせありがとうございます。数日以内に返信いたします。</p>
           </motion.div>
         )}
         

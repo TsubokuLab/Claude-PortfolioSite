@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './AdminLogin.css';
 
 const AdminLogin = () => {
@@ -78,7 +78,7 @@ const AdminLogin = () => {
 
         <div className="login-footer">
           <p>
-            <a href="/" className="back-link">← サイトトップに戻る</a>
+            <Link to="/" className="back-link">← サイトトップに戻る</Link>
           </p>
         </div>
       </div>

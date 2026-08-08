@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Hero from '../components/home/Hero';
 import FeaturedWorks from '../components/home/FeaturedWorks';
 import Background from '../components/webgl/Background';
@@ -125,12 +126,12 @@ const HomePage = () => {
       <section className="contact-cta">
         <div className="container">
           <ScrollAnimation type="fadeUp">
-            <h2 className="cta-title">Let's Work Together</h2>
+            <h2 className="cta-title">Let&apos;s Work Together</h2>
             <p className="cta-description">
               新しいプロジェクトや依頼についてのご相談をお待ちしています。
               あなたのアイデアを一緒に形にしましょう。
             </p>
-            <a href="/contact" className="button primary">お問い合わせ</a>
+            <Link to="/contact" className="button primary">お問い合わせ</Link>
           </ScrollAnimation>
         </div>
       </section>

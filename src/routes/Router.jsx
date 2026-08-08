@@ -10,6 +10,7 @@ import WorksPage from '../pages/WorksPage';
 import WorkDetailPage from '../pages/WorkDetailPage';
 import ActivityPage from '../pages/ActivityPage';
 import ContactPage from '../pages/ContactPage';
+import NotFoundPage from '../pages/NotFoundPage';
 
 // 管理者ページインポート
 import AdminLogin from '../pages/admin/AdminLogin';
@@ -103,17 +104,16 @@ function AppRouter() {
           <Route path="works/:workId" element={<WorkDetailPage />} />
           <Route path="activity" element={<ActivityPage />} />
           <Route path="contact" element={<ContactPage />} />
+          {/* 404はLayout配下に置き、ヘッダー・フッターを維持したまま表示する */}
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
-        
+
         {/* 管理者ページ */}
         <Route path="/admin" element={<Dashboard />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/works" element={<WorksAdmin />} />
         <Route path="/admin/activities" element={<ActivityAdmin />} />
         <Route path="/admin/tags" element={<TagManagement />} />
-        
-        {/* 404ページ */}
-        <Route path="*" element={<div>Page Not Found</div>} />
       </Routes>
     </BrowserRouter>
   );
