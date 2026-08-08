@@ -110,6 +110,9 @@
     "images/works/shadow-touch/ShadowTouch_03.png",
     "images/works/shadow-touch/ShadowTouch_04.jpg"
   ],
+  "tsubokura-virtual-museum": [
+    "images/works/tsubokura-virtual-museum/TsubokuraVirtualMuseum_thumbnail.jpg"
+  ],
   "tsukumogami": [
     "images/works/tsukumogami/Tsukumogami01.png",
     "images/works/tsukumogami/Tsukumogami02.png",
@@ -124,6 +127,10 @@
   "vertexceed": [
     "images/works/vertexceed/Vertexceed_01.jpg",
     "images/works/vertexceed/vertexceed_02.png"
+  ],
+  "virtual-motion-sender": [
+    "images/works/virtual-motion-sender/VirtualMotionSender_Example.png",
+    "images/works/virtual-motion-sender/VirtualMotionSender_thumbnail.png"
   ],
   "void-sailing": [
     "images/works/void-sailing/VoidSailing_01.png",
@@ -146,5 +153,9 @@
     "images/works/voyage-virtual-fashion/image_04.jpg",
     "images/works/voyage-virtual-fashion/image_05.jpg",
     "images/works/voyage-virtual-fashion/thumbnail.jpg"
+  ],
+  "vrchaptics": [
+    "images/works/vrchaptics/VRCHaptics_system.png",
+    "images/works/vrchaptics/VRCHaptics_thumbnail.jpg"
   ]
 }
