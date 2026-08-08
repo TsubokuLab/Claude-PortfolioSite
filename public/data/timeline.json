@@ -323,17 +323,6 @@
         "venue_url": "https://e-zofukuoka.com/special/mahou_museum/"
       },
       {
-        "date": "2024-05-20",
-        "type": [
-          "works"
-        ],
-        "title": "広重美術館 VRChatワールド第二弾「Hiroshige World 2」技術協力",
-        "description": "TOPPAN株式会社様のご依頼で、山形県天童市の広重美術館VRChatワールド第二弾のモデリング・ギミック・フレームワーク開発を担当。",
-        "url": "",
-        "venue": "VRChat",
-        "venue_url": ""
-      },
-      {
         "date": "2024-04-29",
         "type": [
           "media"
@@ -354,6 +343,28 @@
         "url": "https://www.takashimaya.co.jp/store/special/mahou_museum/index.html",
         "venue": "京都高島屋S.C.",
         "venue_url": "https://www.takashimaya.co.jp/store/special/mahou_museum/index.html"
+      },
+      {
+        "date": "2024-04-12",
+        "type": [
+          "works"
+        ],
+        "title": "広重美術館 VRChatワールド第二弾「Hiroshige World 2」技術協力",
+        "description": "TOPPAN株式会社様の「MiraVerse ミュージアム」として公開された、山形県天童市・広重美術館のVRChatワールド第二弾。ワールドアセットの制作と、ミュージアム向けUnityフレームワークの開発で技術協力。",
+        "url": "https://www.hiroshige-tendo.jp/miraverse/",
+        "venue": "VRChat",
+        "venue_url": "https://www.hiroshige-tendo.jp/miraverse/"
+      },
+      {
+        "date": "2024-04-06",
+        "type": [
+          "media"
+        ],
+        "title": "「メタバース生存戦略座談会」出演",
+        "description": "メタバースでの活動の続け方について、クリエイター・企業関係者と議論。",
+        "url": "https://www.youtube.com/watch?v=5bcCCP-rKnA",
+        "venue": "",
+        "venue_url": ""
       },
       {
         "date": "2024-03-16",
@@ -427,6 +438,17 @@
         "venue_url": "https://mocopi-devcamp.com/"
       },
       {
+        "date": "2023-12-02",
+        "type": [
+          "exhibition"
+        ],
+        "title": "12/2-12/17 バーチャルマーケット2023 Winter ブース出展",
+        "description": "「ワールドエンドユートピア Reboot XX 3980年」内に個人ブースを出展。初代Vketから連続11回目の出展。",
+        "url": "https://event.vket.com",
+        "venue": "VRChat（Vket2023 Winter）",
+        "venue_url": "https://event.vket.com"
+      },
+      {
         "date": "2023-08-01",
         "type": [
           "exhibition"
@@ -493,6 +515,17 @@
         "venue_url": "https://tokushu.saga-s.co.jp/mahobisaga/"
       },
       {
+        "date": "2023-07-15",
+        "type": [
+          "exhibition"
+        ],
+        "title": "7/15-7/30 バーチャルマーケット2023 Summer ブース出展",
+        "description": "「スターシップオーケストラ ＜ダークマタ＞」内に個人ブースを出展。初代Vketから連続10回目の出展。",
+        "url": "https://event.vket.com",
+        "venue": "VRChat（Vket2023 Summer）",
+        "venue_url": "https://event.vket.com"
+      },
+      {
         "date": "2023-07-14",
         "type": [
           "exhibition"
@@ -524,6 +557,17 @@
         "url": "https://www.ntsec.gov.tw/article/detail.aspx?a=5070",
         "venue": "国立台湾科学教育館 ",
         "venue_url": "https://www.ntsec.gov.tw/article/detail.aspx?a=5070"
+      },
+      {
+        "date": "2023-06-18",
+        "type": [
+          "media"
+        ],
+        "title": "ラジオ番組「そのらじ」出演",
+        "description": "VRChatのワールド内でも収録の様子を公開しながら配信。",
+        "url": "",
+        "venue": "VRChat",
+        "venue_url": ""
       },
       {
         "date": "2023-05-27",

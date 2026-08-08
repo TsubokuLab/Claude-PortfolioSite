@@ -996,5 +996,72 @@
         "url": "https://www.pixiv.net/fanbox/creator/5179544/post/222812"
       }
     ]
+  },
+  {
+    "id": "hiroshige-world-2",
+    "title": "広重美術館 VRChatワールド「Hiroshige World 2」",
+    "description": "TOPPAN株式会社様の「MiraVerse ミュージアム」として2024年4月12日に公開された、山形県天童市・広重美術館のVRChatワールド第二弾。歌川広重の高精細な作品を鑑賞できるほか、理解を深めるクイズエリアや、絵の中に入り込む体験ができるダイブエリアを備えています。ワールドアセットの制作と、ミュージアム向けUnityフレームワークの開発で技術協力を担当しました。",
+    "category": "clientworks",
+    "year": 2024,
+    "awards": [],
+    "collaborators": [
+      "TOPPAN株式会社",
+      "広重美術館"
+    ],
+    "technology": [
+      "Unity",
+      "C#",
+      "VRChat SDK3",
+      "Udon"
+    ],
+    "exhibition": "VRChat",
+    "materials": "Unity / VRChat",
+    "links": [
+      {
+        "label": "公式サイト",
+        "url": "https://www.hiroshige-tendo.jp/miraverse/"
+      },
+      {
+        "label": "メディア掲載",
+        "url": "https://metacul-frontier.com/?p=11346"
+      }
+    ]
+  },
+  {
+    "id": "water-lily-garden",
+    "title": "睡蓮の庭 - Water Lily Garden",
+    "description": "2026年の新作インスタレーション。「魔法の美術館」2026年 BOSS E・ZO FUKUOKA 会場（7/14-9/27）で初公開しました。",
+    "category": "mediaart",
+    "year": 2026,
+    "awards": [],
+    "collaborators": [],
+    "technology": [
+      "Unity",
+      "C#"
+    ],
+    "exhibition": "魔法の美術館（BOSS E・ZO FUKUOKA）",
+    "materials": "Unity",
+    "links": [
+      {
+        "label": "会場情報",
+        "url": "https://e-zofukuoka.com/special/mahou_museum/"
+      }
+    ]
+  },
+  {
+    "id": "cosmic-square",
+    "title": "Cosmic Square",
+    "description": "「魔法の美術館」を中心に各地を巡回しているインスタレーション作品。長野県 上田市立美術館（2022）、広島県 ふくやま美術館（2024）、福岡県 BOSS E・ZO FUKUOKA（2026）などで展示しています。",
+    "category": "mediaart",
+    "year": 2022,
+    "awards": [],
+    "collaborators": [],
+    "technology": [
+      "Unity",
+      "C#"
+    ],
+    "exhibition": "魔法の美術館",
+    "materials": "Unity",
+    "links": []
   }
 ]
