@@ -1,113 +1,96 @@
 [
   {
-    "category": "インタラクティブ・インスタレーション",
-    "icon": "sensors",
+    "category": "プログラミング",
     "skills": [
       {
         "name": "Unity / C#",
-        "description": "展示作品、テーマパークの体感型アトラクション、インタラクティブなプロジェクションマッピングの実装。制作の中心にあるツール"
+        "level": 95,
+        "description": "テーマパークのアトラクションやインタラクティブなプロジェクションマッピング、VR/MRアプリ開発"
       },
       {
-        "name": "センサー連携",
-        "description": "LiDAR、深度センサー、モーションキャプチャ、各種スイッチ類の入力を映像・音・機構にリアルタイムで接続する設計"
+        "name": "C++/openFrameworks",
+        "level": 85,
+        "description": "メディアアート作品「七色小道」「ミライノピアノ」「石畳燈籠」の開発"
       },
       {
-        "name": "プロジェクションマッピング",
-        "description": "建物や立体物への映像投影。京都二条城、企業イベント、常設展示など。複数台のPC・プロジェクタを同期させる制御システムも自作"
+        "name": "PHP/HTML/CSS/JavaScript",
+        "level": 80,
+        "description": "Webシステム開発、CMS構築"
       },
       {
-        "name": "触覚・嗅覚デバイス",
-        "description": "bHaptics等の触覚デバイス連携、香りの出し分け機構の制御。NHK技研公開2025では触覚と香りを伴う3次元コンテンツを担当"
-      }
-    ]
-  },
-  {
-    "category": "VRChat / メタバース",
-    "icon": "view_in_ar",
-    "skills": [
-      {
-        "name": "VRChatワールド制作",
-        "description": "企業ワールド、イベント会場、常設ワールドの制作。サンリオ、PICO、TOPPAN、Vket出展など"
-      },
-      {
-        "name": "Udon / VRChat SDK3",
-        "description": "同期処理を伴うギミックの実装。バトルロイヤル、ミニゲーム、ワールド内映像システムなど"
-      },
-      {
-        "name": "シェーダ / 軽量化",
-        "description": "HLSL・ShaderLab での表現づくりと、Quest / PICO などスタンドアロン機で動かすための描画負荷の調整"
-      },
-      {
-        "name": "3Dアセット制作・配布",
-        "description": "BOOTH / pixivFANBOX でVRChat向けのモデル・ギミック・ツールを継続的に公開"
-      }
-    ]
-  },
-  {
-    "category": "クリエイティブコーディング",
-    "icon": "code",
-    "skills": [
-      {
-        "name": "C++ / openFrameworks",
-        "description": "描画パフォーマンスが要求されるメディアアート作品の開発。「七色小道」「ミライノピアノ」「石畳燈籠」など"
-      },
-      {
-        "name": "シェーダ (GLSL / HLSL)",
-        "description": "リアルタイム映像表現。作品の見た目づくりの基盤"
-      },
-      {
-        "name": "Web / JavaScript",
-        "description": "ブラウザで完結するツールやビジュアルコンテンツの制作。React / Vite、WebGL"
+        "name": "Python",
+        "level": 70,
+        "description": "データ処理、機械学習など"
       },
       {
         "name": "Processing",
-        "description": "アイデア段階の高速なプロトタイピング"
+        "level": 85,
+        "description": "ビジュアルプログラミングによるアート作品制作"
       }
     ]
   },
   {
-    "category": "フィジカルコンピューティング",
-    "icon": "memory",
+    "category": "メディア技術",
     "skills": [
       {
-        "name": "M5Stack / ESP32",
-        "description": "無線通信を前提とした小型デバイスの制作。センサー、通知、見守り機器など、必要な装置は自分で作る"
+        "name": "プロジェクションマッピング",
+        "level": 90,
+        "description": "建物や物体へのプロジェクションマッピング技術"
       },
       {
-        "name": "Arduino / 電子回路設計",
-        "description": "作品向けのカスタム基板・制御回路の設計と実装。モーター、バルブ、LED等の駆動"
+        "name": "センサー連携技術",
+        "level": 85,
+        "description": "Kinect、Leap Motion、Arduino等のセンサーデバイスとの連携"
       },
+      {
+        "name": "VR/AR/MR開発",
+        "level": 90,
+        "description": "Meta Quest、HTC Vive、HoloLensなどのVR/ARデバイス向けアプリ開発"
+      },
+      {
+        "name": "インタラクティブ設計",
+        "level": 95,
+        "description": "ユーザーインタラクションの設計と実装"
+      }
+    ]
+  },
+  {
+    "category": "データベース",
+    "skills": [
+      {
+        "name": "MySQL",
+        "level": 75,
+        "description": "Webアプリケーションのデータベース設計・構築"
+      },
+      {
+        "name": "PostgreSQL",
+        "level": 70,
+        "description": "大規模データの管理"
+      },
+      {
+        "name": "ORACLE",
+        "level": 65,
+        "description": "企業システムでの利用経験"
+      }
+    ]
+  },
+  {
+    "category": "その他",
+    "skills": [
       {
         "name": "デジタルファブリケーション",
-        "description": "3Dプリンタ、レーザーカッター、CNCを使った筐体・機構部品の制作"
-      }
-    ]
-  },
-  {
-    "category": "AI を使ったものづくり",
-    "icon": "auto_awesome",
-    "skills": [
-      {
-        "name": "LLM を使った開発",
-        "description": "Claude 等を使い、思いついた道具やWebアプリをその日のうちに形にする。このポートフォリオサイト自体もその成果物のひとつ"
+        "level": 80,
+        "description": "3Dプリンティング、レーザーカッター等の活用"
       },
       {
-        "name": "企画・リサーチへの活用",
-        "description": "作品コンセプトの発散、生成AIによるイメージ検証、データ分析（BOOTH 3Dモデル市場の取引分析など）"
-      }
-    ]
-  },
-  {
-    "category": "ディレクション",
-    "icon": "engineering",
-    "skills": [
-      {
-        "name": "テクニカルディレクション",
-        "description": "実現可能性の見極め、技術選定、現地設営を含めた進行の統括"
+        "name": "ハードウェア設計",
+        "level": 75,
+        "description": "電子回路設計、マイコン制御"
       },
       {
         "name": "プロジェクトマネジメント",
-        "description": "クライアントワークでの要件整理、スケジュール管理、外部スタッフとの連携"
+        "level": 85,
+        "description": "チームプロジェクトのディレクション・マネジメント"
       }
     ]
   }

@@ -4,13 +4,6 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Deny direct access to dotfiles / dot-directories (.env, .git, .github ...)
-# /.well-known/ is excluded because Let's Encrypt uses it for renewal.
-# Must come before the SPA rules: these files exist on disk and would
-# otherwise be served as plain text by the !-f condition below.
-RewriteCond %{REQUEST_URI} "(^|/)\.(?!well-known/)"
-RewriteRule ^ - [F,L]
-
 # SPA routing support for React Router
 # Exclude real files and directories
 RewriteCond %{REQUEST_FILENAME} !-f
