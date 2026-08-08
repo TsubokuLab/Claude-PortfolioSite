@@ -54,7 +54,7 @@ React + Vite で構築された SPA で、インタラクティブな 3D アニ�
 │   │   ├── WorkDetailPage.jsx
 │   │   ├── ActivityPage.jsx
 │   │   ├── ContactPage.jsx
-│   │   ├── AboutPage.jsx
+│   │   ├── NotFoundPage.jsx  # 404（Layout 配下）
 │   │   └── admin/            # 管理パネル（6ページ）
 │   ├── routes/
 │   │   ├── Router.jsx        # React Router 設定
@@ -73,7 +73,7 @@ React + Vite で構築された SPA で、インタラクティブな 3D アニ�
 │   ├── data/
 │   │   ├── works.json        # ポートフォリオ作品データ
 │   │   ├── timeline.json     # 活動履歴タイムライン
-│   │   ├── skills.json       # スキルマトリクス
+│   │   ├── skills.json       # スキル一覧（ProfilePage が参照）
 │   │   ├── tags.json         # タグ定義
 │   │   └── heroImages.json   # ヒーロー画像設定
 │   ├── .htaccess             # Apache SPA ルーティング設定
@@ -92,7 +92,7 @@ React + Vite で構築された SPA で、インタラクティブな 3D アニ�
 # 開発サーバー起動（ポート 3000）
 npm run dev
 
-# コード品質チェック
+# コード品質チェック（eslint 9 / eslint.config.js の flat config）
 npm run lint
 
 # ビルド（環境別）
@@ -117,6 +117,22 @@ npm run deploy:github
 | `VITE_ADMIN_PASSWORD_HASH` | `240be518...` (admin123) | （要変更）| 管理者パスワードの SHA-256 ハッシュ |
 
 **重要**: 本番環境では `VITE_ADMIN_PASSWORD_HASH` を必ず安全な値に変更すること。
+現状 `.env.production` にこの変数は定義されておらず、本番ビルドでは管理画面に
+ログインできない（未定義の場合は明示的にエラーを返す実装になっている）。
+
+---
+
+## 画像アセットの規約
+
+- 作品画像は `public/images/works/{作品のid}/` に置く（ディレクトリ名は works.json の `id` と一致させる）
+- **ディレクトリ名・ファイル名は大文字小文字まで works.json の記述と一致させること。**
+  Windows のローカル環境では大文字小文字を区別しないため気付けないが、
+  本番の Linux + Apache では 404 になる
+- `vite.config.js` の `imageManifestPlugin` が `public/images/works/` をスキャンして
+  `public/data/image-manifest.json` を生成するため、`thumbnail` を書かなくても
+  ディレクトリに画像を置けば自動で拾われる
+- ローカル画像も `thumbnail` も無い場合、`src/utils/thumbnails.js` が
+  works.json の `youtube`（動画ID）から YouTube のサムネイルにフォールバックする
 
 ---
 
