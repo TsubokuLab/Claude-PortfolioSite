@@ -823,7 +823,7 @@
     "title": "Japanese Office / 坪倉仮想事務所",
     "description": "日本のオフィスをVRChat上に再現したワールド。実際に打ち合わせや作業に使うことを前提に、机や什器のモデルからひとつずつ作っています。バーチャルオフィスとして日常的に運用しています。",
     "category": "VR",
-    "year": 2022,
+    "year": 2020,
     "awards": [],
     "collaborators": [],
     "technology": [
@@ -847,7 +847,7 @@
     "title": "坪倉家 / Tsubokura's Home",
     "description": "日本の住宅をVRChat上に再現したワールド。生活感のある小物までモデリングし、昼と夜の2バージョンを用意しています。集まって話すための場所として作りました。",
     "category": "VR",
-    "year": 2021,
+    "year": 2018,
     "awards": [],
     "collaborators": [],
     "technology": [
@@ -875,7 +875,7 @@
     "title": "Danchi - 団地",
     "description": "日本の団地をVRChat上に作ったワールド。棟の外観から階段室、部屋の中まで、実際に歩き回れる形で再現しています。",
     "category": "VR",
-    "year": 2023,
+    "year": 2020,
     "awards": [],
     "collaborators": [],
     "technology": [
@@ -897,9 +897,9 @@
   {
     "id": "virtual-tv-studio",
     "title": "Virtual TV Studio",
-    "description": "VRChat内で映像収録・配信を行うためのスタジオワールド。カメラとビデオミキサーを実機の操作感に寄せて実装し、複数カメラの切り替えができます。720p版と1080p版を用意。",
+    "description": "VRChat内で映像収録・配信を行うためのスタジオワールド。カメラとビデオミキサーを実機の操作感に寄せて実装し、複数カメラの切り替えができます。720p版と1080p版を用意していました。初期に制作したワールドのため、現在はVRChat上で非公開にしています。",
     "category": "VR",
-    "year": 2021,
+    "year": 2018,
     "awards": [],
     "collaborators": [],
     "technology": [
@@ -910,17 +910,7 @@
     ],
     "exhibition": "VRChat",
     "materials": "Unity / VRChat",
-    "youtube": "JjjP75W3LtA",
-    "links": [
-      {
-        "label": "vrchat (1080p)",
-        "url": "https://vrchat.com/home/world/wrld_876856a1-1dc4-4a52-b540-6803a9a3c1e6"
-      },
-      {
-        "label": "vrchat (720p)",
-        "url": "https://vrchat.com/home/world/wrld_5779f827-6b4b-456b-a8c5-612074f8de8d"
-      }
-    ]
+    "youtube": "JjjP75W3LtA"
   },
   {
     "id": "vrchaptics",
@@ -989,7 +979,7 @@
     "title": "YTLiveOSC",
     "description": "VRChatのワールドをYouTube Liveのコメント・スーパーチャットに反応させるソフトとサンプルPrefabのセット。配信の視聴者がワールド内のギミックを動かせるようになります。pixivFANBOXで公開中。",
     "category": "software",
-    "year": 2021,
+    "year": 2018,
     "awards": [],
     "collaborators": [],
     "technology": [
