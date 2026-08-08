@@ -2,93 +2,23 @@ import React, { useState, useEffect } from 'react';
 import ScrollAnimation from '../components/animations/ScrollAnimation';
 import { useCursor } from '../context/CursorContext';
 import { getAssetPath } from '../utils/paths';
+import { fetchSkills } from '../utils/api';
 import './ProfilePage.css';
-
-// スキルデータの静的な定義 - データベースカテゴリを除外
-const staticSkills = [
-  {
-    "category": "プログラミング",
-    "icon": "code",
-    "skills": [
-      {
-        "name": "Unity / C#",
-        "description": "テーマパークのアトラクション制作やインタラクティブなプロジェクションマッピング、VR/MRアプリの開発"
-      },
-      {
-        "name": "C++/openFrameworks",
-        "description": "パフォーマンスが求められるメディアアート作品の開発。代表作:「七色小道」「ミライノピアノ」「石畳燈籠」"
-      },
-      {
-        "name": "PHP/HTML/CSS/JavaScript",
-        "description": "Webサイト構築、CMS開発、インタラクティブWebコンテンツの制作"
-      },
-      {
-        "name": "Python",
-        "description": "データ処理、機械学習モデルの検証、自動化スクリプト開発"
-      },
-      {
-        "name": "Processing",
-        "description": "ビジュアルプログラミングによるプロトタイピングとアート作品制作"
-      }
-    ]
-  },
-  {
-    "category": "メディア技術",
-    "icon": "devices",
-    "skills": [
-      {
-        "name": "プロジェクションマッピング",
-        "description": "建物や立体物への映像投影技術。京都二条城、企業イベント、アート展示など多数の実績"
-      },
-      {
-        "name": "センサー連携技術",
-        "description": "Kinect、Leap Motion、Arduinoなど各種センサーとデジタルコンテンツの連携システム開発"
-      },
-      {
-        "name": "VR/AR/MR開発",
-        "description": "Meta Quest、HTC Vive、HoloLensなど各種XRプラットフォーム向けの没入型体験設計・開発"
-      },
-      {
-        "name": "インタラクティブ設計",
-        "description": "ユーザー行動に応答するインタラクションモデルの設計と実装"
-      }
-    ]
-  },
-  {
-    "category": "その他",
-    "icon": "engineering",
-    "skills": [
-      {
-        "name": "テクニカルディレクション",
-        "description": "複雑なプロジェクトのテクニカル面での指揮・監督、技術選定、チームマネジメント"
-      },
-      {
-        "name": "デジタルファブリケーション",
-        "description": "3Dプリンティング、レーザーカッター等を活用した物理的インタフェースの制作"
-      },
-      {
-        "name": "ハードウェア設計",
-        "description": "インタラクティブ作品向けの電子回路設計、マイコン制御システム開発"
-      },
-      {
-        "name": "プロジェクトマネジメント",
-        "description": "開発チームのディレクション、スケジュール管理、クライアントとのコミュニケーション"
-      }
-    ]
-  }
-];
 
 const ProfilePage = () => {
   const { setCursor, resetCursor } = useCursor();
+  const [skills, setSkills] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ページ読み込み完了を模擬
+  // スキルデータは public/data/skills.json が正。管理画面からの更新にも追従する
   useEffect(() => {
-    const timer = setTimeout(() => {
+    let cancelled = false;
+    fetchSkills().then(data => {
+      if (cancelled) return;
+      setSkills(Array.isArray(data) ? data : []);
       setLoading(false);
-    }, 500);
-    
-    return () => clearTimeout(timer);
+    });
+    return () => { cancelled = true; };
   }, []);
 
   const profileImagePath = getAssetPath('/images/profile/teruaki_tsubokura_2025.jpg');
@@ -133,8 +63,12 @@ const ProfilePage = () => {
                     その後、より自分のフィールドに近い仕事が出来る株式会社ワントゥーテンへ入社。遊園地の体感型アトラクションゲーム「ミライセンシ」や京都二条城へのプロジェクションマッピング等のインスタレーションを中心に手がけ、デジタルサイネージアワード2014 ゴールド、カンヌライオンズ2013 モバイル部門ゴールド、第66回広告電通賞モバイル・コミュニケーション部門 最優秀賞などを受賞。
                   </p>
                   <p>
-                    現在は、フリーランスのメディアアーティスト／クリエイティブテクノロジストとして独立し、総務省 異能vation ジェネレーションアワードでも部門最優秀賞を受賞。国内外で500万人以上を動員した人気の企画展「魔法の美術館」へも作品を多数出展している。
-                    広告クリエイティブ分野では、企画・制作やテーマパークのアトラクション制作、VRChatを中心としたメタバースの企業ワールド制作まで幅広く手がけている。
+                    2015年にフリーランスのメディアアーティスト／クリエイティブテクノロジストとして独立し、10年以上にわたって活動を続けている。総務省 異能vation ジェネレーションアワードでも部門最優秀賞を受賞。国内外で500万人以上を動員した人気の企画展「魔法の美術館」へも作品を多数出展している。
+                    広告クリエイティブ分野の企画・制作やテーマパークのアトラクション制作に加え、近年はVRChatを中心としたメタバースの企業ワールド制作、BOOTH／pixivFANBOXでのアセット公開にも比重を置いている。
+                  </p>
+                  <p>
+                    最近は生成AIを制作プロセスに取り込むことに関心があり、思いついた道具やWebアプリをその日のうちに形にする試みを続けている。
+                    作品に必要なハードウェアはM5Stack等を使って自分で組み、ソフトとハードの境目を行き来しながらつくることを基本の姿勢としている。
                   </p>
                 </div>
               </div>
@@ -282,7 +216,7 @@ const ProfilePage = () => {
             </div>
           ) : (
             <div className="skills-container">
-              {staticSkills.map((category, categoryIndex) => (
+              {skills.map((category, categoryIndex) => (
                 <div key={category.category} className="skill-category-section">
                   <ScrollAnimation type="fadeUp" delay={categoryIndex * 0.1}>
                     <div className="skill-category-header">
