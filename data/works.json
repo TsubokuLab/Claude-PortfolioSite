@@ -923,7 +923,7 @@
   {
     "id": "vrchaptics",
     "title": "VRCHaptics",
-    "description": "触覚スーツ「bHaptics」をVRChatで動作させるアプリとUnityアセットのセット。VRChatの画面から接触判定を読み取ってスーツを振動させる仕組みで、アバター側のセットアップ用ヘルパーも同梱しています。pixivFANBOXで公開中。",
+    "description": "触覚スーツ「bHaptics」をVRChatで動作させるアプリとUnityアセットのセット。VRChatの画面から接触判定を読み取ってスーツを振動させる仕組みで、アバター側のセットアップ用ヘルパーも同梱していました。pixivFANBOXで配布していました。\n\n※ 2019年に制作したものです。その後の開発・サポートは終了しており、現在の環境では動作しません。当時の記録として掲載しています。",
     "category": "software",
     "year": 2019,
     "awards": [],
@@ -985,7 +985,7 @@
   {
     "id": "ytliveosc",
     "title": "YTLiveOSC",
-    "description": "VRChatのワールドをYouTube Liveのコメント・スーパーチャットに反応させるソフトとサンプルPrefabのセット。配信の視聴者がワールド内のギミックを動かせるようになります。pixivFANBOXで公開中。",
+    "description": "VRChatのワールドをYouTube Liveのコメント・スーパーチャットに反応させるソフトとサンプルPrefabのセット。配信の視聴者がコメントを送ると、ワールド内のギミックが動きました。pixivFANBOXで配布していました。\n\n※ 2018年に制作したものです。その後の開発・サポートは終了しており、現在の環境では動作しません。当時の記録として掲載しています。",
     "category": "software",
     "year": 2018,
     "awards": [],
