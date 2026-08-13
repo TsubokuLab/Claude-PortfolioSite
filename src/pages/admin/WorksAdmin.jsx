@@ -305,9 +305,9 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
   const [formData, setFormData] = useState(work);
   const [youtubePreview, setYoutubePreview] = useState(null);
 
-  // YouTube ID が変わったらプレビューを取得
+  // YouTube ID が変わったらプレビューを取得（複数ある場合は先頭をプレビューする）
   useEffect(() => {
-    const id = formData.youtube;
+    const [id] = Array.isArray(formData.youtube) ? formData.youtube : [formData.youtube];
     if (!id || !/^[\w-]{11}$/.test(id)) {
       setYoutubePreview(null);
       return;
@@ -349,6 +349,22 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
     } catch (_) {}
     return str; // パース失敗時はそのまま
   };
+
+  // 入力欄はカンマ区切りで複数の動画を受け付ける。
+  // 1本なら文字列、複数なら配列として保存する（works.json のどちらの形式にも対応）
+  const parseYouTubeField = (input) => {
+    const ids = input
+      .split(',')
+      .map(s => s.trim())
+      .filter(Boolean)
+      .map(parseYouTubeId);
+    if (ids.length === 0) return '';
+    return ids.length === 1 ? ids[0] : ids;
+  };
+
+  const youtubeFieldValue = Array.isArray(formData.youtube)
+    ? formData.youtube.join(', ')
+    : (formData.youtube || '');
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -486,9 +502,9 @@ const WorkEditModal = ({ work, onSave, onCancel }) => {
               <label>YouTube</label>
               <input
                 type="text"
-                value={formData.youtube || ''}
-                onChange={(e) => handleChange('youtube', parseYouTubeId(e.target.value))}
-                placeholder="Video ID または URL をそのまま貼り付け"
+                value={youtubeFieldValue}
+                onChange={(e) => handleChange('youtube', parseYouTubeField(e.target.value))}
+                placeholder="Video ID または URL。複数ある場合はカンマ区切り"
               />
               {youtubePreview && (
                 <div className="youtube-preview">

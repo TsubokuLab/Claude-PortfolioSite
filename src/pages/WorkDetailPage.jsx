@@ -6,10 +6,14 @@ import ScrollAnimation from '../components/animations/ScrollAnimation';
 import ParallaxEffect from '../components/animations/ParallaxEffect';
 import { useCursor } from '../context/CursorContext';
 import { formatDate } from '../utils/helpers';
+import { resolveThumbUrl, getYouTubeIds, youTubeThumbUrl } from '../utils/thumbnails';
 import './WorkDetailPage.css';
 
 // YouTube video ID → embed URL（youtube-nocookie.com でFirefox 153エラー回避）
 const toEmbedUrl = (id) => id ? `https://www.youtube-nocookie.com/embed/${id}` : null;
+
+// public/ 配下の相対パス → 実際に配信されるURL
+const toAssetUrl = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\.\//, '')}`;
 
 // マニフェストから有効なサムネイルを取得
 const resolveThumb = (work, manifest) => {
@@ -31,7 +35,6 @@ const WorkDetailPage = () => {
   const [relatedWorks, setRelatedWorks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isVideoActive, setIsVideoActive] = useState(false);
   const [manifest, setManifest] = useState({});
   const navigate = useNavigate();
   const { setCursor, resetCursor } = useCursor();
@@ -54,12 +57,8 @@ const WorkDetailPage = () => {
 
       setWork(workData);
       setManifest(imageManifest);
-
-      // YouTubeがある場合は動画を初期表示
-      if (workData.youtube) {
-        setIsVideoActive(true);
-        setActiveIndex(0);
-      }
+      // スライドは「動画 → 画像」の順に並ぶので、常に先頭から表示する
+      setActiveIndex(0);
 
       const related = allWorks
         .filter(w => w.id !== workId && w.category === workData.category)
@@ -84,7 +83,6 @@ const WorkDetailPage = () => {
     return null;
   }
 
-  const youtubeUrl = toEmbedUrl(work.youtube);
   const effectiveThumbnail = resolveThumb(work, manifest);
   const effectiveImages = resolveImages(work, manifest);
 
@@ -94,49 +92,26 @@ const WorkDetailPage = () => {
     ...effectiveImages.filter(img => img !== effectiveThumbnail)
   ];
 
-  // サムネイル選択時の処理
-  const handleThumbnailClick = (index, isVideo = false) => {
-    setActiveIndex(index);
-    setIsVideoActive(isVideo);
-  };
+  // 動画と画像を1本のスライド配列にまとめる。動画を先頭に置く。
+  // youtube は動画IDの文字列でも配列でも受け付ける（複数本の作品があるため）
+  const slides = [
+    ...getYouTubeIds(work).map(id => ({ type: 'video', id })),
+    ...galleryImages.map(path => ({ type: 'image', path }))
+  ];
 
-  // 前の画像へ
-  const handlePrev = () => {
-    if (isVideoActive) {
-      // 動画が表示されている場合は最後の画像へ
-      setIsVideoActive(false);
-      setActiveIndex(galleryImages.length - 1);
-    } else if (activeIndex === 0) {
-      // 最初の画像の場合は、動画があれば動画へ、なければ最後の画像へ
-      if (youtubeUrl) {
-        setIsVideoActive(true);
-      } else {
-        setActiveIndex(galleryImages.length - 1);
-      }
-    } else {
-      // それ以外は前の画像へ
-      setActiveIndex(activeIndex - 1);
-    }
-  };
+  // データ変更などで範囲外を指してしまった場合に備える
+  const currentIndex = slides.length > 0 ? Math.min(activeIndex, slides.length - 1) : 0;
+  const currentSlide = slides[currentIndex];
 
-  // 次の画像へ
-  const handleNext = () => {
-    if (isVideoActive) {
-      // 動画が表示されている場合は最初の画像へ
-      setIsVideoActive(false);
-      setActiveIndex(0);
-    } else if (activeIndex === galleryImages.length - 1) {
-      // 最後の画像の場合は、動画があれば動画へ、なければ最初の画像へ
-      if (youtubeUrl) {
-        setIsVideoActive(true);
-      } else {
-        setActiveIndex(0);
-      }
-    } else {
-      // それ以外は次の画像へ
-      setActiveIndex(activeIndex + 1);
-    }
+  const handleThumbnailClick = (index) => setActiveIndex(index);
+
+  // 前後移動（端では反対側へ回り込む）
+  const step = (delta) => {
+    if (slides.length === 0) return;
+    setActiveIndex((currentIndex + delta + slides.length) % slides.length);
   };
+  const handlePrev = () => step(-1);
+  const handleNext = () => step(1);
 
   return (
     <div className="work-detail-page">
@@ -169,11 +144,12 @@ const WorkDetailPage = () => {
           <div className="work-detail-gallery">
             <ScrollAnimation type="fadeUp">
               <div className="gallery-main">
-                {isVideoActive && youtubeUrl ? (
+                {currentSlide && currentSlide.type === 'video' ? (
                   // YouTube動画表示
                   <div className="youtube-embed-container">
                     <iframe
-                      src={youtubeUrl}
+                      key={currentSlide.id}
+                      src={toEmbedUrl(currentSlide.id)}
                       title={work.title}
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -183,17 +159,17 @@ const WorkDetailPage = () => {
                   </div>
                 ) : (
                   // 画像表示
-                  galleryImages.length > 0 && (
-                    <img 
-                      src={`${import.meta.env.BASE_URL}${galleryImages[activeIndex].replace(/^\.\//, '')}`} 
-                      alt={`${work.title} - ${activeIndex + 1}`} 
+                  currentSlide && (
+                    <img
+                      src={toAssetUrl(currentSlide.path)}
+                      alt={`${work.title} - ${currentIndex + 1}`}
                       className="gallery-active-image"
                     />
                   )
                 )}
-                
+
                 {/* ナビゲーションボタン */}
-                {(galleryImages.length > 1 || youtubeUrl) && (
+                {slides.length > 1 && (
                   <>
                     <button 
                       className="gallery-nav prev"
@@ -217,37 +193,30 @@ const WorkDetailPage = () => {
                 )}
               </div>
               
-              {/* サムネイル */}
-              {(galleryImages.length > 0 || youtubeUrl) && (
+              {/* サムネイル（動画・画像を通し番号で並べる） */}
+              {slides.length > 1 && (
                 <div className="gallery-thumbnails">
-                  {/* 動画サムネイル */}
-                  {youtubeUrl && (
+                  {slides.map((slide, index) => (
                     <button
-                      className={`gallery-thumbnail youtube-thumbnail ${isVideoActive ? 'active' : ''}`}
-                      onClick={() => handleThumbnailClick(0, true)}
+                      key={slide.type === 'video' ? `video-${slide.id}` : `image-${slide.path}`}
+                      className={`gallery-thumbnail ${slide.type === 'video' ? 'youtube-thumbnail' : ''} ${currentIndex === index ? 'active' : ''}`}
+                      onClick={() => handleThumbnailClick(index)}
                       onMouseEnter={() => setCursor('hover')}
                       onMouseLeave={resetCursor}
                     >
-                      <div className="thumbnail-video-icon">▶</div>
-                      {/* サムネイル画像がない場合は作品の最初の画像を使用 */}
-                      {galleryImages.length > 0 ? (
-                        <img src={`${import.meta.env.BASE_URL}${galleryImages[0].replace(/^\.\//, '')}`} alt={`${work.title} - 動画`} />
+                      {slide.type === 'video' ? (
+                        <>
+                          <div className="thumbnail-video-icon">▶</div>
+                          {/* YouTubeのサムネイルが取得できない場合は▶アイコンだけ残す */}
+                          <img
+                            src={youTubeThumbUrl(slide.id)}
+                            alt={`${work.title} - 動画 ${index + 1}`}
+                            onError={(e) => { e.currentTarget.style.visibility = 'hidden'; }}
+                          />
+                        </>
                       ) : (
-                        <div className="thumbnail-placeholder">動画</div>
+                        <img src={toAssetUrl(slide.path)} alt={`${work.title} - ${index + 1}`} />
                       )}
-                    </button>
-                  )}
-                  
-                  {/* 画像サムネイル */}
-                  {galleryImages.map((image, index) => (
-                    <button
-                      key={`image-${index}`}
-                      className={`gallery-thumbnail ${!isVideoActive && activeIndex === index ? 'active' : ''}`}
-                      onClick={() => handleThumbnailClick(index, false)}
-                      onMouseEnter={() => setCursor('hover')}
-                      onMouseLeave={resetCursor}
-                    >
-                      <img src={`${import.meta.env.BASE_URL}${image.replace(/^\.\//, '')}`} alt={`${work.title} - ${index + 1}`} />
                     </button>
                   ))}
                 </div>
@@ -361,9 +330,11 @@ const WorkDetailPage = () => {
                           className="related-image"
                           style={{
                             backgroundImage: (() => {
-                              const thumb = resolveThumb(relatedWork, manifest);
+                              // 共通の解決処理を使う。ローカル画像を持たない作品でも
+                              // YouTubeのサムネイルにフォールバックする
+                              const thumb = resolveThumbUrl(relatedWork, manifest);
                               return thumb
-                                ? `url(${import.meta.env.BASE_URL}${thumb.replace(/^\.\//, '')})`
+                                ? `url(${thumb})`
                                 : 'linear-gradient(-45deg, var(--accent), var(--accent-secondary))';
                             })()
                           }}

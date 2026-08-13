@@ -1,5 +1,15 @@
 /**
- * 作品サムネイルのURL解決。WorksPage と FeaturedWorks で共有する。
+ * works.json の youtube を配列に正規化する。
+ * 1本のときは文字列、複数本のときは配列で持てるようにしている。
+ */
+export const getYouTubeIds = (work) => {
+  const v = work?.youtube;
+  if (!v) return [];
+  return (Array.isArray(v) ? v : [v]).filter(Boolean);
+};
+
+/**
+ * 作品サムネイルのURL解決。WorksPage / FeaturedWorks / WorkDetailPage で共有する。
  *
  * 優先順位:
  *   1. works.json の thumbnail
@@ -20,9 +30,13 @@ export const resolveThumbUrl = (work, manifest = {}) => {
 
   // ローカル画像が無い場合はYouTubeのサムネイルで代替する
   // （VRChatワールドなど、静止画は無いが動画はある作品向け）
-  if (work.youtube) {
-    return `https://i.ytimg.com/vi/${work.youtube}/hqdefault.jpg`;
+  const [firstVideo] = getYouTubeIds(work);
+  if (firstVideo) {
+    return youTubeThumbUrl(firstVideo);
   }
 
   return null;
 };
+
+/** YouTube動画IDからサムネイル画像のURLを作る */
+export const youTubeThumbUrl = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
